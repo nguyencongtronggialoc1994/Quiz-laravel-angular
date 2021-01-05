@@ -23,4 +23,5 @@ Route::prefix('quizzes')->group(function () {
     Route::post('/',[QuizController::class,'store']);
     Route::get('/{id}',[QuizController::class,'show']);
     Route::put('/{id}',[QuizController::class,'update']);
+    Route::delete('/{id}',[QuizController::class,'destroy']);
 });

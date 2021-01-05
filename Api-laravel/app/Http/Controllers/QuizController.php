@@ -103,6 +103,14 @@ class QuizController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $quizzes= Quizzes::find($id);
+        $message="User not found";
+        if($quizzes){
+            $quizzes->delete();
+            $message="delete success";
+            $statusCode=200;
+        }
+
+        return response()-> json($message, $statusCode);
     }
 }
