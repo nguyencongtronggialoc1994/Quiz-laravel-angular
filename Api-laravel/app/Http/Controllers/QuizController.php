@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\QuizzesRequest;
 use App\Models\Quizzes;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,7 @@ class QuizController extends Controller
         $quizzes= Quizzes::all();
         return response()->json($quizzes,200);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -34,7 +36,7 @@ class QuizController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(QuizzesRequest $request)
     {
         $quizzes= new Quizzes();
         $quizzes->fill($request-> all());
@@ -82,7 +84,7 @@ class QuizController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(QuizzesRequest $request, $id)
     {
         $quizzes= Quizzes::find($id);
         $statusCode=200;
