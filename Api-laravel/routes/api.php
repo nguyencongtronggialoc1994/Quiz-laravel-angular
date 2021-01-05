@@ -20,4 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::prefix('quizzes')->group(function () {
     Route::get('/', [QuizController::class,'index']);
+    Route::post('/',[QuizController::class,'store']);
+    Route::get('/{id}',[QuizController::class,'show']);
 });

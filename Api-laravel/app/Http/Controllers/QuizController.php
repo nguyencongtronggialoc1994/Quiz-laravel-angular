@@ -36,7 +36,15 @@ class QuizController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $quizzes= new Quizzes();
+        $quizzes->fill($request-> all());
+        $quizzes->save();
+        $statusCode= 201;
+        if(!$quizzes){
+            $statusCode=404;
+        }
+
+        return response()-> json($quizzes,$statusCode);
     }
 
     /**
@@ -47,7 +55,13 @@ class QuizController extends Controller
      */
     public function show($id)
     {
-        //
+        $quizzes= Quizzes::find($id);
+        $statusCode=200;
+        if(!$quizzes){
+            $statusCode=404;
+        }
+
+        return response()-> json($quizzes, $statusCode);
     }
 
     /**
