@@ -22,4 +22,5 @@ Route::prefix('quizzes')->group(function () {
     Route::get('/', [QuizController::class,'index']);
     Route::post('/',[QuizController::class,'store']);
     Route::get('/{id}',[QuizController::class,'show']);
+    Route::put('/{id}',[QuizController::class,'update']);
 });

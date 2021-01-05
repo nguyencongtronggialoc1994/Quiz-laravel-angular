@@ -84,7 +84,15 @@ class QuizController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $quizzes= Quizzes::find($id);
+        $statusCode=200;
+        if(!$quizzes){
+            $statusCode=404;
+        }
+        $quizzes->fill($request-> all());
+        $quizzes->save();
+
+        return response()-> json($quizzes,$statusCode);
     }
 
     /**
