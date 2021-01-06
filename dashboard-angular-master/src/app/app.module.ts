@@ -12,7 +12,8 @@ import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { CreateQuizzesComponent } from './quizzes/create-quizzes/create-quizzes.component';
+import { QuizzesListComponent } from './quizzes/quizzes-list/quizzes-list.component';
+import { UpdateQuizzesComponent } from './quizzes/update-quizzes/update-quizzes.component';
 
 
 
@@ -34,11 +35,7 @@ import { CreateQuizzesComponent } from './quizzes/create-quizzes/create-quizzes.
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-<<<<<<< HEAD
-=======
-    CreateQuizzesComponent
-
->>>>>>> 8d6a80bfd9f8bad24f72d81c206c980c0507d289
+    QuizzesListComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
