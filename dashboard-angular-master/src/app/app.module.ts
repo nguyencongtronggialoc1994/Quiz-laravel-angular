@@ -12,6 +12,9 @@ import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { QuizzesListComponent } from './quizzes/quizzes-list/quizzes-list.component';
+import { UpdateQuizzesComponent } from './quizzes/update-quizzes/update-quizzes.component';
+import { UpdateCategoriesComponent } from './categories/update-categories/update-categories.component';
 
 
 @NgModule({
@@ -23,11 +26,17 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     RouterModule,
     AppRoutingModule,
     NgbModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+
+
+
+
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    QuizzesListComponent,
+    UpdateCategoriesComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
