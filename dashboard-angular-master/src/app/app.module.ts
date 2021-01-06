@@ -17,6 +17,7 @@ import { UpdateQuizzesComponent } from './quizzes/update-quizzes/update-quizzes.
 
 
 
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -35,9 +36,6 @@ import { UpdateQuizzesComponent } from './quizzes/update-quizzes/update-quizzes.
     AppComponent,
     AdminLayoutComponent,
     QuizzesListComponent,
-   
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]

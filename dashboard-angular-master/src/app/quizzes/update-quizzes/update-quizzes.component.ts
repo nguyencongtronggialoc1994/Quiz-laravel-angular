@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Categories } from '../../categories/Categories';
+import { CategoriesService } from '../../categories/categories.service';
 import { Quizz } from '../quizzes';
 import { QuizzesListComponent } from '../quizzes-list/quizzes-list.component';
 import { QuizzesService } from '../quizzes.service';
@@ -12,13 +15,16 @@ import { QuizzesService } from '../quizzes.service';
 export class UpdateQuizzesComponent implements OnInit {
 id!: number;
 quizzes!: Quizz;
+categories!: Observable<Categories[]>
   constructor(
     private quizzesService: QuizzesService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private categoryService: CategoriesService
   ) { }
 
   ngOnInit(): void {
+    this.categories= this.categoryService.getCategoryList();
     this.quizzes= new Quizz();
     this.id= this.route.snapshot.params['id'];
     this.quizzesService.getQuizzFindId(this.id)

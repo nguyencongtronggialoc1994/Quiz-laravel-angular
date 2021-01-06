@@ -15,7 +15,9 @@
 
                         <div class="form-group">
                             <label for="category_id">Thể loại quizz</label>
-                            <input type="text" class="form-control" id="category_id" required [(ngModel)]="quizzes.category_id" name="category_id">
+                            <select class="form-control" name="category_id" id="category_id" [(ngModel)]="quizzes.category_id">
+                              <option  *ngFor="let category of categories| async" value="{{category.id}}">{{category.name}}</option>
+                            </select>
                         </div>
 
                         <div class="form-group">

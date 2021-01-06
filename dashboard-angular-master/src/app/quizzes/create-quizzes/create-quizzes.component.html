@@ -5,9 +5,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h3> Create Quizz</h3>
-
-                    <h4 class="card-title"> Simple Table</h4>
+                    <h4> Create Quizz</h4>
                 </div>
                 <div class="card-body">
 
@@ -15,7 +13,9 @@
 
                         <div class="form-group">
                             <label for="category_id">Thể loại quizz</label>
-                            <input type="text" class="form-control" id="category_id" required [(ngModel)]="quizzes.category_id" name="category_id">
+                            <select class="form-control" name="category_id" id="category_id" [(ngModel)]="quizzes.category_id">
+                              <option  *ngFor="let category of categories| async" value="{{category.id}}">{{category.name}}</option>
+                            </select>
                         </div>
 
                         <div class="form-group">
