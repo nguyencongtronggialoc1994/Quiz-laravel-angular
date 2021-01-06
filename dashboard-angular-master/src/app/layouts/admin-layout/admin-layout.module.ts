@@ -9,6 +9,7 @@ import { ChartsModule } from 'ng2-charts';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import { CreateQuizzesComponent } from '../../quizzes/create-quizzes/create-quizzes.component';
+import { UpdateQuizzesComponent } from '../../quizzes/update-quizzes/update-quizzes.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { CreateQuizzesComponent } from '../../quizzes/create-quizzes/create-quiz
   declarations: [
     DashboardComponent,
     TableListComponent,
-    CreateQuizzesComponent
+    CreateQuizzesComponent,
+    UpdateQuizzesComponent
   ]
 })
 

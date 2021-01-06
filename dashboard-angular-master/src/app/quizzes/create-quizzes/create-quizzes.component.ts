@@ -36,7 +36,7 @@ submited=false;
   }
 
   goToList(){
-    this.router.navigate(['quizzesList'])
+    this.router.navigate(['quizzes-list'])
   }
 
   onSubmit(){

@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { QuizzesListComponent } from './quizzes/quizzes-list/quizzes-list.component';
+import { UpdateQuizzesComponent } from './quizzes/update-quizzes/update-quizzes.component';
 
 
 
@@ -34,6 +35,7 @@ import { QuizzesListComponent } from './quizzes/quizzes-list/quizzes-list.compon
     AppComponent,
     AdminLayoutComponent,
     QuizzesListComponent,
+   
 
 
   ],

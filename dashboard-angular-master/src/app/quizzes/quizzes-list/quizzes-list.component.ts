@@ -34,6 +34,8 @@ quizzes!: Observable<Quizz[]>;
 
   }
 
- updateQuizz(){}
+ updateQuizz(id: number){
+   this.router.navigate(['update-quizz',id]);
+ }
 
 }
