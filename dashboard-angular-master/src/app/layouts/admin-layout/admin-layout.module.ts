@@ -8,6 +8,8 @@ import { TableListComponent } from '../../table-list/table-list.component';
 import { ChartsModule } from 'ng2-charts';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
+import {CreateCategoriesComponent} from '../../categories/create-categories/create-categories.component';
+import {ListCategoriesComponent} from '../../categories/list-categories/list-categories.component';
 
 @NgModule({
   imports: [
@@ -21,6 +23,8 @@ import { ToastrModule } from 'ngx-toastr';
   declarations: [
     DashboardComponent,
     TableListComponent,
+    CreateCategoriesComponent,
+    ListCategoriesComponent
   ]
 })
 
