@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/Categories.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Quiz-laravel-angular.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Quiz-laravel-angular.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/components/sidebar/sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/components/sidebar/sidebar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/layouts/admin-layout/admin-layout.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/layouts/admin-layout/admin-layout.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/layouts/admin-layout/admin-layout.routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/layouts/admin-layout/admin-layout.routing.ts" afterDir="false" />
-    </list>
+    <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -168,7 +159,7 @@
       <workItem from="1609812651080" duration="132000" />
       <workItem from="1609835886542" duration="1238000" />
       <workItem from="1609857767583" duration="2844000" />
-      <workItem from="1609894914212" duration="6911000" />
+      <workItem from="1609894914212" duration="7544000" />
     </task>
     <servers />
   </component>
