@@ -45,10 +45,10 @@
                             <tbody>
                                 <tr *ngFor="let quizz of quizzes | async; index as i">
                                     <td>
-                                        {{ ++i}}
+                                        {{ i+1}}
                                     </td>
                                     <td>
-                                        {{ quizz.category_id}}
+                                        {{ quizz.name}}
                                     </td>
                                     <td>
                                         {{quizz.text }}

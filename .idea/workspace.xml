@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="" />
+    <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-laravel/app/Http/Controllers/QuizController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Api-laravel/app/Http/Controllers/QuizController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/quizzes-list/quizzes-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/quizzes-list/quizzes-list.component.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,7 +144,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/dashboard-angular-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -160,6 +164,7 @@
       <workItem from="1609835886542" duration="1238000" />
       <workItem from="1609857767583" duration="2844000" />
       <workItem from="1609894914212" duration="8387000" />
+      <workItem from="1609920839683" duration="781000" />
     </task>
     <servers />
   </component>
@@ -188,5 +193,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

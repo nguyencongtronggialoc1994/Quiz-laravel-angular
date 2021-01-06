@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\QuizzesRequest;
 use App\Models\Quizzes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class QuizController extends Controller
 {
@@ -15,7 +16,11 @@ class QuizController extends Controller
      */
     public function index()
     {
-        $quizzes= Quizzes::all();
+        $quizzes= DB::table('quizzes')
+            ->join('categories','quizzes.category_id','=','categories.id')
+            ->select('quizzes.*','categories.name')
+//        ->where('quizzes.category_id','=','categories.id')
+        ->get();
         return response()->json($quizzes,200);
     }
 
