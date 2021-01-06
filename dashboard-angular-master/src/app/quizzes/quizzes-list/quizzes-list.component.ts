@@ -38,4 +38,8 @@ quizzes!: Observable<Quizz[]>;
    this.router.navigate(['update-quizz',id]);
  }
 
+ add(){
+   this.router.navigate(['create-quiz']);
+ }
+
 }
