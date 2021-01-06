@@ -22,6 +22,18 @@ export class LoginService {
   }
 
   register(user: Object): Observable<Object> {
-    return this.http.post('http://127.0.0.1:8000/api/register', user);
+    return this.http.post(`http://127.0.0.1:8000/api/register`, user);
+  }
+
+  changePassword(id: number, value: any): Observable<Object> {
+    return this.http.put(`http://127.0.0.1:8000/api/users/${id}`, value);
+  }
+
+  getUser(id: number): Observable<any> {
+    return this.http.get(`http://127.0.0.1:8000/api/users/show/${id}`);
+  }
+
+  getIdByEmail(email: string): Observable<any> {
+    return this.http.get(`http://127.0.0.1:8000/api/users/getId/${email}`);
   }
 }

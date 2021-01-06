@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
   email!: string;
   password!: string;
+  id!: number;
 
   constructor(
     private loginService: LoginService,
@@ -26,15 +27,29 @@ export class LoginComponent implements OnInit {
     this.notificationService.showSuccess('Login successfully !!', 'welcome to page');
   }
 
-  login() {
-    this.loginService.login(this.email, this.password).subscribe(
+  getIdByEmail() {
+    this.loginService.getIdByEmail(this.email).subscribe(
       data => {
-        console.log(data.token);
-        localStorage.setItem('AccessToken', data.token);
-        this.showToasterSuccess();
+        this.id = data;
       }
     );
   }
+
+  login() {
+    this.loginService.login(this.email, this.password).subscribe(
+      data => {
+        localStorage.setItem('AccessToken', data.token);
+        this.showToasterSuccess();
+        this.getIdByEmail();
+      }
+    );
+  }
+
+  goToChangePassword() {
+ this.router.navigate(['changePassword', this.id]);
+ // console.log(this.id);
+  }
+
   goToRegister() {
     this.router.navigate(['/register']);
   }

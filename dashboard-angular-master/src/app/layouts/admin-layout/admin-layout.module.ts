@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import {LoginComponent} from '../../login/login/login.component';
 import {RegisterComponent} from '../../login/register/register.component';
+import {ChangePasswordComponent} from '../../login/change-password/change-password.component';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import {RegisterComponent} from '../../login/register/register.component';
     TableListComponent,
     LoginComponent,
     RegisterComponent,
+    ChangePasswordComponent,
   ]
 })
 

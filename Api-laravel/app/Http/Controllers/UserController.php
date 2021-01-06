@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Exceptions\JWTException;
@@ -13,10 +14,22 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 
 class UserController extends Controller
 {
-    public function index()
+    public function show($id)
+    {
+        $user = User::findOrFail($id);
+        return response()->json($user, 200);
+    }
+
+    public function index(): \Illuminate\Http\JsonResponse
     {
         $users = User::all();
         return response()->json($users, 200);
+    }
+
+    public function getIdByEmail($email)
+    {
+        $id = DB::table('users')->where('email', '=', $email)->value('id');
+        return response()->json($id, 200);
     }
 
     public function update(Request $request, $id)
@@ -25,12 +38,15 @@ class UserController extends Controller
         $statusCode = 200;
         if (!$user)
             $statusCode = 404;
-        $user->fill($request->all());
+//        $user->name = $request->name;
+//        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
         $user->save();
         return response()->json($user, $statusCode);
     }
 
-    public function authenticate(Request $request)
+    public
+    function authenticate(Request $request)
     {
         $credentials = $request->only('email', 'password');
 
@@ -45,7 +61,8 @@ class UserController extends Controller
         return response()->json(compact('token'));
     }
 
-    public function register(Request $request)
+    public
+    function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
@@ -71,7 +88,8 @@ class UserController extends Controller
     /*
      * get current user
      */
-    public function getAuthenticatedUser()
+    public
+    function getAuthenticatedUser()
     {
         try {
 
