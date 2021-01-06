@@ -11,6 +11,9 @@ import { ToastrModule } from 'ngx-toastr';
 import {CreateCategoriesComponent} from '../../categories/create-categories/create-categories.component';
 import {ListCategoriesComponent} from '../../categories/list-categories/list-categories.component';
 
+import {LoginComponent} from '../../login/login/login.component';
+import {RegisterComponent} from '../../login/register/register.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -24,7 +27,9 @@ import {ListCategoriesComponent} from '../../categories/list-categories/list-cat
     DashboardComponent,
     TableListComponent,
     CreateCategoriesComponent,
-    ListCategoriesComponent
+    ListCategoriesComponent,
+    LoginComponent,
+    RegisterComponent,
   ]
 })
 

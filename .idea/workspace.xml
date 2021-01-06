@@ -2,11 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/Categories.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-laravel/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-laravel/app/Http/Middleware/JwtMiddleware.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-laravel/config/jwt.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/User.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/login.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/login.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/login/login.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/login/login.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/login/login.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/login/login.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/register/register.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/register/register.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/register/register.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/register/register.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/notification.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/notification.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Quiz-laravel-angular.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Quiz-laravel-angular.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-laravel/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Api-laravel/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-laravel/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api-laravel/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-laravel/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Api-laravel/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-laravel/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/Api-laravel/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-laravel/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/Api-laravel/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/components/navbar/navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/components/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/components/sidebar/sidebar.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/components/sidebar/sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/components/sidebar/sidebar.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/layouts/admin-layout/admin-layout.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/layouts/admin-layout/admin-layout.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/layouts/admin-layout/admin-layout.routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/layouts/admin-layout/admin-layout.routing.ts" afterDir="false" />
@@ -185,5 +209,18 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/dashboard-angular-master/src/app/login/login/login.component.html</url>
+          <line>18</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
