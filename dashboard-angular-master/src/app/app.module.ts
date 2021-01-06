@@ -12,6 +12,7 @@ import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { QuizzesListComponent } from './quizzes/quizzes-list/quizzes-list.component';
 
 
 
@@ -32,6 +33,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    QuizzesListComponent,
 
 
   ],
