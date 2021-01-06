@@ -1,0 +1,35 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h2>Categories List</h2>
+          <!--    <app-search-news-article (data)="searchNewsArticle($event)"></app-search-news-article>-->
+        </div>
+        <div class="card-body">
+<!--          <button (click)="goToCreate()" class="btn btn-primary">Add newsArticle</button>-->
+          <table class="table table-bordered" style="width: 100%">
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>Tên Danh Mục</th>
+              <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let category of categories| async ">
+              <td>{{category.id}}</td>
+              <td>{{category.name}}</td>
+              <td>
+
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
