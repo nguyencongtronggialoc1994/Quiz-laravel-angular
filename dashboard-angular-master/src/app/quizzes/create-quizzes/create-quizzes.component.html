@@ -1,0 +1,41 @@
+<h3>Create Quizz</h3>
+<div style="width: 400px;">
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="name">Thể loại quizz</label>
+            <input type="text" class="form-control" id="title" required [(ngModel)]="quizzes.category_id" name="category_id">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Câu hỏi</label>
+            <input type="text" class="form-control" id="text" required [(ngModel)]="quizzes.text" name="text">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Đáp án 1:</label>
+            <input type="text" class="form-control" id="option1" required [(ngModel)]="quizzes.option1" name="option1">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Đáp án 2:</label>
+            <input type="text" class="form-control" id="option2" required [(ngModel)]="quizzes.option2" name="option2">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Đáp án 3:</label>
+            <input type="text" class="form-control" id="option3" required [(ngModel)]="quizzes.option3" name="option3">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Đáp án 4:</label>
+            <input type="text" class="form-control" id="option4" required [(ngModel)]="quizzes.option4" name="option4">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Đáp án đúng:</label>
+            <input type="text" class="form-control" id="correctAnswer" required [(ngModel)]="quizzes.correctAnswer" name="correctAnswer">
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
