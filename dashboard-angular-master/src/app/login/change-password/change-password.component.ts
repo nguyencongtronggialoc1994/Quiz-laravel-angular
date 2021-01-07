@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {NotificationService} from '../../notification.service';
 import {LoginService} from '../login.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {User} from '../User';
 
 @Component({
   selector: 'app-change-password',
@@ -12,7 +11,7 @@ import {User} from '../User';
 export class ChangePasswordComponent implements OnInit {
   password!: string;
   id!: number;
-  data = {'password': this.password};
+  // data = {'password': this.password};
 
   constructor(
     private notificationService: NotificationService,
@@ -28,8 +27,7 @@ export class ChangePasswordComponent implements OnInit {
 
 
   changePassword() {
-    console.log(this.data);
-    this.loginService.changePassword(this.id, this.data).subscribe(
+    this.loginService.changePassword(this.id, {'password': this.password}).subscribe(
       data => {
         this.router.navigate(['/login']);
       }
