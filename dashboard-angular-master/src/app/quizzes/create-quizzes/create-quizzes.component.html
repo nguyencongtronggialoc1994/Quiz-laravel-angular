@@ -9,7 +9,7 @@
                 </div>
                 <div class="card-body">
 
-                    <form>
+                    <form (ngSubmit)="onSubmit()">
 
                         <div class="form-group">
                             <label for="category_id">Thể loại quizz</label>
@@ -47,7 +47,7 @@
                             <label for="correctAnswer">Đáp án đúng:</label>
                             <input type="text" class="form-control" id="correctAnswer" required [(ngModel)]="quizzes.correctAnswer" name="correctAnswer">
                         </div>
-                        <button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
                     </form>
 
 

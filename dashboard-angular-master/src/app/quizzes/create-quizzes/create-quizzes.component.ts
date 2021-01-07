@@ -6,6 +6,7 @@ import { CategoriesService } from '../../categories/categories.service';
 import { Categories } from '../../categories/Categories';
 import { Quizz } from '../quizzes';
 import { QuizzesService } from '../quizzes.service';
+import { NotificationService } from '../../notification.service';
 
 @Component({
   selector: 'app-create-quizzes',
@@ -19,12 +20,21 @@ categories!: Observable<Categories[]>;
   constructor(
     private quizzesService: QuizzesService,
     private router: Router,
-    private categoryService: CategoriesService
+    private categoryService: CategoriesService,
+    private   notificationService: NotificationService
   ) { }
 
   ngOnInit(): void {
     this.categories=this.categoryService.getCategoryList();
     console.log(this.categories)
+  }
+
+  showToasterSuccess(){
+    this.notificationService.showSuccess("Thêm thành công","Thông báo!");
+  }
+
+  showToasterError(){
+    this.notificationService.showError("Có đáp án trùng nhau hoặc đáp án đúng không trùng với các đáp án","Thông báo!");
   }
 
   newQuizz(){
@@ -36,8 +46,14 @@ categories!: Observable<Categories[]>;
     this.quizzesService.createQuizz(this.quizzes)
     .subscribe((data:any) => {
       console.log(data);
-      this.quizzes= new Quizz();
-      this.goToList();
+      if(data[0]=='404'){
+        this.showToasterError();
+      }else{
+        this.showToasterSuccess();
+        this.quizzes= new Quizz();
+        this.goToList();
+      }
+
     },
     (error: any)=> console.log(error));
   }
@@ -49,6 +65,7 @@ categories!: Observable<Categories[]>;
   onSubmit(){
     this.submited= true;
     this.save();
+
   }
 
 }

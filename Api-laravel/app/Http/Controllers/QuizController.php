@@ -43,15 +43,29 @@ class QuizController extends Controller
      */
     public function store(QuizzesRequest $request)
     {
+
         $quizzes= new Quizzes();
         $quizzes->fill($request-> all());
-        $quizzes->save();
-        $statusCode= 201;
+        $option1=$quizzes->option1;
+        $option2=$quizzes->option2;
+        $option3=$quizzes->option3;
+        $option4=$quizzes->option4;
+        $correctAnswer=$quizzes->correctAnswer;
+        if($option1==$option2||$option1==$option3||$option1==$option4||$option2==$option3||$option2==$option4||$option3==$option4){
+            $statusCode=404;
+        }else if($correctAnswer!==$option1 && $correctAnswer!==$option2 && $correctAnswer!==$option3 && $correctAnswer!==$option4){
+            $statusCode=404;
+        }else{
+            $statusCode= 201;
+            $quizzes->save();
+        }
+
         if(!$quizzes){
             $statusCode=404;
         }
+        $data=[$statusCode,$quizzes];
 
-        return response()-> json($quizzes,$statusCode);
+        return response()-> json($data);
     }
 
     /**
