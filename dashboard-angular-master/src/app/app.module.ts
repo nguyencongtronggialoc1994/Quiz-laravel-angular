@@ -23,11 +23,18 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     RouterModule,
     AppRoutingModule,
     NgbModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+
+
+
+
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
