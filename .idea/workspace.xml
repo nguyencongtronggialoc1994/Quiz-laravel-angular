@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -8,6 +9,9 @@
       <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/list-categories/list-categories.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/list-categories/list-categories.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/quizzes-list/quizzes-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/quizzes-list/quizzes-list.component.html" afterDir="false" />
     </list>
+=======
+    <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="" />
+>>>>>>> 7578fa49ede29ca45c39bc6231afa834b1ef23f3
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -165,11 +169,15 @@
       <workItem from="1609812651080" duration="132000" />
       <workItem from="1609835886542" duration="1238000" />
       <workItem from="1609857767583" duration="2844000" />
+<<<<<<< HEAD
       <workItem from="1609894914212" duration="6911000" />
       <workItem from="1609925325689" duration="238000" />
       <workItem from="1609925573669" duration="3258000" />
       <workItem from="1609939905489" duration="9391000" />
       <workItem from="1609981133261" duration="42000" />
+=======
+      <workItem from="1609894914212" duration="8387000" />
+>>>>>>> 7578fa49ede29ca45c39bc6231afa834b1ef23f3
     </task>
     <servers />
   </component>
@@ -181,7 +189,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

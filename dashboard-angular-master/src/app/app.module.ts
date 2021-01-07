@@ -14,7 +14,12 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { QuizzesListComponent } from './quizzes/quizzes-list/quizzes-list.component';
 import { UpdateQuizzesComponent } from './quizzes/update-quizzes/update-quizzes.component';
+<<<<<<< HEAD
 import { UpdateCategoriesComponent } from './categories/update-categories/update-categories.component';
+=======
+
+
+>>>>>>> 7578fa49ede29ca45c39bc6231afa834b1ef23f3
 
 
 @NgModule({
@@ -30,13 +35,19 @@ import { UpdateCategoriesComponent } from './categories/update-categories/update
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7578fa49ede29ca45c39bc6231afa834b1ef23f3
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
     QuizzesListComponent,
+<<<<<<< HEAD
     UpdateCategoriesComponent,
+=======
+>>>>>>> 7578fa49ede29ca45c39bc6231afa834b1ef23f3
   ],
   providers: [],
   bootstrap: [AppComponent]
