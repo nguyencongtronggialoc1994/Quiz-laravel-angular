@@ -15,6 +15,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { QuizzesListComponent } from './quizzes/quizzes-list/quizzes-list.component';
 import { UpdateQuizzesComponent } from './quizzes/update-quizzes/update-quizzes.component';
 
+import { UpdateCategoriesComponent } from './categories/update-categories/update-categories.component';
 
 
 
@@ -31,11 +32,16 @@ import { UpdateQuizzesComponent } from './quizzes/update-quizzes/update-quizzes.
 
 
 
+
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
     QuizzesListComponent,
+
+    UpdateCategoriesComponent,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
