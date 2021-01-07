@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddCategoryRequest;
+use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -21,7 +23,7 @@ class CategoryController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(AddCategoryRequest $request)
     {
         $categories = new Category();
         $categories->fill($request->all());
@@ -50,7 +52,7 @@ class CategoryController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(UpdateCategoryRequest $request, $id)
     {
         $categories = Category::findOrFail($id);
         $categories->fill($request->all());

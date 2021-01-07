@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Categories} from '../Categories';
+import {CategoriesService} from '../categories.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-create-categories',
@@ -7,9 +10,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateCategoriesComponent implements OnInit {
 
-  constructor() { }
+  category: Categories = new Categories();
+  submitted = false;
 
-  ngOnInit(): void {
+  constructor(private categoryService: CategoriesService,
+              private router: Router) { }
+  ngOnInit() {
   }
+
+  Category(): void {
+    this.submitted = false;
+    this.category = new Categories();
+  }
+
+  save() {
+    this.categoryService.createCategory(this.category).subscribe((data: any) => {
+        console.log(data);
+        this.category = new Categories();
+        this.gotoList();
+      },
+      (error: any) => console.log(error));
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    this.save();
+  }
+
+  gotoList() {
+    this.router.navigate(['/category-list']);
+  }
+
 
 }

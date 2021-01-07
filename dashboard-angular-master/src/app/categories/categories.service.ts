@@ -10,8 +10,23 @@ export class CategoriesService {
 
   constructor(private http: HttpClient) {
   }
+  getCategory(id: number): Observable<any> {
+    console.log('this');
+    return this.http.get(`${this.baseUrl}/${id}`);
+  }
 
   getCategoryList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
+  }
+
+  createCategory(category: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}`, category);
+  }
+
+  deleteCategory(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+  }
+  updateCategory(id: number, value: any): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/${id}`, value);
   }
 }
