@@ -13,21 +13,14 @@ export const ROUTES: RouteInfo[] = [
   // { path: '/maps', title: 'Maps',  icon: 'location_map-big', class: '' },
   // { path: '/notifications', title: 'Notifications',  icon: 'ui-1_bell-53', class: '' },
 
-<<<<<<< HEAD
+
   // { path: '/user-profile', title: 'User Profile',  icon: 'users_single-02', class: '' },
   {path: '/table-list', title: 'Table List', icon: 'design_bullet-list-67', class: ''},
   {path: '/category-list', title: 'Category List', icon: 'design_bullet-list-67', class: ''},
-  {path: '/category-add', title: 'Category Add', icon: 'design_bullet-list-67', class: ''},
+
   {path: '/quizzes-list', title: 'Quizz List', icon: 'design_bullet-list-67', class: ''},
-=======
-    // { path: '/user-profile', title: 'User Profile',  icon: 'users_single-02', class: '' },
-    { path: '/table-list', title: 'Table List',  icon: 'design_bullet-list-67', class: '' },
-    { path: '/category-list', title: 'Category List',  icon: 'design_bullet-list-67', class: '' },
-    // { path: '/typography', title: 'Typography',  icon: 'text_caps-small', class: '' },
-    // { path: '/upgrade', title: 'Upgrade to PRO',  icon: 'objects_spaceship', class: 'active active-pro' }
-    
-    {path: '/quizzes-list', title: 'Quizz List', icon: 'design_bullet-list-67', class: ''},
->>>>>>> 7578fa49ede29ca45c39bc6231afa834b1ef23f3
+
+
 
 ];
 

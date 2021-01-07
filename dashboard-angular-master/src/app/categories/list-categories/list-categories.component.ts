@@ -25,10 +25,9 @@ export class ListCategoriesComponent implements OnInit {
         error => console.log(error));
   }
 
-  // bookDetails(id: number){
-  //   this.router.navigate(['details', id]);
-  // }
-  //
+  add() {
+  this.router.navigate(['category-add']);
+}
   updateCategory(id: number) {
     this.router.navigate(['category', id]);
   }

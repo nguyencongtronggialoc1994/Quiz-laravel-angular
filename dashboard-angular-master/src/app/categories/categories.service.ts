@@ -15,7 +15,7 @@ export class CategoriesService {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-  getCategoryList(id: number): Observable<any> {
+  getCategoryList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
   }
 
