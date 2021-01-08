@@ -1,3 +1,4 @@
+
 <div class="loginForm">
   <br>
   <br>
@@ -5,7 +6,7 @@
   <form #loginForm="ngForm" novalidate (ngSubmit)="onSubmit()">
     <div class="form-group  form_input_login">
       <label>Email</label>
-      <input type="text" name="email" class="form-control input_form_login"  email required [(ngModel)]="email"
+      <input type="text"  name="email" class="form-control input_form_login"  email required [(ngModel)]="email"
              #emailLogin="ngModel">
     </div>
     <div *ngIf="submitted">
@@ -26,3 +27,6 @@
     <div class="div_submit"><button class="btn btn_blue">Login</button></div>
   </form>
 </div>
+
+
+
