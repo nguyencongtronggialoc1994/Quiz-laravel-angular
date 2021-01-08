@@ -8,14 +8,16 @@
           <h2>Categories List</h2>
         </div>
         <div class="card-body">
-          <div class="container" >
+          <div class="container">
             <h3>Create Category</h3>
             <div [hidden]="submitted">
               <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="name">Title</label>
 
-                  <input type="text" class="form-control" id="name" required minlength="4" [(ngModel)]="category.name" #name="ngModel" name="name">
+
+                  <input type="text" class="form-control" id="name" required minlength="4" [(ngModel)]="category.name"
+                         #name="ngModel" name="name">
                   <div *ngIf="name.invalid && (name.dirty || name.touched)"
                        class="category_name">
                     <div *ngIf="name.errors.required" style="color: red">
@@ -25,11 +27,14 @@
                       Tên Danh Mục phải dài ít nhất 4 ký tự.
                     </div>
                   </div>
+
+
                 </div>
 
                 <button type="submit" class="btn btn-success">Submit</button>
               </form>
             </div>
+
 
             <div [hidden]="!submitted">
               <h4>You submitted successfully!</h4>

@@ -12,7 +12,10 @@ export class LoginComponent implements OnInit {
   email!: string;
   password!: string;
   id!: number;
-  submitted: boolean = false;
+
+
+  submitted: boolean =false;
+
 
   constructor(
     private loginService: LoginService,
@@ -28,10 +31,12 @@ export class LoginComponent implements OnInit {
     this.notificationService.showSuccess('Đăng nhập thành công !!', 'Thông báo');
   }
 
+
   onSubmit() {
     this.submitted = true;
     this.login();
   }
+
 
   getIdByEmail() {
     this.loginService.getIdByEmail(this.email).subscribe(
@@ -52,6 +57,15 @@ export class LoginComponent implements OnInit {
   }
 
   goToChangePassword() {
+
+
+    this.router.navigate(['changePassword', this.id]);
+    // console.log(this.id);
+
+ this.router.navigate(['changePassword', this.id]);
+ // console.log(this.id);
+
+
     this.router.navigate(['changePassword', this.id]);
     // console.log(this.id);
   }
