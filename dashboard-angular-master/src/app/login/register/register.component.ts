@@ -3,7 +3,7 @@ import {LoginService} from '../login.service';
 import {NotificationService} from '../../notification.service';
 import {Router} from '@angular/router';
 import {User} from '../User';
-
+import  * as $ from "jquery";
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -25,10 +25,21 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  test(): void{
+    var confirm_password = $('#confirm_password').val();
+    var password = $('#password').val();
+    var userName = $('#userName').val();
+    var email = $('#email').val();
+    if (confirm_password !== password || userName==null || email==null){
+      alert("Đăng kí thất bại! Vui lòng nhập lại")
+      return;
+    }else {
+      this.register();
+    }
+  }
   onSubmit() {
     this.submitted = true;
-    this.register();
+    this.test();
   }
 
 
