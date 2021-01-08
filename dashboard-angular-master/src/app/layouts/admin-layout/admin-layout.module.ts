@@ -12,6 +12,7 @@ import {LoginComponent} from '../../login/login/login.component';
 import {RegisterComponent} from '../../login/register/register.component';
 import {ChangePasswordComponent} from '../../login/change-password/change-password.component';
 
+
 import { CreateQuizzesComponent } from '../../quizzes/create-quizzes/create-quizzes.component';
 import { UpdateQuizzesComponent } from '../../quizzes/update-quizzes/update-quizzes.component';
 
@@ -21,7 +22,11 @@ import { QuizzesListComponent } from '../../quizzes/quizzes-list/quizzes-list.co
 import { UpdateCategoriesComponent } from '../../categories/update-categories/update-categories.component';
 
 
+
+
+
 // @ts-ignore
+
 @NgModule({
   imports: [
     CommonModule,
@@ -34,6 +39,15 @@ import { UpdateCategoriesComponent } from '../../categories/update-categories/up
   declarations: [
     DashboardComponent,
     TableListComponent,
+
+
+    CreateQuizzesComponent,
+    UpdateQuizzesComponent,
+
+    CreateCategoriesComponent,
+    ListCategoriesComponent,
+
+
     CreateQuizzesComponent,
     UpdateQuizzesComponent,
     CreateCategoriesComponent,
@@ -43,6 +57,8 @@ import { UpdateCategoriesComponent } from '../../categories/update-categories/up
     ChangePasswordComponent,
     QuizzesListComponent,
     UpdateCategoriesComponent,
+
+
   ]
 })
 

@@ -21,11 +21,13 @@ export const ROUTES: RouteInfo[] = [
   {path: '/quizzes-list', title: 'Quizz List', icon: 'design_bullet-list-67', class: ''},
 
 
+
     // { path: '/user-profile', title: 'User Profile',  icon: 'users_single-02', class: '' },
     { path: '/login', title: 'login',  icon: 'users_single-02', class: '' },
     { path: '/register', title: 'Register',  icon: 'users_single-02', class: '' },
     // { path: '/typography', title: 'Typography',  icon: 'text_caps-small', class: '' },
     // { path: '/upgrade', title: 'Upgrade to PRO',  icon: 'objects_spaceship', class: 'active active-pro' }
+
 
 ];
 
