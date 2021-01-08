@@ -33,6 +33,7 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
+    console.log(1)
     this.loginService.register(this.user).subscribe(
       data => {
         console.log(data);

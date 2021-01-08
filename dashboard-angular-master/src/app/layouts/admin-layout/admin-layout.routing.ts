@@ -50,7 +50,9 @@ export const AdminLayoutRoutes: Routes = [
     {path: 'update-quizz/:id', component: UpdateQuizzesComponent},
 
     {path: 'category-list', component: ListCategoriesComponent},
-
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'changePassword/:id', component: ChangePasswordComponent},
 
   ]
 ;
