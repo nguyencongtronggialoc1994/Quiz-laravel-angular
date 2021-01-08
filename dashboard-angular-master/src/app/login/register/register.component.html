@@ -36,6 +36,7 @@
         <p class="text-danger form_input_login" *ngIf="passLogin.errors.maxlength">*Độ dài mật khẩu từ 6-8 kí tự!</p>
       </div>
     </div>
+    <input type="hidden" value="2" [(ngModel)]="user.role">
     <div class="div_submit"><button class="btn btn_blue">Register</button></div>
   </form>
 </div>
