@@ -6,16 +6,15 @@
       <div class="card">
         <div class="card-header">
           <h2>Categories List</h2>
-          <!--    <app-search-news-article (data)="searchNewsArticle($event)"></app-search-news-article>-->
         </div>
         <div class="card-body">
-          <!--          <button (click)="goToCreate()" class="btn btn-primary">Add newsArticle</button>-->
           <div class="container" >
             <h3>Create Category</h3>
             <div [hidden]="submitted">
               <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="name">Title</label>
+
                   <input type="text" class="form-control" id="name" required minlength="4" [(ngModel)]="category.name" #name="ngModel" name="name">
                   <div *ngIf="name.invalid && (name.dirty || name.touched)"
                        class="category_name">

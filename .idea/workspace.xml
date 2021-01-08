@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -12,6 +13,9 @@
 =======
     <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="" />
 >>>>>>> 7578fa49ede29ca45c39bc6231afa834b1ef23f3
+=======
+    <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="" />
+>>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -139,6 +143,9 @@
       <path value="$PROJECT_DIR$/Api-laravel/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/Api-laravel/vendor/symfony/routing" />
       <path value="$PROJECT_DIR$/Api-laravel/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/Api-laravel/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/Api-laravel/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/Api-laravel/vendor/tymon/jwt-auth" />
     </include_path>
   </component>
   <component name="ProjectId" id="1md9YixH7ZepJEfdRNLJLkAzU7Q" />
@@ -171,13 +178,22 @@
       <workItem from="1609857767583" duration="2844000" />
 <<<<<<< HEAD
       <workItem from="1609894914212" duration="6911000" />
+<<<<<<< HEAD
+=======
+      <workItem from="1610007902074" duration="674000" />
+>>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
       <workItem from="1609925325689" duration="238000" />
       <workItem from="1609925573669" duration="3258000" />
       <workItem from="1609939905489" duration="9391000" />
       <workItem from="1609981133261" duration="42000" />
+<<<<<<< HEAD
 =======
       <workItem from="1609894914212" duration="8387000" />
 >>>>>>> 7578fa49ede29ca45c39bc6231afa834b1ef23f3
+=======
+      <workItem from="1609894914212" duration="8387000" />
+      <workItem from="1610005361649" duration="752000" />
+>>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
     </task>
     <servers />
   </component>

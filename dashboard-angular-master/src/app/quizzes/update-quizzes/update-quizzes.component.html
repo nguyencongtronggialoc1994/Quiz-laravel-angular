@@ -10,16 +10,13 @@
           <h4 class="card-title"> Simple Table</h4>
         </div>
         <div class="card-body">
-
           <form>
-
             <div class="form-group">
               <label for="category_id">Thể loại quizz</label>
               <select class="form-control" name="category_id" id="category_id" [(ngModel)]="quizzes.category_id">
                 <option *ngFor="let category of categories| async" value="{{category.id}}">{{category.name}}</option>
               </select>
             </div>
-
             <div class="form-group">
               <label for="text">Câu hỏi</label>
               <input type="text" class="form-control" id="text" required minlength="1" [(ngModel)]="quizzes.text"
@@ -34,7 +31,6 @@
                 </div>
               </div>
             </div>
-
             <div class="form-group">
               <label for="option1">Đáp án 1:</label>
               <input type="text" class="form-control" id="option1" required [(ngModel)]="quizzes.option1" name="option1"
@@ -46,7 +42,6 @@
                 </div>
               </div>
             </div>
-
             <div class="form-group">
               <label for="option2">Đáp án 2:</label>
               <input type="text" class="form-control" id="option2" required [(ngModel)]="quizzes.option2"
@@ -58,7 +53,6 @@
                 </div>
               </div>
             </div>
-
             <div class="form-group">
               <label for="option3">Đáp án 3:</label>
               <input type="text" class="form-control" id="option3" required [(ngModel)]="quizzes.option3"
@@ -70,7 +64,6 @@
                 </div>
               </div>
             </div>
-
             <div class="form-group">
               <label for="option4">Đáp án 4:</label>
               <input type="text" class="form-control" id="option4" required [(ngModel)]="quizzes.option4"
@@ -82,7 +75,6 @@
                 </div>
               </div>
             </div>
-
             <div class="form-group">
               <label for="correctAnswer">Đáp án đúng:</label>
               <input type="text" class="form-control" id="correctAnswer" required [(ngModel)]="quizzes.correctAnswer"
@@ -96,9 +88,8 @@
             </div>
             <button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
           </form>
-
-
         </div>
       </div>
     </div>
+  </div>
   </div>
