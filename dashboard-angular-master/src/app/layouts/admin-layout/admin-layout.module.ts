@@ -33,7 +33,7 @@ import {ListCategoriesComponent} from '../../categories/list-categories/list-cat
     UpdateQuizzesComponent,
 
     CreateCategoriesComponent,
-    ListCategoriesComponent
+    ListCategoriesComponent,
 
   ]
 })

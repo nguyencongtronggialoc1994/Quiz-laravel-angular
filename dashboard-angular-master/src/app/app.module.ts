@@ -18,7 +18,6 @@ import { UpdateQuizzesComponent } from './quizzes/update-quizzes/update-quizzes.
 import { UpdateCategoriesComponent } from './categories/update-categories/update-categories.component';
 
 
-
 @NgModule({
   imports: [
     BrowserAnimationsModule,
