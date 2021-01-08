@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   email!: string;
   password!: string;
   id!: number;
-  submitted: boolean =false;
+  submitted: boolean = false;
 
   constructor(
     private loginService: LoginService,
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   showToasterSuccess() {
-    this.notificationService.showSuccess('Login successfully !!', 'welcome to page');
+    this.notificationService.showSuccess('Đăng nhập thành công !!', 'Thông báo');
   }
 
   onSubmit() {

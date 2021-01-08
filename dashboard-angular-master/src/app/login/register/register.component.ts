@@ -11,6 +11,7 @@ import {User} from '../User';
 })
 export class RegisterComponent implements OnInit {
   user: User = new User();
+
   submitted: boolean = false;
 
   constructor(
@@ -29,7 +30,7 @@ export class RegisterComponent implements OnInit {
   }
 
   showToasterSuccess() {
-    this.notificationService.showSuccess('Register successfully', 'notification');
+    this.notificationService.showSuccess('Đăng ký thành công.', 'Thông báo !');
   }
 
   register() {
