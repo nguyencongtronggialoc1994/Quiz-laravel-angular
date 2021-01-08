@@ -2,6 +2,8 @@
   <profile version="1.0">
     <option name="myName" value="Project Default" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
@@ -11,6 +13,7 @@
             <item index="2" class="java.lang.String" itemvalue="ng-really-message" />
 =======
 <<<<<<< HEAD
+>>>>>>> d40d0b2dae629baf1df7e750291be1ff57727ad5
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
@@ -24,9 +27,14 @@
     </inspection_tool>
 <<<<<<< HEAD
 =======
+>>>>>>> feature-login
+=======
+<<<<<<< HEAD
+=======
 =======
 >>>>>>> feature-login
 >>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
+>>>>>>> d40d0b2dae629baf1df7e750291be1ff57727ad5
     <inspection_tool class="TsLint" enabled="true" level="WARNING" enabled_by_default="true" />
   </profile>
 </component>

@@ -2,19 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d40d0b2dae629baf1df7e750291be1ff57727ad5
 <<<<<<< HEAD
     <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/create-categories/create-categories.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/create-categories/create-categories.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/list-categories/list-categories.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/list-categories/list-categories.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/quizzes-list/quizzes-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/quizzes-list/quizzes-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-laravel/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/Api-laravel/routes/api.php" afterDir="false" />
     </list>
 =======
     <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="" />
+<<<<<<< HEAD
+=======
 >>>>>>> 7578fa49ede29ca45c39bc6231afa834b1ef23f3
 =======
     <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="" />
+>>>>>>> d40d0b2dae629baf1df7e750291be1ff57727ad5
 >>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +160,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../case_study_model3" />
+=======
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+>>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -176,7 +183,6 @@
       <workItem from="1609812651080" duration="132000" />
       <workItem from="1609835886542" duration="1238000" />
       <workItem from="1609857767583" duration="2844000" />
-<<<<<<< HEAD
       <workItem from="1609894914212" duration="6911000" />
 <<<<<<< HEAD
 =======
@@ -188,10 +194,19 @@
       <workItem from="1609981133261" duration="42000" />
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
       <workItem from="1609894914212" duration="8387000" />
 >>>>>>> 7578fa49ede29ca45c39bc6231afa834b1ef23f3
 =======
+>>>>>>> d40d0b2dae629baf1df7e750291be1ff57727ad5
       <workItem from="1609894914212" duration="8387000" />
+<<<<<<< HEAD
+      <workItem from="1610005361649" duration="4786000" />
+      <workItem from="1610013950939" duration="18000" />
+      <workItem from="1610029970308" duration="599000" />
+      <workItem from="1610066326902" duration="1883000" />
+=======
       <workItem from="1610005361649" duration="752000" />
 >>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
     </task>
