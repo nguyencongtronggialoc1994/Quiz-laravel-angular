@@ -13,8 +13,8 @@ export class LoginComponent implements OnInit {
   password!: string;
   id!: number;
 
-  submitted: boolean =false;
 
+  submitted: boolean =false;
 
 
   constructor(
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   }
 
   showToasterSuccess() {
-    this.notificationService.showSuccess('Login successfully !!', 'welcome to page');
+    this.notificationService.showSuccess('Đăng nhập thành công !!', 'Thông báo');
   }
 
 
@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
     this.login();
   }
-
 
 
   getIdByEmail() {
@@ -59,12 +58,16 @@ export class LoginComponent implements OnInit {
 
   goToChangePassword() {
 
+
     this.router.navigate(['changePassword', this.id]);
     // console.log(this.id);
 
  this.router.navigate(['changePassword', this.id]);
  // console.log(this.id);
 
+
+    this.router.navigate(['changePassword', this.id]);
+    // console.log(this.id);
   }
 
   goToRegister() {

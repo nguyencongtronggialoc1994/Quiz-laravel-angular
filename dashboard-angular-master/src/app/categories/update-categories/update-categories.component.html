@@ -6,19 +6,14 @@
       <div class="card">
         <div class="card-header">
           <h2>Categories Update</h2>
-          <!--    <app-search-news-article (data)="searchNewsArticle($event)"></app-search-news-article>-->
         </div>
         <div class="card-body">
-          <!--          <button (click)="goToCreate()" class="btn btn-primary">Add newsArticle</button>-->
           <div class="container" style="width: 60%">
             <h3>Update Category</h3>
             <div [hidden]="submitted">
               <form (ngSubmit)="onSubmit()">
                 <div class="form-group">
                   <label for="name">Name</label>
-<<<<<<< HEAD
-                  <input type="text" class="form-control" id="name" required [(ngModel)]="category.name" name="name">
-=======
                   <input type="text" class="form-control" id="name" required minlength="4" [(ngModel)]="category.name" #name="ngModel" name="name">
                   <div *ngIf="name.invalid && (name.dirty || name.touched)"
                        class="category_name">
@@ -30,7 +25,7 @@
                     </div>
                   </div>
 
->>>>>>> f2c1ea355b0a4bd844446381cb0b9c1fc440006b
+
                 </div>
                 <button type="submit" class="btn btn-success">Submit</button>
               </form>
