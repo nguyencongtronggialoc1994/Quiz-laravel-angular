@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Categories} from '../Categories';
 import {CategoriesService} from '../categories.service';
 import {Router} from '@angular/router';
+import { NotificationService } from '../../notification.service';
 
 @Component({
   selector: 'app-create-categories',
@@ -14,9 +15,18 @@ export class CreateCategoriesComponent implements OnInit {
   submitted = false;
 
   constructor(private categoryService: CategoriesService,
-              private router: Router) { }
+              private router: Router,
+              private notificationService: NotificationService) { }
   ngOnInit() {
   }
+  showToasterSuccess(){
+    this.notificationService.showSuccess("Cập nhật thành công","Thông báo!");
+  }
+
+  showToasterError(){
+    this.notificationService.showError("Có đáp án trùng nhau hoặc đáp án đúng không trùng với các đáp án","Thông báo!");
+  }
+
 
   Category(): void {
     this.submitted = false;
@@ -26,6 +36,7 @@ export class CreateCategoriesComponent implements OnInit {
   save() {
     this.categoryService.createCategory(this.category).subscribe((data: any) => {
         console.log(data);
+        this.showToasterSuccess()
         this.category = new Categories();
         this.gotoList();
       },

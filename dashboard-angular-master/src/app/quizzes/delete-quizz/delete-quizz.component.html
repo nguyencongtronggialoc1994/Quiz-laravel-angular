@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="text-danger">Bạn có chắc chắn muốn xóa câu hỏi này</h2>
+
+        </div>
+        <div class="card-body">
+            <div *ngIf="quiz">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Tên</th>
+                            <th scope="col">Giá trị</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+                            <td>Thể loại</td>
+                            <td>{{ quiz[0].name}}</td>
+
+                        </tr>
+                        <tr>
+
+                            <td>Câu hỏi</td>
+                            <td>{{ quiz[0].text}}</td>
+
+                        </tr>
+                        <tr>
+
+                            <td>Đáp án 1</td>
+                            <td>{{ quiz[0].option1}}</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Đáp án 2</td>
+                            <td>{{ quiz[0].option2}}</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Đáp án 3</td>
+                            <td>{{ quiz[0].option3}}</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Đáp án 4</td>
+                            <td>{{ quiz[0].option4}}</td>
+
+                        </tr>
+                        <tr>
+
+                            <td>Đáp án đúng</td>
+                            <td>{{ quiz[0].correctAnswer}}</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div style="float: left;"><button (click)="quizzesList()" class="btn btn-success">Quay lại danh sách</button></div>
+            <div style="float: right"><button (click)="deleteQuiz(quiz[0].id)" class="btn btn-danger ">Xóa</button></div>
+
+
+        </div>
+    </div>
+</div>

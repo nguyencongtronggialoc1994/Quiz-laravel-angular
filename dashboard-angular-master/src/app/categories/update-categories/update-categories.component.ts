@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Categories} from '../Categories';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CategoriesService} from '../categories.service';
+import { NotificationService } from '../../notification.service';
 
 @Component({
   selector: 'app-update-categories',
@@ -15,7 +16,8 @@ export class UpdateCategoriesComponent implements OnInit {
   public submitted: boolean | undefined;
 
   constructor(private route: ActivatedRoute, private router: Router,
-              private categoryService: CategoriesService) { }
+              private categoryService: CategoriesService,
+              private notificationService: NotificationService) { }
 
   ngOnInit() {
     this.category = new Categories();
@@ -27,10 +29,19 @@ export class UpdateCategoriesComponent implements OnInit {
         this.category = data;
       }, error => console.log(error));
   }
+
+  showToasterSuccess(){
+    this.notificationService.showSuccess("Cập nhật thành công","Thông báo!");
+  }
+
+  showToasterError(){
+    this.notificationService.showError("Có đáp án trùng nhau hoặc đáp án đúng không trùng với các đáp án","Thông báo!");
+  }
   updateCategory() {
     this.categoryService.updateCategory(this.id, this.category)
       .subscribe(data => {
         console.log(data);
+        this.showToasterSuccess();
         this.category = new Categories();
         this.gotoList();
       }, error => console.log(error));

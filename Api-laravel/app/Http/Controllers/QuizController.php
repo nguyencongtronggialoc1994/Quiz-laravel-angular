@@ -76,7 +76,10 @@ class QuizController extends Controller
      */
     public function show($id)
     {
-        $quizzes= Quizzes::find($id);
+        $quizzes= DB::table('quizzes')
+            ->join('categories','quizzes.category_id','=','categories.id')
+            ->select('quizzes.*','categories.name')
+            ->where('quizzes.id','=',$id)->get();
         $statusCode=200;
         if(!$quizzes){
             $statusCode=404;

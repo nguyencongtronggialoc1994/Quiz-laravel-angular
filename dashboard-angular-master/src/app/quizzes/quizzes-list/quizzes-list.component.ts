@@ -27,13 +27,7 @@ export class QuizzesListComponent implements OnInit {
   }
 
   deleteQuizz(id: number) {
-    this.quizzesService.deleteQuizz(id)
-      .subscribe((data: any) => {
-          console.log(data);
-          this.reloadData();
-        },
-        (error: any) => console.log(error));
-
+    this.router.navigate(['delete-quiz', id]);
   }
 
   updateQuizz(id: number) {
