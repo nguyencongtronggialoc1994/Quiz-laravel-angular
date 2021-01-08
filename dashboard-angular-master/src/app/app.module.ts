@@ -18,6 +18,7 @@ import { UpdateQuizzesComponent } from './quizzes/update-quizzes/update-quizzes.
 import { UpdateCategoriesComponent } from './categories/update-categories/update-categories.component';
 
 import { DeleteQuizzComponent } from './quizzes/delete-quizz/delete-quizz.component';
+import { DeleteCategoriesComponent } from './categories/delete-categories/delete-categories.component';
 
 
 
@@ -43,6 +44,7 @@ import { DeleteQuizzComponent } from './quizzes/delete-quizz/delete-quizz.compon
 
     UpdateCategoriesComponent,
     DeleteQuizzComponent,
+    DeleteCategoriesComponent,
 
 
   ],

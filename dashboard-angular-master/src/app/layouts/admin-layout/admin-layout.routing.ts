@@ -11,6 +11,7 @@ import {ListCategoriesComponent} from '../../categories/list-categories/list-cat
 import {CreateCategoriesComponent} from '../../categories/create-categories/create-categories.component';
 import {UpdateCategoriesComponent} from '../../categories/update-categories/update-categories.component';
 import { DeleteQuizzComponent } from '../../quizzes/delete-quizz/delete-quizz.component';
+import { DeleteCategoriesComponent } from '../../categories/delete-categories/delete-categories.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -33,6 +34,7 @@ export const AdminLayoutRoutes: Routes = [
     {path:'delete-quiz/:id', component:DeleteQuizzComponent},
 
     {path: 'category-list', component: ListCategoriesComponent},
+    {path: 'delete-category/:id', component: DeleteCategoriesComponent}
 
 
 

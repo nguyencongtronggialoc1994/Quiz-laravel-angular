@@ -19,8 +19,8 @@ class QuizController extends Controller
         $quizzes= DB::table('quizzes')
             ->join('categories','quizzes.category_id','=','categories.id')
             ->select('quizzes.*','categories.name')
-//        ->where('quizzes.category_id','=','categories.id')
-        ->get();
+            ->get();
+
         return response()->json($quizzes,200);
     }
 
