@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   }
 
   showToasterSuccess() {
-    this.notificationService.showSuccess('Login successfully !!', 'welcome to page');
+    this.notificationService.showSuccess('Đăng nhập thành công !!', 'Thông báo');
   }
 
   getIdByEmail() {
