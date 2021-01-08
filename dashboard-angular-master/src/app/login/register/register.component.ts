@@ -11,7 +11,9 @@ import {User} from '../User';
 })
 export class RegisterComponent implements OnInit {
   user: User = new User();
+
   submitted: boolean = false;
+
 
   constructor(
     private loginService: LoginService,
@@ -23,10 +25,13 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   onSubmit() {
     this.submitted = true;
     this.register();
   }
+
+
 
   showToasterSuccess() {
     this.notificationService.showSuccess('Register successfully', 'notification');
