@@ -12,6 +12,8 @@ import {User} from '../User';
 export class RegisterComponent implements OnInit {
   user: User = new User();
 
+  submitted: boolean = false;
+
   constructor(
     private loginService: LoginService,
     private notificationService: NotificationService,
@@ -22,8 +24,13 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit() {
+    this.submitted = true;
+    this.register();
+  }
+
   showToasterSuccess() {
-    this.notificationService.showSuccess('Register successfully', 'notification');
+    this.notificationService.showSuccess('Đăng ký thành công.', 'Thông báo !');
   }
 
   register() {

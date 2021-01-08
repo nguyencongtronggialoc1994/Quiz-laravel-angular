@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api-laravel/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/Api-laravel/routes/api.php" afterDir="false" />
     </list>
+=======
+    <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="" />
+>>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,7 +150,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../case_study_model3" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+>>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -166,15 +174,23 @@
       <workItem from="1609835886542" duration="1238000" />
       <workItem from="1609857767583" duration="2844000" />
       <workItem from="1609894914212" duration="6911000" />
+<<<<<<< HEAD
+=======
+      <workItem from="1610007902074" duration="674000" />
+>>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
       <workItem from="1609925325689" duration="238000" />
       <workItem from="1609925573669" duration="3258000" />
       <workItem from="1609939905489" duration="9391000" />
       <workItem from="1609981133261" duration="42000" />
       <workItem from="1609894914212" duration="8387000" />
+<<<<<<< HEAD
       <workItem from="1610005361649" duration="4786000" />
       <workItem from="1610013950939" duration="18000" />
       <workItem from="1610029970308" duration="599000" />
       <workItem from="1610066326902" duration="1883000" />
+=======
+      <workItem from="1610005361649" duration="752000" />
+>>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
     </task>
     <servers />
   </component>

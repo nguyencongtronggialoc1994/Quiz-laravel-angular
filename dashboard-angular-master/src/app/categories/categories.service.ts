@@ -12,8 +12,12 @@ export class CategoriesService {
   }
 
   getCategory(id: number): Observable<any> {
-    console.log('this');
-    return this.http.get(`${this.baseUrl}/${id}`);
+    const auth_token = localStorage.getItem('AccessToken');
+    const reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.get(`${this.baseUrl}/${id}`,{headers: reqHeader});
   }
 
   getCategoryList(): Observable<any> {
@@ -51,4 +55,5 @@ export class CategoriesService {
     });
     return this.http.put(`${this.baseUrl}/${id}`, value, {headers: reqHeader});
   }
+
 }
