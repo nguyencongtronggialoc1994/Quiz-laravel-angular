@@ -3,15 +3,17 @@ import {LoginService} from '../login.service';
 import {NotificationService} from '../../notification.service';
 import {Router} from '@angular/router';
 import {User} from '../User';
-import  * as $ from "jquery";
+import * as $ from "jquery";
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  user: User = new User();
-
+  name!: string;
+  email!: string;
+  password!: string;
   submitted: boolean = false;
 
 
@@ -25,23 +27,23 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  test(): void{
+  test(): void {
     var confirm_password = $('#confirm_password').val();
     var password = $('#password').val();
     var userName = $('#userName').val();
     var email = $('#email').val();
-    if (confirm_password !== password || userName==null || email==null){
+    if (confirm_password !== password || userName == null || email == null) {
       alert("Đăng kí thất bại! Vui lòng nhập lại")
       return;
-    }else {
+    } else {
       this.register();
     }
   }
+
   onSubmit() {
     this.submitted = true;
     this.test();
   }
-
 
 
   showToasterSuccess() {
@@ -49,10 +51,9 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    this.loginService.register(this.user).subscribe(
+
+    this.loginService.register({"name": this.name,"email":this.email,"password":this.password,"role":"2"}).subscribe(
       data => {
-        console.log(data);
-        this.user = new User();
         this.showToasterSuccess();
         this.router.navigate(['login']);
       }
