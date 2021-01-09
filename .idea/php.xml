@@ -108,6 +108,9 @@
       <path value="$PROJECT_DIR$/Api-laravel/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/Api-laravel/vendor/symfony/routing" />
       <path value="$PROJECT_DIR$/Api-laravel/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/Api-laravel/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/Api-laravel/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/Api-laravel/vendor/tymon/jwt-auth" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

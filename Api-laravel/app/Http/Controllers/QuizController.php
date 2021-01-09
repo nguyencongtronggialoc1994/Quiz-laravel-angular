@@ -107,32 +107,18 @@ class QuizController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(QuizzesRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $quizzes= Quizzes::find($id);
-        $quizzes->fill($request-> all());
-
-        $option1=$quizzes->option1;
-        $option2=$quizzes->option2;
-        $option3=$quizzes->option3;
-        $option4=$quizzes->option4;
-        $correctAnswer=$quizzes->correctAnswer;
-        if($option1==$option2||$option1==$option3||$option1==$option4||$option2==$option3||$option2==$option4||$option3==$option4){
-            $statusCode=404;
-        }else if($correctAnswer!==$option1 && $correctAnswer!==$option2 && $correctAnswer!==$option3 && $correctAnswer!==$option4){
-            $statusCode=404;
-        }else{
-            $statusCode= 201;
-            $quizzes->save();
-        }
-
+        
+        $statusCode= 200;
         if(!$quizzes){
             $statusCode=404;
         }
-        $data=[$statusCode,$quizzes];
+        $quizzes->fill($request-> all());
+        $quizzes->save();
 
-
-        return response()-> json($data);
+        return response()-> json($quizzes,$statusCode);
     }
 
     /**

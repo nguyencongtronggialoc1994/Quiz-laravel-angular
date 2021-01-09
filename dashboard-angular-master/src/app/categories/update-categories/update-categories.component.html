@@ -5,19 +5,29 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h2>Cập nhật danh mục</h2>
-                    <!--    <app-search-news-article (data)="searchNewsArticle($event)"></app-search-news-article>-->
+                    <h2>Categories Update</h2>
                 </div>
                 <div class="card-body">
-                    <!--          <button (click)="goToCreate()" class="btn btn-primary">Add newsArticle</button>-->
                     <div class="container" style="width: 60%">
-
+                        <h3>Update Category</h3>
                         <div [hidden]="submitted">
                             <form (ngSubmit)="onSubmit()">
                                 <div class="form-group">
-                                    <label for="name">Danh mục</label>
-                                    <input type="text" class="form-control" id="name" required [(ngModel)]="category.name" name="name">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="name" required minlength="4" [(ngModel)]="category.name" #name="ngModel" name="name">
+                                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="category_name">
+                                        <div *ngIf="name.errors.required" style="color: red">
+                                            Không được để trống Danh Mục
+                                        </div>
+                                        <div *ngIf="name.errors.minlength" style="color: red">
+                                            Tên Danh Mục phải dài ít nhất 4 ký tự.
+                                        </div>
+                                    </div>
                                 </div>
+
+
+
+
                                 <div style="float: right;"><button (click)="goToList()" class="btn btn-success">Quay lại danh sách</button></div>
                                 <button type="submit" class="btn btn-success">Cập nhật</button>
                             </form>

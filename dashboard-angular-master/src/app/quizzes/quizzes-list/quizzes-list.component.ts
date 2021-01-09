@@ -31,7 +31,7 @@ export class QuizzesListComponent implements OnInit {
   }
 
   updateQuizz(id: number) {
-    this.router.navigate(['update-quizz', id]);
+    this.router.navigate(['update-quiz', id]);
   }
 
   add() {

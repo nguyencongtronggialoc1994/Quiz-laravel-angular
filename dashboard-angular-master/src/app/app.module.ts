@@ -12,13 +12,11 @@ import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { QuizzesListComponent } from './quizzes/quizzes-list/quizzes-list.component';
-import { UpdateQuizzesComponent } from './quizzes/update-quizzes/update-quizzes.component';
+import { UpdateQuizComponent } from './quizzes/update-quiz/update-quiz.component';
 
-import { UpdateCategoriesComponent } from './categories/update-categories/update-categories.component';
 
-import { DeleteQuizzComponent } from './quizzes/delete-quizz/delete-quizz.component';
-import { DeleteCategoriesComponent } from './categories/delete-categories/delete-categories.component';
+
+
 
 
 
@@ -40,11 +38,7 @@ import { DeleteCategoriesComponent } from './categories/delete-categories/delete
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    QuizzesListComponent,
-
-    UpdateCategoriesComponent,
-    DeleteQuizzComponent,
-    DeleteCategoriesComponent,
+    
 
 
   ],
