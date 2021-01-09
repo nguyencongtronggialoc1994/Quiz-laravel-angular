@@ -26,6 +26,16 @@ class UserController extends Controller
         return response()->json($users, 200);
     }
 
+    public function getRole($email)
+    {
+        $role = DB::table('users')
+            ->join('role_user', 'users.id', '=', 'role_user.user_id')
+            ->join('roles', 'role_user.role_id', '=', 'roles.id')
+            ->select('roles.name')->where('users.email','=',$email)
+            ->first();
+        return response()->json($role,200);
+    }
+
     public function getIdByEmail($email)
     {
         $id = DB::table('users')->where('email', '=', $email)->value('id');

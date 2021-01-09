@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   id!: number;
 
 
-  submitted: boolean =false;
+  submitted: boolean = false;
 
 
   constructor(
@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.login();
+    this.getRole();
   }
 
 
@@ -44,6 +45,14 @@ export class LoginComponent implements OnInit {
         this.id = data;
       }
     );
+  }
+
+  getRole() {
+    this.loginService.getRole(this.email).subscribe(
+      data => {
+        localStorage.setItem('role', data.name);
+      }
+    )
   }
 
   login() {
@@ -57,17 +66,9 @@ export class LoginComponent implements OnInit {
   }
 
   goToChangePassword() {
-
-
     this.router.navigate(['changePassword', this.id]);
     // console.log(this.id);
 
- this.router.navigate(['changePassword', this.id]);
- // console.log(this.id);
-
-
-    this.router.navigate(['changePassword', this.id]);
-    // console.log(this.id);
   }
 
   goToRegister() {
