@@ -1,7 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+
+
+    <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="">
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-laravel/app/Http/Controllers/QuizController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Api-laravel/app/Http/Controllers/QuizController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/quizzes-list/quizzes-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/quizzes-list/quizzes-list.component.html" afterDir="false" />
+    </list>
+=======
+<<<<<<< HEAD
+    <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="">
+=======
+
+      <change afterPath="$PROJECT_DIR$/Api-laravel/app/Http/Controllers/QuizController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-laravel/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-laravel/app/Http/Middleware/JwtMiddleware.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-laravel/app/Http/Requests/AddCategoryRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-laravel/app/Http/Requests/QuizzesRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-laravel/app/Http/Requests/UpdateCategoryRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-laravel/app/Models/Quizzes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api-laravel/config/jwt.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/update-categories/update-categories.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/update-categories/update-categories.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/update-categories/update-categories.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/update-categories/update-categories.component.ts" afterDir="false" />
+
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/User.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/change-password/change-password.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/change-password/change-password.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/change-password/change-password.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/change-password/change-password.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/login.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/login.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/login/login.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/login/login.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/login/login.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/login/login.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/register/register.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/register/register.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/register/register.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/register/register.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/notification.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/notification.service.ts" afterDir="false" />
+
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/create-quizzes/create-quizzes.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/create-quizzes/create-quizzes.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/create-quizzes/create-quizzes.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/create-quizzes/create-quizzes.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/quizzes-list/quizzes-list.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/quizzes-list/quizzes-list.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/quizzes-list/quizzes-list.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/quizzes-list/quizzes-list.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/quizzes.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/quizzes.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/quizzes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/update-quizzes/update-quizzes.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/update-quizzes/update-quizzes.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/update-quizzes/update-quizzes.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/update-quizzes/update-quizzes.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+
+
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Quiz-laravel-angular.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Quiz-laravel-angular.iml" afterDir="false" />
+>>>>>>> 3a3b795b9786ac92df258ce5246ba92642941ab1
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/Api-laravel/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Api-laravel/app/Http/Controllers/CategoryController.php" afterDir="false" />
+
+
+      <change beforePath="$PROJECT_DIR$/Api-laravel/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/Api-laravel/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-laravel/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Api-laravel/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-laravel/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api-laravel/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-laravel/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Api-laravel/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-laravel/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/Api-laravel/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-laravel/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/Api-laravel/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/package-lock.json" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/categories.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/categories.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/create-categories/create-categories.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/create-categories/create-categories.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/create-categories/create-categories.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/create-categories/create-categories.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/list-categories/list-categories.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/list-categories/list-categories.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/list-categories/list-categories.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/categories/list-categories/list-categories.component.ts" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/app.module.ts" afterDir="false" />
+ 
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/components/navbar/navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/components/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/components/sidebar/sidebar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/components/sidebar/sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/components/sidebar/sidebar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/layouts/admin-layout/admin-layout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/layouts/admin-layout/admin-layout.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/layouts/admin-layout/admin-layout.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/layouts/admin-layout/admin-layout.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/layouts/admin-layout/admin-layout.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/layouts/admin-layout/admin-layout.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/layouts/admin-layout/admin-layout.routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/layouts/admin-layout/admin-layout.routing.ts" afterDir="false" />
+    </list>
+ validate-register
+
+
+    <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api-laravel/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/Api-laravel/routes/api.php" afterDir="false" />
+    </list>
+
     <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="" />
+<<<<<<< HEAD
+>>>>>>> 7578fa49ede29ca45c39bc6231afa834b1ef23f3
+>>>>>>> 09a4bec31f1e4090e98d9ad3fa506741fa0ecd96
+=======
+
+
+
+
+    <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="" />
+
+>>>>>>> 3a3b795b9786ac92df258ce5246ba92642941ab1
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,6 +246,9 @@
       <path value="$PROJECT_DIR$/Api-laravel/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/Api-laravel/vendor/symfony/routing" />
       <path value="$PROJECT_DIR$/Api-laravel/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/Api-laravel/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/Api-laravel/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/Api-laravel/vendor/tymon/jwt-auth" />
     </include_path>
   </component>
   <component name="ProjectId" id="1md9YixH7ZepJEfdRNLJLkAzU7Q" />
@@ -140,7 +260,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/dashboard-angular-master" />
+
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../case_study_model3" />
+
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -159,7 +283,45 @@
       <workItem from="1609812651080" duration="132000" />
       <workItem from="1609835886542" duration="1238000" />
       <workItem from="1609857767583" duration="2844000" />
+      <workItem from="1609894914212" duration="6911000" />
+
+
+      <workItem from="1610007902074" duration="674000" />
+
+
+
+      <workItem from="1610007902074" duration="674000" />
+
+
+      <workItem from="1609925325689" duration="238000" />
+      <workItem from="1609925573669" duration="3258000" />
+      <workItem from="1609939905489" duration="9391000" />
+      <workItem from="1609981133261" duration="42000" />
+
+
+
+
       <workItem from="1609894914212" duration="8387000" />
+
+
+
+      <workItem from="1609894914212" duration="8387000" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <workItem from="1609920839683" duration="781000" />
+=======
+>>>>>>> 7578fa49ede29ca45c39bc6231afa834b1ef23f3
+>>>>>>> 09a4bec31f1e4090e98d9ad3fa506741fa0ecd96
+=======
+
+      <workItem from="1610005361649" duration="4786000" />
+      <workItem from="1610013950939" duration="18000" />
+      <workItem from="1610029970308" duration="599000" />
+      <workItem from="1610066326902" duration="1883000" />
+
+      <workItem from="1610005361649" duration="752000" />
+
+>>>>>>> 3a3b795b9786ac92df258ce5246ba92642941ab1
     </task>
     <servers />
   </component>
@@ -188,5 +350,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

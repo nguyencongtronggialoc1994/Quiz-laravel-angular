@@ -15,23 +15,17 @@ export class ListCategoriesComponent implements OnInit {
               private router: Router) {}
 
   categories!: Observable<Categories[]>;
-  // deleteBook(id: number) {
-  //   this.bookService.deleteBook(id)
-  //     .subscribe(
-  //       data => {
-  //         console.log(data);
-  //         this.reloadData();
-  //       },
-  //       error => console.log(error));
-  // }
+  deleteCategory(id: number) {
+    this.router.navigate(['delete-category',id])
 
-  // bookDetails(id: number){
-  //   this.router.navigate(['details', id]);
-  // }
-  //
-  // updateBook(id: number){
-  //   this.router.navigate(['update', id])
-  // }
+  }
+
+  add() {
+  this.router.navigate(['category-add']);
+}
+  updateCategory(id: number) {
+    this.router.navigate(['category', id]);
+  }
 
 
   ngOnInit() {
@@ -40,6 +34,7 @@ export class ListCategoriesComponent implements OnInit {
   }
 
   reloadData() {
+    // @ts-ignore
     this.categories = this.categoryService.getCategoryList();
   }
 

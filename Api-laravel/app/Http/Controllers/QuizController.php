@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\QuizzesRequest;
+use App\Http\Requests\UpdateQuizRequest;
 use App\Models\Quizzes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class QuizController extends Controller
 {
@@ -15,7 +17,11 @@ class QuizController extends Controller
      */
     public function index()
     {
-        $quizzes= Quizzes::all();
+        $quizzes= DB::table('quizzes')
+            ->join('categories','quizzes.category_id','=','categories.id')
+            ->select('quizzes.*','categories.name')
+            ->get();
+
         return response()->json($quizzes,200);
     }
 
@@ -38,15 +44,29 @@ class QuizController extends Controller
      */
     public function store(QuizzesRequest $request)
     {
+
         $quizzes= new Quizzes();
         $quizzes->fill($request-> all());
-        $quizzes->save();
-        $statusCode= 201;
+        $option1=$quizzes->option1;
+        $option2=$quizzes->option2;
+        $option3=$quizzes->option3;
+        $option4=$quizzes->option4;
+        $correctAnswer=$quizzes->correctAnswer;
+        if($option1==$option2||$option1==$option3||$option1==$option4||$option2==$option3||$option2==$option4||$option3==$option4){
+            $statusCode=404;
+        }else if($correctAnswer!==$option1 && $correctAnswer!==$option2 && $correctAnswer!==$option3 && $correctAnswer!==$option4){
+            $statusCode=404;
+        }else{
+            $statusCode= 201;
+            $quizzes->save();
+        }
+
         if(!$quizzes){
             $statusCode=404;
         }
+        $data=[$statusCode,$quizzes];
 
-        return response()-> json($quizzes,$statusCode);
+        return response()-> json($data);
     }
 
     /**
@@ -57,7 +77,10 @@ class QuizController extends Controller
      */
     public function show($id)
     {
-        $quizzes= Quizzes::find($id);
+        $quizzes= DB::table('quizzes')
+            ->join('categories','quizzes.category_id','=','categories.id')
+            ->select('quizzes.*','categories.name')
+            ->where('quizzes.id','=',$id)->get();
         $statusCode=200;
         if(!$quizzes){
             $statusCode=404;
@@ -84,10 +107,11 @@ class QuizController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(QuizzesRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $quizzes= Quizzes::find($id);
-        $statusCode=200;
+        
+        $statusCode= 200;
         if(!$quizzes){
             $statusCode=404;
         }

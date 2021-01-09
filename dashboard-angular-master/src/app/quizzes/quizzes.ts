@@ -1,4 +1,4 @@
-export class Quizzes {
+export class Quizz {
   id!: number;
   text!: string;
   option1!: string;
