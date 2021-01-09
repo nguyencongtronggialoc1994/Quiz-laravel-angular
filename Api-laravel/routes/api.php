@@ -30,7 +30,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-// Route::middleware('jwt.verify')->group(function () {
+Route::middleware('jwt.verify')->group(function () {
     Route::prefix('categories')->group(function () {
         Route::get('/', [CategoryController::class, 'index']);
         Route::get('/{id}', [CategoryController::class, 'show']);
@@ -46,6 +46,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
         Route::put('/{id}', [QuizController::class, 'update']);
         Route::delete('/{id}', [QuizController::class, 'destroy']);
     });
-// });
+});
 
 
