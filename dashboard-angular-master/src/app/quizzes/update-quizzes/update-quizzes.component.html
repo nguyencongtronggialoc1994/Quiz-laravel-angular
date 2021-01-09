@@ -1,17 +1,17 @@
 <div class="panel-header panel-header-sm">
 </div>
 <div class="main-content">
+
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4> Thêm mới câu hỏi</h4>
+                    <h3>Thêm mới câu hỏi</h3>
+
+
                 </div>
                 <div class="card-body">
-
-
                     <form>
-
                         <div class="form-group">
                             <label for="category_id">Thể loại</label>
                             <select class="form-control" name="category_id" id="category_id" [(ngModel)]="quizzes.category_id">
@@ -20,10 +20,13 @@
                         </div>
                         <div class="form-group">
                             <label for="text">Câu hỏi</label>
-                            <input type="text" class="form-control" id="text" required [(ngModel)]="quizzes.text" name="text" #name="ngModel">
+                            <input type="text" class="form-control" id="text" required minlength="1" [(ngModel)]="quizzes.text" name="text" #name="ngModel">
                             <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text">
                                 <div *ngIf="name.errors.required" style="color: red">
                                     Không được để trống
+                                </div>
+                                <div *ngIf="name.errors.minlength" style="color: red">
+                                    Phải dài ít nhất 1 ký tự.
                                 </div>
                             </div>
                         </div>
@@ -72,8 +75,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="float: right;"><button (click)="goToList()" class="btn btn-success">Quay lại danh sách</button></div>
-                        <button type="submit" class="btn btn-success" (click)="onSubmit()">Thêm mới</button>
+                        <button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
                     </form>
                 </div>
             </div>

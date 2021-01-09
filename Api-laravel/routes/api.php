@@ -20,17 +20,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('login',[UserController::class,'authenticate']);
-Route::post('register',[UserController::class,'register']);
-Route::put('/users/{id}',[UserController::class,'update']);
-Route::get('users/getId/{key}',[UserController::class,'getIdByEmail']);
-Route::get('users/show/{id}',[UserController::class,'show']);
+Route::post('login', [UserController::class, 'authenticate']);
+Route::post('register', [UserController::class, 'register']);
+Route::put('/users/{id}', [UserController::class, 'update']);
+Route::get('users/getId/{key}', [UserController::class, 'getIdByEmail']);
+Route::get('users/getId/{key}', [UserController::class, 'getIdByEmail']);
+Route::get('users/role/{email}', [UserController::class, 'getRole']);
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
 Route::middleware('jwt.verify')->group(function () {
+
     Route::prefix('categories')->group(function () {
         Route::get('/', [CategoryController::class, 'index']);
         Route::get('/{id}', [CategoryController::class, 'show']);
