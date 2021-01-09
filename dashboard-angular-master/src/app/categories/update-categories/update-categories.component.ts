@@ -43,7 +43,7 @@ export class UpdateCategoriesComponent implements OnInit {
         console.log(data);
         this.showToasterSuccess();
         this.category = new Categories();
-        this.gotoList();
+        this.goToList();
       }, error => console.log(error));
   }
 
@@ -51,7 +51,7 @@ export class UpdateCategoriesComponent implements OnInit {
     this.updateCategory();
   }
 
-  gotoList() {
+  goToList() {
     this.router.navigate(['/category-list']);
   }
 

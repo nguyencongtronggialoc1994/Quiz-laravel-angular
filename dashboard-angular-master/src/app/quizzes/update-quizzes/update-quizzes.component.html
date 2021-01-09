@@ -5,51 +5,51 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h3> Create Quizz</h3>
+                    <h4> Cập nhật câu hỏi</h4>
 
-                    <h4 class="card-title"> Simple Table</h4>
                 </div>
                 <div class="card-body">
 
                     <form (ngSubmit)="onSubmit()">
 
                         <div class=" form-group ">
-                            <label for="category_id ">Thể loại quizz</label>
-                            <select class="form-control " name="category_id " id="category_id " [(ngModel)]="quizzes.category_id ">
-                              <option  *ngFor="let category of categories| async " value="{{category.id}} ">{{category.name}}</option>
+                            <label for="category_id ">Thể loại</label>
+                            <select class="form-control " name="category_id " id="category_id " [(ngModel)]="quizzes[0].category_id ">
+                              <option  *ngFor="let category of categories| async " value="{{category.id}}">{{category.name}}</option>
                             </select>
                         </div>
 
                         <div class="form-group ">
                             <label for="name ">Câu hỏi</label>
-                            <input type="text " class="form-control " id="text " required [(ngModel)]="quizzes.text " name="text ">
+                            <input type="text " class="form-control " id="text " required [(ngModel)]="quizzes[0].text " name="text ">
                         </div>
 
                         <div class="form-group ">
                             <label for="option1 ">Đáp án 1:</label>
-                            <input type="text " class="form-control " id="option1 " required [(ngModel)]="quizzes.option1 " name="option1 ">
+                            <input type="text " class="form-control " id="option1 " required [(ngModel)]="quizzes[0].option1 " name="option1 ">
                         </div>
 
                         <div class="form-group ">
                             <label for="option2 ">Đáp án 2:</label>
-                            <input type="text " class="form-control " id="option2 " required [(ngModel)]="quizzes.option2 " name="option2 ">
+                            <input type="text " class="form-control " id="option2 " required [(ngModel)]="quizzes[0].option2 " name="option2 ">
                         </div>
 
                         <div class="form-group ">
                             <label for="option3 ">Đáp án 3:</label>
-                            <input type="text " class="form-control " id="option3 " required [(ngModel)]="quizzes.option3 " name="option3 ">
+                            <input type="text " class="form-control " id="option3 " required [(ngModel)]="quizzes[0].option3 " name="option3 ">
                         </div>
 
                         <div class="form-group ">
                             <label for="option4 ">Đáp án 4:</label>
-                            <input type="text " class="form-control " id="option4 " required [(ngModel)]="quizzes.option4 " name="option4 ">
+                            <input type="text " class="form-control " id="option4 " required [(ngModel)]="quizzes[0].option4 " name="option4 ">
                         </div>
 
                         <div class="form-group ">
                             <label for="correctAnswer ">Đáp án đúng:</label>
-                            <input type="text " class="form-control " id="correctAnswer " required [(ngModel)]="quizzes.correctAnswer " name="correctAnswer ">
+                            <input type="text " class="form-control " id="correctAnswer " required [(ngModel)]="quizzes[0].correctAnswer " name="correctAnswer ">
                         </div>
-                        <button type="submit " class="btn btn-success ">Submit</button>
+                        <div style="float: right;"><button (click)="goToList()" class="btn btn-success">Quay lại danh sách</button></div>
+                        <button type="submit " class="btn btn-success">Cập nhật</button>
                     </form>
 
 

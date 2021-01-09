@@ -6,7 +6,7 @@ import { NotificationService } from '../../notification.service';
 import {Categories} from '../../categories/Categories';
 import {CategoriesService} from '../../categories/categories.service';
 import {Quizz} from '../quizzes';
-import {QuizzesListComponent} from '../quizzes-list/quizzes-list.component';
+
 import {QuizzesService} from '../quizzes.service';
 
 

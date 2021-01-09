@@ -1,33 +1,33 @@
 <div class="panel-header panel-header-sm">
 </div>
 <div class="main-content">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">
-          <h2>Categories Update</h2>
-          <!--    <app-search-news-article (data)="searchNewsArticle($event)"></app-search-news-article>-->
-        </div>
-        <div class="card-body">
-          <!--          <button (click)="goToCreate()" class="btn btn-primary">Add newsArticle</button>-->
-          <div class="container" style="width: 60%">
-            <h3>Update Category</h3>
-            <div [hidden]="submitted">
-              <form (ngSubmit)="onSubmit()">
-                <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" class="form-control" id="name" required [(ngModel)]="category.name" name="name">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Cập nhật danh mục</h2>
+                    <!--    <app-search-news-article (data)="searchNewsArticle($event)"></app-search-news-article>-->
                 </div>
-                <button type="submit" class="btn btn-success">Submit</button>
-              </form>
-            </div>
-            <div [hidden]="!submitted">
-              <h4>You submitted successfully!</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+                <div class="card-body">
+                    <!--          <button (click)="goToCreate()" class="btn btn-primary">Add newsArticle</button>-->
+                    <div class="container" style="width: 60%">
 
+                        <div [hidden]="submitted">
+                            <form (ngSubmit)="onSubmit()">
+                                <div class="form-group">
+                                    <label for="name">Danh mục</label>
+                                    <input type="text" class="form-control" id="name" required [(ngModel)]="category.name" name="name">
+                                </div>
+                                <div style="float: right;"><button (click)="goToList()" class="btn btn-success">Quay lại danh sách</button></div>
+                                <button type="submit" class="btn btn-success">Cập nhật</button>
+                            </form>
+                        </div>
+                        <div [hidden]="!submitted">
+                            <h4>You submitted successfully!</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

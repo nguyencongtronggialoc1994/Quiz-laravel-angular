@@ -5,14 +5,14 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4> Create Quizz</h4>
+                    <h4> Thêm mới câu hỏi</h4>
                 </div>
                 <div class="card-body">
 
                     <form (ngSubmit)="onSubmit()">
 
                         <div class="form-group">
-                            <label for="category_id">Thể loại quizz</label>
+                            <label for="category_id">Thể loại </label>
                             <select class="form-control" name="category_id" id="category_id" [(ngModel)]="quizzes.category_id">
                               <option  *ngFor="let category of categories| async" value="{{category.id}}">{{category.name}}</option>
                             </select>
@@ -47,7 +47,9 @@
                             <label for="correctAnswer">Đáp án đúng:</label>
                             <input type="text" class="form-control" id="correctAnswer" required [(ngModel)]="quizzes.correctAnswer" name="correctAnswer">
                         </div>
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="submit" class="btn btn-success">Thêm</button>
+                        <div style="float: right;"><button (click)="goToList()" class="btn btn-success">Quay lại danh sách</button></div>
+
                     </form>
 
 

@@ -38,7 +38,7 @@ export class CreateCategoriesComponent implements OnInit {
         console.log(data);
         this.showToasterSuccess()
         this.category = new Categories();
-        this.gotoList();
+        this.goToList();
       },
       (error: any) => console.log(error));
   }
@@ -48,7 +48,7 @@ export class CreateCategoriesComponent implements OnInit {
     this.save();
   }
 
-  gotoList() {
+  goToList() {
     this.router.navigate(['/category-list']);
   }
 
