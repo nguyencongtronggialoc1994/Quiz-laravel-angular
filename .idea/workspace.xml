@@ -3,17 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="541e8bfc-2ca9-4695-99d1-1473af016fe0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api-laravel/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Api-laravel/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api-laravel/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/Api-laravel/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/components/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/components/sidebar/sidebar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/components/sidebar/sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/components/sidebar/sidebar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/User.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/login.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/login/login.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/register/register.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/login/register/register.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/create-quizzes/create-quizzes.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/create-quizzes/create-quizzes.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/update-quizzes/update-quizzes.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-angular-master/src/app/quizzes/update-quizzes/update-quizzes.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -157,7 +148,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../web_music" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demo-template-angular" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -192,6 +183,7 @@
       <workItem from="1610005361649" duration="752000" />
       <workItem from="1610091538021" duration="8259000" />
       <workItem from="1610159760993" duration="7113000" />
+      <workItem from="1610247678990" duration="3431000" />
     </task>
     <servers />
   </component>

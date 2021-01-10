@@ -13,7 +13,7 @@
         <div class="card-body">
           <form>
             <div class="form-group">
-              <label for="category_id">Thể loại quizz</label>
+              <label for="category_id">Thể loại</label>
               <select class="form-control" name="category_id" id="category_id" [(ngModel)]="quizzes.category_id">
                 <option *ngFor="let category of categories| async" value="{{category.id}}">{{category.name}}</option>
               </select>

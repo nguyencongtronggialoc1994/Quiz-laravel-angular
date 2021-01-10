@@ -2,10 +2,10 @@
 <div class="loginForm">
   <br>
   <br>
-  <h2 style="text-align: center">Login</h2>
+  <h2 style="text-align: center">Đăng nhập</h2>
   <form #loginForm="ngForm" novalidate (ngSubmit)="onSubmit()">
     <div class="form-group  form_input_login">
-      <label>Email</label>
+      <label>Tài khoản email</label>
       <input type="text"  name="email" class="form-control input_form_login"  email required [(ngModel)]="email"
              #emailLogin="ngModel">
     </div>
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="form-group form_input_login">
-      <label>Password</label>
+      <label>Mật khẩu</label>
       <input type="password" name="password" class="form-control input_form_login" required [(ngModel)]="password" #passLogin="ngModel">
     </div>
     <div *ngIf="submitted">
@@ -24,7 +24,7 @@
         <p class="text-danger form_input_login" *ngIf="passLogin.errors.required">*Vui lòng nhập mật khẩu!</p>
       </div>
     </div>
-    <div class="div_submit"><button class="btn btn_blue">Login</button></div>
+    <div class="div_submit"><button class="btn btn_blue">Đăng nhập</button></div>
   </form>
 </div>
 

@@ -2,7 +2,7 @@
 <div class="registerForm">
   <br>
   <br>
-  <h2 style="text-align: center">Register</h2>
+  <h2 style="text-align: center">Đăng ký</h2>
   <form #loginForm="ngForm" novalidate (ngSubmit)="onSubmit()">
     <div class="form-group  form_input_login">
       <label>Tên người dùng</label>
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="form-group form_input_login">
-      <label>Password</label>
+      <label>Mật khẩu</label>
       <input type="password" id="password" name="password" class="form-control input_form_login" required minlength="6" maxlength="8"
              [(ngModel)]="password" #passLogin="ngModel">
     </div>
@@ -39,10 +39,10 @@
     </div>
 <!--    <input type="hidden" id="role" name="role" value="2" [(ngModel)]="user.role">-->
     <div class="form-group form_input_login">
-      <label>Password</label>
+      <label>Nhập lại mật khẩu</label>
       <input type="password" id="confirm_password" name="password" class="form-control input_form_login" required minlength="6" maxlength="8">
     </div>
-    <div class="div_submit"><button class="btn btn_blue">Register</button></div>
+    <div class="div_submit"><button class="btn btn_blue">Đăng ký</button></div>
 
   </form>
 </div>
