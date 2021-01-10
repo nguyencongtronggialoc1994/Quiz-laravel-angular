@@ -77,10 +77,7 @@ class QuizController extends Controller
      */
     public function show($id)
     {
-        $quizzes= DB::table('quizzes')
-            ->join('categories','quizzes.category_id','=','categories.id')
-            ->select('quizzes.*','categories.name')
-            ->where('quizzes.id','=',$id)->get();
+        $quizzes= Quizzes::find($id);
         $statusCode=200;
         if(!$quizzes){
             $statusCode=404;
@@ -110,15 +107,27 @@ class QuizController extends Controller
     public function update(Request $request, $id)
     {
         $quizzes= Quizzes::find($id);
-        
-        $statusCode= 200;
+        $quizzes->fill($request-> all());
+        $option1=$quizzes->option1;
+        $option2=$quizzes->option2;
+        $option3=$quizzes->option3;
+        $option4=$quizzes->option4;
+        $correctAnswer=$quizzes->correctAnswer;
+        if($option1==$option2||$option1==$option3||$option1==$option4||$option2==$option3||$option2==$option4||$option3==$option4){
+            $statusCode=404;
+        }else if($correctAnswer!==$option1 && $correctAnswer!==$option2 && $correctAnswer!==$option3 && $correctAnswer!==$option4){
+            $statusCode=404;
+        }else{
+            $statusCode= 201;
+            $quizzes->save();
+        }
+
         if(!$quizzes){
             $statusCode=404;
         }
-        $quizzes->fill($request-> all());
-        $quizzes->save();
+        $data=[$statusCode,$quizzes];
 
-        return response()-> json($quizzes,$statusCode);
+        return response()-> json($data);
     }
 
     /**

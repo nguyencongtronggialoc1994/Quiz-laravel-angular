@@ -30,7 +30,6 @@ export class ListCategoriesComponent implements OnInit {
 
   ngOnInit() {
     this.reloadData();
-    console.log(1);
   }
 
   reloadData() {
