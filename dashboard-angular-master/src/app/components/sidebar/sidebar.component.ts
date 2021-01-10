@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 declare interface RouteInfo {
   path: string;
@@ -21,12 +22,11 @@ export const ROUTES: RouteInfo[] = [
   {path: '/quizzes-list', title: 'Quizz List', icon: 'design_bullet-list-67', class: ''},
 
 
-
-    // { path: '/user-profile', title: 'User Profile',  icon: 'users_single-02', class: '' },
-    { path: '/login', title: 'login',  icon: 'users_single-02', class: '' },
-    { path: '/register', title: 'Register',  icon: 'users_single-02', class: '' },
-    // { path: '/typography', title: 'Typography',  icon: 'text_caps-small', class: '' },
-    // { path: '/upgrade', title: 'Upgrade to PRO',  icon: 'objects_spaceship', class: 'active active-pro' }
+  // { path: '/user-profile', title: 'User Profile',  icon: 'users_single-02', class: '' },
+  {path: '/login', title: 'login', icon: 'users_single-02', class: ''},
+  {path: '/register', title: 'Register', icon: 'users_single-02', class: ''},
+  // { path: '/typography', title: 'Typography',  icon: 'text_caps-small', class: '' },
+  // { path: '/upgrade', title: 'Upgrade to PRO',  icon: 'objects_spaceship', class: 'active active-pro' }
 
 
 ];
@@ -39,11 +39,30 @@ export const ROUTES: RouteInfo[] = [
 export class SidebarComponent implements OnInit {
   menuItems: any[];
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
   }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
+  }
+
+  logout() {
+    localStorage.removeItem('AccessToken');
+    localStorage.removeItem('role');
+    this.router.navigate(['login']);
+  }
+
+  checkUser() {
+    if (localStorage.getItem('role') == "user") {
+      return true;
+    } else return false
+  }
+  checkAdmin() {
+    if (localStorage.getItem('role') == "admin") {
+      return true;
+    } else return false
   }
 
   isMobileMenu() {

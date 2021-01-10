@@ -11,11 +11,59 @@
 </div>
 <div class="sidebar-wrapper bg-dark">
     <ul class="nav">
-        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
-            <a [routerLink]="[menuItem.path]">
-                <i class="now-ui-icons {{menuItem.icon}}"></i>
-                <p>{{menuItem.title}}</p>
-            </a>
+<!--        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">-->
+<!--            <a [routerLink]="[menuItem.path]">-->
+<!--                <i class="now-ui-icons {{menuItem.icon}}"></i>-->
+<!--                <p>{{menuItem.title}}</p>-->
+<!--            </a>-->
+<!--        </li>-->
+
+      <li routerLinkActive="active"  class="nav-item">
+        <a routerLink="login">
+          <i class="now-ui-icons users_single-02"></i>
+          <p>Đăng nhập</p>
+        </a>
+      </li>
+      <li routerLinkActive="active"  class="nav-item">
+        <a routerLink="register">
+          <i class="now-ui-icons users_single-02"></i>
+          <p>Đăng ký</p>
+        </a>
+      </li>
+      <div *ngIf="checkUser()">
+        <li routerLinkActive="active"  class="nav-item" (click)="logout()">
+          <a (click)="logout()">
+            <i class="now-ui-icons users_single-02" (click)="logout()"></i>
+            <p (click)="logout()">Đăng xuất</p>
+          </a>
         </li>
+        <li routerLinkActive="active"  class="nav-item">
+          <a routerLink="dashboard">
+            <i class="now-ui-icons design_app"></i>
+            <p>Dashboard</p>
+          </a>
+        </li>
+      </div>
+      <div *ngIf="checkAdmin()">
+        <li routerLinkActive="active"  class="nav-item" (click)="logout()">
+          <a (click)="logout()">
+            <i class="now-ui-icons users_single-02" (click)="logout()"></i>
+            <p (click)="logout()">Đăng xuất</p>
+          </a>
+        </li>
+        <li routerLinkActive="active"  class="nav-item">
+          <a routerLink="category-list">
+            <i class="now-ui-icons design_bullet-list-67"></i>
+            <p>Danh sách đề thi</p>
+          </a>
+        </li>
+        <li routerLinkActive="active"  class="nav-item">
+          <a routerLink="quizzes-list">
+            <i class="now-ui-icons design_bullet-list-67"></i>
+            <p>Danh sách câu hỏi</p>
+          </a>
+        </li>
+      </div>
+
     </ul>
 </div>

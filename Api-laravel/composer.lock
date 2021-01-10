@@ -1053,19 +1053,11 @@
                 "framework",
                 "laravel"
             ],
-<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-<<<<<<< HEAD
-            "time": "2020-12-22T21:21:19+00:00"
-=======
             "time": "2021-01-05T15:43:10+00:00"
->>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
-=======
-            "time": "2021-01-05T15:43:10+00:00"
->>>>>>> d40d0b2dae629baf1df7e750291be1ff57727ad5
         },
         {
             "name": "laravel/tinker",
@@ -1137,7 +1129,6 @@
         },
         {
             "name": "lcobucci/jwt",
-<<<<<<< HEAD
             "version": "3.3.3",
             "source": {
                 "type": "git",
@@ -1162,35 +1153,9 @@
                 "phpunit/phpunit": "^5.7 || ^7.3",
                 "squizlabs/php_codesniffer": "~2.3"
             },
-=======
-            "version": "3.2.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/lcobucci/jwt.git",
-                "reference": "82be04b4753f8b7693b62852b7eab30f97524f9b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/lcobucci/jwt/zipball/82be04b4753f8b7693b62852b7eab30f97524f9b",
-                "reference": "82be04b4753f8b7693b62852b7eab30f97524f9b",
-                "shasum": ""
-            },
-            "require": {
-                "ext-openssl": "*",
-                "php": ">=5.5"
-            },
-            "require-dev": {
-                "mdanter/ecc": "~0.3.1",
-                "mikey179/vfsstream": "~1.5",
-                "phpmd/phpmd": "~2.2",
-                "phpunit/php-invoker": "~1.1",
-                "phpunit/phpunit": "~4.5",
-                "squizlabs/php_codesniffer": "~2.3"
-            },
             "suggest": {
                 "mdanter/ecc": "Required to use Elliptic Curves based algorithms."
             },
->>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1218,8 +1183,10 @@
                 "JWS",
                 "jwt"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
+            "support": {
+                "issues": "https://github.com/lcobucci/jwt/issues",
+                "source": "https://github.com/lcobucci/jwt/tree/3.2"
+            },
             "funding": [
                 {
                     "url": "https://github.com/lcobucci",
@@ -1229,17 +1196,7 @@
                     "url": "https://www.patreon.com/lcobucci",
                     "type": "patreon"
                 }
-            ],
-            "time": "2020-08-20T13:22:28+00:00"
-=======
-            "support": {
-                "issues": "https://github.com/lcobucci/jwt/issues",
-                "source": "https://github.com/lcobucci/jwt/tree/3.2"
-            },
-=======
->>>>>>> d40d0b2dae629baf1df7e750291be1ff57727ad5
-            "time": "2018-11-11T12:22:26+00:00"
->>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
+            ]
         },
         {
             "name": "league/commonmark",
@@ -1649,16 +1606,10 @@
                 "jwt",
                 "token"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
             "support": {
                 "issues": "https://github.com/namshi/jose/issues",
                 "source": "https://github.com/namshi/jose/tree/master"
             },
->>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
-=======
->>>>>>> d40d0b2dae629baf1df7e750291be1ff57727ad5
             "time": "2016-12-05T07:27:31+00:00"
         },
         {
@@ -4020,15 +3971,9 @@
                 "portable",
                 "shim"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
             "support": {
                 "source": "https://github.com/symfony/polyfill-php56/tree/v1.20.0"
             },
->>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
-=======
->>>>>>> d40d0b2dae629baf1df7e750291be1ff57727ad5
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -4940,13 +4885,6 @@
                 "mockery/mockery": ">=0.9.9",
                 "phpunit/phpunit": "~4.8|~6.0"
             },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-            "default-branch": true,
->>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
-=======
->>>>>>> d40d0b2dae629baf1df7e750291be1ff57727ad5
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -4988,16 +4926,10 @@
                 "jwt",
                 "laravel"
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
             "support": {
                 "issues": "https://github.com/tymondesigns/jwt-auth/issues",
                 "source": "https://github.com/tymondesigns/jwt-auth"
             },
->>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
-=======
->>>>>>> d40d0b2dae629baf1df7e750291be1ff57727ad5
             "funding": [
                 {
                     "url": "https://www.patreon.com/seantymon",
@@ -7705,5 +7637,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }

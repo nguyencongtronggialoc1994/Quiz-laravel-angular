@@ -6,6 +6,7 @@ use App\Http\Requests\AddCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
@@ -66,6 +67,8 @@ class CategoryController extends Controller
 
     public function destroy($id)
     {
+        $categories= DB::table('quizzes')->where('category_id','LIKE',$id);
+        $categories->delete();
         $categories = Category::findOrFail($id);
         $message = "User not found";
         $statusCode = 404;
@@ -76,5 +79,7 @@ class CategoryController extends Controller
         }
         return response()->json($message,$statusCode);
     }
+
+
 
 }
