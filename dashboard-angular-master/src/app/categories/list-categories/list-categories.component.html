@@ -5,13 +5,13 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h2>Danh sách danh mục</h2>
+                    <h2>Danh sách đề thi</h2>
                 </div>
                 <div class="card-body" style="text-align: center">
 
                     <div class="table-responsive">
                         <div style="text-align: left">
-                            <a class="btn btn-success mb-3 ml-2" (click)="add()">Thêm mới danh mục</a>
+                            <a class="btn btn-success mb-3 ml-2" (click)="add()">Thêm mới đề thi</a>
                         </div>
                         <table class="table">
                             <thead class=" text-primary">
@@ -19,15 +19,15 @@
                                     STT
                                 </th>
                                 <th>
-                                    DANH MỤC
+                                    Đề thi
                                 </th>
                                 <th colspan="2">
                                     Quản lý
                                 </th>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let category of categories| async ">
-                                    <td>{{category.id}}</td>
+                                <tr *ngFor="let category of categories| async; index as i ">
+                                    <td>{{i+1}}</td>
                                     <td>{{category.name}}</td>
                                     <td>
                                         <button (click)="deleteCategory(category.id)" class="btn btn-danger" style="margin-left: 10px;">
