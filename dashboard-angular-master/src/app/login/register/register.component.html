@@ -1,11 +1,13 @@
 
+<div class="panel-header panel-header-sm">
+</div>
 <div class="registerForm">
   <br>
   <br>
-  <h2 style="text-align: center">Đăng ký</h2>
+  <h1 style="text-align: center;font-size: 50px">Đăng ký</h1>
   <form #loginForm="ngForm" novalidate (ngSubmit)="onSubmit()">
     <div class="form-group  form_input_login">
-      <label>Tên người dùng</label>
+      <label for="userName">Tên người dùng</label>
       <input id="userName" type="text" name="name" class="form-control input_form_login" required [(ngModel)]="name"
              #userName="ngModel">
     </div>
@@ -16,7 +18,8 @@
     </div>
     <div class="form-group  form_input_login">
       <label>Email</label>
-      <input type="text" id="email" name="email" required class="form-control input_form_login" email [(ngModel)]="email"
+      <input type="text" id="email" name="email" required class="form-control input_form_login" email
+             [(ngModel)]="email"
              #userEmail="ngModel">
     </div>
     <div *ngIf="submitted">
@@ -27,7 +30,8 @@
     </div>
     <div class="form-group form_input_login">
       <label>Mật khẩu</label>
-      <input type="password" id="password" name="password" class="form-control input_form_login" required minlength="6" maxlength="8"
+      <input type="password" id="password" name="password" class="form-control input_form_login" required minlength="6"
+             maxlength="8"
              [(ngModel)]="password" #passLogin="ngModel">
     </div>
     <div *ngIf="submitted">
@@ -37,12 +41,14 @@
         <p class="text-danger form_input_login" *ngIf="passLogin.errors.maxlength">*Độ dài mật khẩu từ 6-8 kí tự!</p>
       </div>
     </div>
-<!--    <input type="hidden" id="role" name="role" value="2" [(ngModel)]="user.role">-->
     <div class="form-group form_input_login">
       <label>Nhập lại mật khẩu</label>
-      <input type="password" id="confirm_password" name="password" class="form-control input_form_login" required minlength="6" maxlength="8">
+      <input type="password" id="confirm_password" name="password" class="form-control input_form_login" required
+             minlength="6" maxlength="8">
     </div>
-    <div class="div_submit"><button class="btn btn_blue">Đăng ký</button></div>
-
-  </form>
+    <div class="div_submit">
+      <button class="btn btn_blue">Đăng ký</button>
+    </div>
+    </form>
 </div>
+

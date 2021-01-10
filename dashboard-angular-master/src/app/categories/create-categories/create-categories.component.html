@@ -1,48 +1,49 @@
 <div class="panel-header panel-header-sm">
 </div>
 <div class="main-content">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">
-          <h2>Categories List</h2>
-        </div>
-        <div class="card-body">
-          <div class="container">
-            <h3>Create Category</h3>
-            <div [hidden]="submitted">
-              <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
-                <div class="form-group">
-                  <label for="name">Title</label>
 
-
-                  <input type="text" class="form-control" id="name" required minlength="4" [(ngModel)]="category.name"
-                         #name="ngModel" name="name">
-                  <div *ngIf="name.invalid && (name.dirty || name.touched)"
-                       class="category_name">
-                    <div *ngIf="name.errors.required" style="color: red">
-                      Không được để trống Danh Mục
-                    </div>
-                    <div *ngIf="name.errors.minlength" style="color: red">
-                      Tên Danh Mục phải dài ít nhất 4 ký tự.
-                    </div>
-                  </div>
-
-
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Danh sách đề thi</h3>
                 </div>
+                <div class="card-body">
+                    <div class="container">
 
-                <button type="submit" class="btn btn-success">Submit</button>
-              </form>
+                        <div [hidden]="submitted">
+                            <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="name">Đề thi</label>
+
+
+                                    <input type="text" class="form-control" id="name" required minlength="2" [(ngModel)]="category.name" #name="ngModel" name="name">
+                                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="category_name">
+                                        <div *ngIf="name.errors.required" style="color: red">
+                                            Không được để trống đề thi
+                                        </div>
+                                        <div *ngIf="name.errors.minlength" style="color: red">
+                                            Tên đề thi phải dài ít nhất 2 ký tự.
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+
+                                <div style="float: right;"><button (click)="goToList()" class="btn btn-success">Quay lại danh sách</button></div>
+                                <button type="submit" class="btn btn-success">Thêm</button>
+                            </form>
+                        </div>
+
+                        <div [hidden]="!submitted">
+                            <h4>You submitted successfully!</h4>
+
+                        </div>
+                    </div>
+                </div>
             </div>
-
-
-            <div [hidden]="!submitted">
-              <h4>You submitted successfully!</h4>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
-

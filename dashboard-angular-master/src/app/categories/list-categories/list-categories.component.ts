@@ -16,13 +16,8 @@ export class ListCategoriesComponent implements OnInit {
 
   categories!: Observable<Categories[]>;
   deleteCategory(id: number) {
-    this.categoryService.deleteCategory(id)
-      .subscribe(
-        data => {
-          console.log(data);
-          this.reloadData();
-        },
-        error => console.log(error));
+    this.router.navigate(['delete-category',id])
+
   }
 
   add() {
@@ -35,7 +30,6 @@ export class ListCategoriesComponent implements OnInit {
 
   ngOnInit() {
     this.reloadData();
-    console.log(1);
   }
 
   reloadData() {
