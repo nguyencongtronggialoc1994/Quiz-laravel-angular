@@ -23,6 +23,8 @@ import {UpdateCategoriesComponent} from '../../categories/update-categories/upda
 import { DeleteQuizzComponent } from '../../quizzes/delete-quizz/delete-quizz.component';
 import { DeleteCategoriesComponent } from '../../categories/delete-categories/delete-categories.component';
 import { UpdateQuizComponent } from '../../quizzes/update-quiz/update-quiz.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { UpdateQuizComponent } from '../../quizzes/update-quiz/update-quiz.compo
     FormsModule,
     ChartsModule,
     NgbModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MatFormFieldModule,
+    MatIconModule
   ],
   declarations: [
       DashboardComponent,
