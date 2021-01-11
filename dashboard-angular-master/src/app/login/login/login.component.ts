@@ -61,7 +61,11 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('AccessToken', data.token);
         this.showToasterSuccess();
         this.getIdByEmail();
-      }
+        if (localStorage.getItem('role') == 'user')
+          this.router.navigate(['table-list']);
+        if (localStorage.getItem('role')=='admin')
+          this.router.navigate(['quizzes-list'])
+          }
     );
   }
 
