@@ -25,22 +25,25 @@
           <input   type="text" name="email" class="form-control input_form_login" email required [(ngModel)]="email"
                    #emailLogin="ngModel">
         </div>
-        <div *ngIf="submitted">
-          <div *ngIf="emailLogin.errors" style="color: red">
-            <p class="text-danger form_input_login" *ngIf="emailLogin.errors.required">*Vui lòng nhập địa chỉ
-              email!</p>
-            <p class="text-danger form_input_login" *ngIf="emailLogin.errors.email">*Email không hợp lệ!</p>
+        <div *ngIf="emailLogin.invalid && (emailLogin.dirty || emailLogin.touched)" class="category_name">
+          <div *ngIf="emailLogin.errors.required" style="color: red">
+           *Không được để trống email
+          </div>
+          <div *ngIf="emailLogin.errors.email" style="color: red">
+            *Email không đúng định dạng
           </div>
         </div>
         <div class="form-group form_input_login mb-3">
           <label>Mật khẩu</label>
           <input type="password" name="password" class="form-control input_form_login" required minlength="6" [(ngModel)]="password"
-                 #passLogin="ngModel">
+                 #passwordLogin="ngModel">
         </div>
-        <div *ngIf="submitted">
-          <div *ngIf="passLogin.errors" style="color: red">
-            <p class="text-danger form_input_login" *ngIf="passLogin.errors.required">*Vui lòng nhập mật khẩu!</p>
-            <p class="text-danger form_input_login" *ngIf="passLogin.errors.minlength">*Mật khẩu phải hơn 6 ký tự!</p>
+        <div *ngIf="passwordLogin.invalid && (passwordLogin.dirty || passwordLogin.touched)" class="category_name">
+          <div *ngIf="passwordLogin.errors.required" style="color: red">
+            *Không được để trống mật khẩu
+          </div>
+          <div *ngIf="passwordLogin.errors.minlength" style="color: red">
+            *Mật khẩu phải ít nhất 6 ký tự
           </div>
         </div>
         <div class="div_submit">
@@ -59,7 +62,7 @@
         </div>
         <hr>
         <div style="text-align: center;" class="mb-3">
-          <a class="btn btn-link">Đăng ký tài khoản</a> | <a class="btn btn-link">Trở về trang chủ</a>
+          <a routerLink="register">Đăng ký tài khoản</a> | <a class="btn btn-link">Trở về trang chủ</a>
         </div>
       </form>
     </div>
