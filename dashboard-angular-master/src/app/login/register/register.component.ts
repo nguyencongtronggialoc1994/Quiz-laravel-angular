@@ -4,6 +4,7 @@ import {NotificationService} from '../../notification.service';
 import {Router} from '@angular/router';
 import {User} from '../User';
 import * as $ from "jquery";
+import {isEmpty} from "rxjs/operators";
 
 @Component({
   selector: 'app-register',
@@ -50,12 +51,27 @@ export class RegisterComponent implements OnInit {
     this.notificationService.showSuccess('Đăng ký thành công.', 'Thông báo !');
   }
 
-  register() {
+  showToasterError() {
+    this.notificationService.showError('Đăng ký thất bại', 'email của quý khách đã có người sử dụng');
+  }
 
-    this.loginService.register({"name": this.name,"email":this.email,"password":this.password,"role":"2"}).subscribe(
+  register() {
+    this.loginService.register({
+      "name": this.name,
+      "email": this.email,
+      "password": this.password,
+      "role": "2"
+    }).subscribe(
       data => {
-        this.showToasterSuccess();
-        this.router.navigate(['login']);
+        // console.log(data.HttpErrorResponse);
+        // if (data.statusCode == 201) {
+        //   // console.log(data);
+          this.showToasterSuccess();
+          this.router.navigate(['login']);
+        // } else {
+        //   this.showToasterError();
+        //
+        // }
       }
     );
   }

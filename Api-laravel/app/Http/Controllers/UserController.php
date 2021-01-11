@@ -31,9 +31,9 @@ class UserController extends Controller
         $role = DB::table('users')
             ->join('role_user', 'users.id', '=', 'role_user.user_id')
             ->join('roles', 'role_user.role_id', '=', 'roles.id')
-            ->select('roles.name')->where('users.email','=',$email)
+            ->select('roles.name')->where('users.email', '=', $email)
             ->first();
-        return response()->json($role,200);
+        return response()->json($role, 200);
     }
 
     public function getIdByEmail($email)
@@ -79,9 +79,10 @@ class UserController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6',
         ]);
-
+        $statusCode = 201;
         if ($validator->fails()) {
-            return response()->json($validator->errors()->toJson(), 400);
+            $statusCode=400;
+            return response()->json($validator->errors()->toJson(), $statusCode);
         }
 
         $user = User::create([
@@ -92,7 +93,7 @@ class UserController extends Controller
         $user->roles()->attach($request->role);
         $token = JWTAuth::fromUser($user);
 
-        return response()->json(compact('user', 'token'), 201);
+        return response()->json(compact('user', 'token','statusCode'), $statusCode);
     }
 
     /*
