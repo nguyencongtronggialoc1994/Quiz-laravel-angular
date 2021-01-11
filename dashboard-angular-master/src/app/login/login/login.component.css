@@ -1,25 +1,29 @@
+.loginButton {
+  width: 21rem;
+}
 
-.loginForm{
-  color: black;
-  background: white;
-  margin-top: 15%;
-  margin-left: 35%;
-  width: 30%;
-  border-radius: 50px;
+.loginButtonGoogle {
+  width: 21rem;
 }
-.form_input_login{
-  width: 80%;
-  margin-left: 10%;
-}
-.input_form_login{
-  border-color: black!important;
+
+
+body {
+  background-color: whitesmoke;
 }
 .btn_blue{
   background-color: blueviolet;
   /*border-radius: 20px;*/
+
 }
-.div_submit{
-  text-align: center;
+.example-form {
+  min-width: 250px;
+  max-width: 500px;
+  width: 100%;
+}
+
+
+.example-full-width {
+  width: 100%;
 }
 
 

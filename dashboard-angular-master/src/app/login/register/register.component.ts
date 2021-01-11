@@ -51,8 +51,13 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
+// <<<<<<< HEAD
+//     console.log(1)
+//     this.loginService.register(this.user).subscribe(
+// =======
 
     this.loginService.register({"name": this.name,"email":this.email,"password":this.password,"role":"2"}).subscribe(
+
       data => {
         this.showToasterSuccess();
         this.router.navigate(['login']);
