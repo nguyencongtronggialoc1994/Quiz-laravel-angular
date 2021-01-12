@@ -37,16 +37,16 @@ export class UpdateQuizComponent implements OnInit {
 
   updateQuiz() {
     this.quizService.updateQuizz(this.id, this.quiz)
-      .subscribe(data => {
-        console.log(this.quiz);
+      .subscribe((data: any) => {
+        console.log(data);
         // tslint:disable-next-line:triple-equals
-        // if (data[0] == '404') {
-        //   this.showToasterError();
-        // } else {
+        if (data[0] == '404') {
+          this.showToasterError();
+        } else {
         this.showToasterSuccess();
         this.goToList();
         this.quiz = new Quiz();
-        // }
+        }
       });
 
   }

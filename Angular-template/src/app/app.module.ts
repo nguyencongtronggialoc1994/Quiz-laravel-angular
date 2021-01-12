@@ -20,6 +20,11 @@ import { UpdateCategoryComponent } from './category/update-category/update-categ
 import { DeleteCategoryComponent } from './category/delete-category/delete-category.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+import { TakeTestComponent } from './test/take-test/take-test.component';
+import { ExamComponent } from './test/exam/exam.component';
+
+
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
@@ -60,6 +65,7 @@ import {ScrollingModule} from "@angular/cdk/scrolling";
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,7 +79,9 @@ import {ScrollingModule} from "@angular/cdk/scrolling";
     CategoryListComponent,
     CreateCategoryComponent,
     UpdateCategoryComponent,
-    DeleteCategoryComponent
+    DeleteCategoryComponent,
+    TakeTestComponent,
+    ExamComponent
   ],
   imports: [
     BrowserModule,

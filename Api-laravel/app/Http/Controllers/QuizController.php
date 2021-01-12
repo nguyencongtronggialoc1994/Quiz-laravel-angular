@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\QuizzesRequest;
-use App\Http\Requests\UpdateQuizRequest;
+
 use App\Models\Quizzes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -47,6 +47,8 @@ class QuizController extends Controller
 
         $quizzes= new Quizzes();
         $quizzes->fill($request-> all());
+
+
         $option1=$quizzes->option1;
         $option2=$quizzes->option2;
         $option3=$quizzes->option3;
@@ -148,4 +150,6 @@ class QuizController extends Controller
 
         return response()-> json($message, $statusCode);
     }
+
+   
 }
