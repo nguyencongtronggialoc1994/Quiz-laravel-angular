@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { data } from 'jquery';
+
 import { Observable } from 'rxjs';
 import { CategoriesService } from '../../categories/categories.service';
 import { Categories } from '../../categories/Categories';
@@ -17,6 +17,7 @@ export class CreateQuizzesComponent implements OnInit {
 quizzes: Quizz = new Quizz();
 submited=false;
 categories!: Observable<Categories[]>;
+
   constructor(
     private quizzesService: QuizzesService,
     private router: Router,
@@ -25,6 +26,7 @@ categories!: Observable<Categories[]>;
   ) { }
 
   ngOnInit(): void {
+
     this.categories=this.categoryService.getCategoryList();
     console.log(this.categories)
   }
@@ -42,9 +44,13 @@ categories!: Observable<Categories[]>;
     this.quizzes= new Quizz();
   }
 
+
+
   save(){
+
     this.quizzesService.createQuizz(this.quizzes)
     .subscribe((data:any) => {
+      console.log(data);
       console.log(data);
       if(data[0]=='404'){
         this.showToasterError();

@@ -26,6 +26,8 @@
                                     Không được để trống
                                 </div>
                             </div>
+
+
                         </div>
                         <div class="form-group">
                             <label for="option1">Đáp án 1:</label>
@@ -35,45 +37,48 @@
                                     Không được để trống
                                 </div>
                             </div>
+                            <input type="checkbox" id="checkbox1" [(ngModel)]="quizzes.opption1" name="checkbox1" #name="ngModel">
                         </div>
-                        <div class="form-group">
-                            <label for="option2">Đáp án 2:</label>
-                            <input type="text" class="form-control" id="option2" required [(ngModel)]="quizzes.option2" name="option2" #option2="ngModel">
-                            <div *ngIf="option2.invalid && (option2.dirty || option2.touched)" class="option2">
-                                <div *ngIf="option2.errors.required" style="color: red">
+
+
+                        <div class=" form-group ">
+                            <label for="option2 ">Đáp án 2:</label>
+                            <input type="text " class="form-control " id="option2 " required [(ngModel)]="quizzes.option2 " name="option2 ">
+                            <div *ngIf="option2.invalid && (option2.dirty || option2.touched) " class="option2 ">
+                                <div *ngIf="option2.errors.required " style="color: red ">
                                     Không được để trống
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="option3">Đáp án 3:</label>
-                            <input type="text" class="form-control" id="option3" required [(ngModel)]="quizzes.option3" name="option3" #option3="ngModel">
-                            <div *ngIf="option3.invalid && (option3.dirty || option3.touched)" class="option3">
-                                <div *ngIf="option3.errors.required" style="color: red">
+                        <div class="form-group ">
+                            <label for="option3 ">Đáp án 3:</label>
+                            <input type="text " class="form-control " id="option3 " required [(ngModel)]="quizzes.option3 " name="option3 ">
+                            <div *ngIf="option3.invalid && (option3.dirty || option3.touched) " class="option3 ">
+                                <div *ngIf="option3.errors.required " style="color: red ">
                                     Không được để trống
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="option4">Đáp án 4:</label>
-                            <input type="text" class="form-control" id="option4" required [(ngModel)]="quizzes.option4" name="option4" #option4="ngModel">
-                            <div *ngIf="option4.invalid && (option4.dirty || option4.touched)" class="option4">
-                                <div *ngIf="option4.errors.required" style="color: red">
+                        <div class="form-group ">
+                            <label for="option4 ">Đáp án 4:</label>
+                            <input type="text " class="form-control " id="option4 " required [(ngModel)]="quizzes.option4 " name="option4 ">
+                            <div *ngIf="option4.invalid && (option4.dirty || option4.touched) " class="option4 ">
+                                <div *ngIf="option4.errors.required " style="color: red ">
                                     Không được để trống
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="correctAnswer">Đáp án đúng:</label>
-                            <input type="text" class="form-control" id="correctAnswer" required [(ngModel)]="quizzes.correctAnswer" name="correctAnswer" #correctAnswer="ngModel">
-                            <div *ngIf="correctAnswer.invalid && (correctAnswer.dirty || correctAnswer.touched)" class="correctAnswer">
-                                <div *ngIf="correctAnswer.errors.required" style="color: red">
+                        <div class="form-group ">
+                            <label for="correctAnswer ">Đáp án đúng:</label>
+                            <input type="text " class="form-control " id="correctAnswer " required [(ngModel)]="quizzes.correctAnswer " name="correctAnswer ">
+                            <div *ngIf="correctAnswer.invalid && (correctAnswer.dirty || correctAnswer.touched) " class="correctAnswer ">
+                                <div *ngIf="correctAnswer.errors.required " style="color: red ">
                                     Không được để trống
                                 </div>
                             </div>
                         </div>
-                        <div style="float: right;"><button (click)="goToList()" class="btn btn-success">Quay lại danh sách</button></div>
-                        <button type="submit" class="btn btn-success" (click)="onSubmit()">Thêm mới</button>
+                        <div style="float: right; "><button (click)="goToList() " class="btn btn-success ">Quay lại danh sách</button></div>
+                        <button type="submit " class="btn btn-success " (click)="onSubmit() ">Thêm mới</button>
                     </form>
                 </div>
             </div>

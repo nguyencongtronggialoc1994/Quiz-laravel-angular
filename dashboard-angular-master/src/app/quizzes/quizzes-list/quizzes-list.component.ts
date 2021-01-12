@@ -23,7 +23,9 @@ export class QuizzesListComponent implements OnInit {
   }
 
   reloadData() {
+    
     this.quizzes = this.quizzesService.getAllQuizzes();
+    console.log(this.quizzes)
   }
 
   deleteQuizz(id: number) {
