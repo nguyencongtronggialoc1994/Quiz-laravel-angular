@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
 
 
   submitted: boolean = false;
+  hide: true;
 
 
   constructor(

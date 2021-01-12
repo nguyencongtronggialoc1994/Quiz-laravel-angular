@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
   email!: string;
   password!: string;
   submitted: boolean = false;
+  hide: true;
 
 
   constructor(
