@@ -1,3 +1,4 @@
+
 import { DeleteCategoryComponent } from './category/delete-category/delete-category.component';
 import { UpdateCategoryComponent } from './category/update-category/update-category.component';
 import { CategoryListComponent } from './category/category-list/category-list.component';
@@ -26,10 +27,12 @@ const routes: Routes = [
   { path: 'delete-category/:id', component: DeleteCategoryComponent },
   {path: 'exam', component:ExamComponent},
   {path:'test', component:TakeTestComponent}
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

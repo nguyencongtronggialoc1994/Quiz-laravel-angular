@@ -1,7 +1,8 @@
-import { Router } from '@angular/router';
-import { NotificationService } from './../../notification.service';
-import { UserService } from './../user.service';
-import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {NotificationService} from '../../notification.service';
+import {UserService} from '../user.service';
+import {Component, OnInit} from '@angular/core';
+import {User} from "../User";
 
 @Component({
   selector: 'app-register',
@@ -11,29 +12,23 @@ import { Component, OnInit } from '@angular/core';
 export class RegisterComponent implements OnInit {
   name!: string;
   email!: string;
-  password!: string;
+  userPassword!: string;
   submitted: boolean = false;
+  hide = true;
+  hide2 = true;
+  user: User = new User();
+  newPasswordConfirm: any;
 
   constructor(
     private userService: UserService,
     private notificationService: NotificationService,
     private router: Router
-  ) {}
+  ) {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
-  // test(): void {
-  //   var confirm_password = $('#confirm_password').val();
-  //   var password = $('#password').val();
-  //   var userName = $('#userName').val();
-  //   var email = $('#email').val();
-  //   if (confirm_password !== password || userName == null || email == null) {
-  //     alert("Đăng kí thất bại! Vui lòng nhập lại")
-  //     return;
-  //   } else {
-  //     this.register();
-  //   }
-  // }
 
   onSubmit() {
     this.submitted = true;
@@ -51,24 +46,31 @@ export class RegisterComponent implements OnInit {
     );
   }
 
+  showToasterError1() {
+    this.notificationService.showError(
+      'Xác nhận mật khẩu không đúng.Vui lòng nhập lại',
+      'Thông báo'
+    )
+
+  }
+
   register() {
-    this.userService
-      .register({
-        name: this.name,
-        email: this.email,
-        password: this.password,
-        role: '2',
-      })
-      .subscribe((data) => {
-        // console.log(data.HttpErrorResponse);
-        // if (data.statusCode == 201) {
-        //   // console.log(data);
-        this.showToasterSuccess();
-        this.router.navigate(['login']);
-        // } else {
-        //   this.showToasterError();
-        //
-        // }
-      });
+    if (this.userPassword == this.newPasswordConfirm) {
+      this.userService
+        .register({
+          'name': this.name,
+          'email': this.email,
+          'password': this.userPassword,
+          'role': '2',
+        })
+        .subscribe(data => {
+          this.showToasterSuccess();
+          this.router.navigate(['login']);
+
+        }, error => this.showToasterError());
+    } else {
+      this.showToasterError1();
+    }
+
   }
 }
