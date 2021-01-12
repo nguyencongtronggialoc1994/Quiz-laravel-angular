@@ -8,7 +8,7 @@
             <h1 style="font-size: 40px;">Đăng ký</h1>
         </div>
         <div class="card-body">
-            <form>
+            <form #login="ngForm">
               <div class="mb-3">
                 <mat-form-field class="example-full-width">
                   <input matInput  type="text" [(ngModel)]="name" name="userName" required #userName="ngModel" [class.is-invalid]="userName.invalid && userName.touched" placeholder="Tên người dùng ">
@@ -53,7 +53,7 @@
                 </div>
               </div>
                 <div class="div_submit" style="text-align: center;">
-                    <button class="btn btn-success" (click)="onSubmit()">Đăng ký</button>
+                    <button class="btn btn-success" [disabled]="login.form.invalid" (click)="onSubmit()">Đăng ký</button>
                 </div>
             </form>
 

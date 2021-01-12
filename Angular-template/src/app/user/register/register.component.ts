@@ -1,7 +1,7 @@
-import { Router } from '@angular/router';
-import { NotificationService } from '../../notification.service';
-import { UserService } from '../user.service';
-import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {NotificationService} from '../../notification.service';
+import {UserService} from '../user.service';
+import {Component, OnInit} from '@angular/core';
 import {User} from "../User";
 
 @Component({
@@ -14,8 +14,8 @@ export class RegisterComponent implements OnInit {
   email!: string;
   userPassword!: string;
   submitted: boolean = false;
-  hide=true;
-  hide2=true;
+  hide = true;
+  hide2 = true;
   user: User = new User();
   newPasswordConfirm: any;
 
@@ -23,11 +23,11 @@ export class RegisterComponent implements OnInit {
     private userService: UserService,
     private notificationService: NotificationService,
     private router: Router
-  ) {}
+  ) {
+  }
 
-  ngOnInit(): void {}
-
-
+  ngOnInit(): void {
+  }
 
 
   onSubmit() {
@@ -46,18 +46,31 @@ export class RegisterComponent implements OnInit {
     );
   }
 
-  register() {
-    this.userService
-      .register({
-        'name': this.name,
-        'email': this.email,
-        'password': this.userPassword,
-        'role': '2',
-      })
-      .subscribe(data => {
-        this.showToasterSuccess();
-        this.router.navigate(['login']);
+  showToasterError1() {
+    this.notificationService.showError(
+      'Xác nhận mật khẩu không đúng.Vui lòng nhập lại',
+      'Thông báo'
+    )
 
-      },error => this.showToasterError());
+  }
+
+  register() {
+    if (this.userPassword == this.newPasswordConfirm) {
+      this.userService
+        .register({
+          'name': this.name,
+          'email': this.email,
+          'password': this.userPassword,
+          'role': '2',
+        })
+        .subscribe(data => {
+          this.showToasterSuccess();
+          this.router.navigate(['login']);
+
+        }, error => this.showToasterError());
+    } else {
+      this.showToasterError1();
+    }
+
   }
 }
