@@ -4,37 +4,37 @@
 <br>
 <div class="row justify-content-center mb-3">
     <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 25rem; height: 35rem;">
-        <div class="card-header" style="text-align: center;color: green;background-color: #7ee28f">
+        <div class="card-header" style="text-align: center;color: green;background-color: #e7e8e7">
             <h1 style="font-size: 40px;">Đăng Nhập</h1>
         </div>
         <div class="card-body">
-            <form #loginForm="ngForm" novalidate (ngSubmit)="onSubmit()">
-                <div class="form-group  form_input_login mb-3">
-                    <label>Tài khoản email</label>
-                    <input type="text" name="email" class="form-control input_form_login" email required [(ngModel)]="email" #emailLogin="ngModel">
+            <form #loginForm="ngForm" >
+              <br>
+              <br>
+              <div class="mb-3">
+                <mat-form-field class="example-full-width">
+                  <input matInput [(ngModel)]="email" name="email" required email type="text"  #emails='ngModel' [class.is-invalid]="emails.invalid && emails.touched"  placeholder="Nhập email">
+                </mat-form-field>
+                <div *ngIf="emails.errors && (emails.valid || emails.touched)">
+                  <small class="text-danger" *ngIf="emails.errors.required">Email không được để trống</small>
+                  <small class="text-danger" *ngIf="emails.errors.email">Email phải nhập đúng định dạng</small>
                 </div>
-                <div *ngIf="submitted">
-                    <div *ngIf="emailLogin.errors" style="color: red">
-                        <p class="text-danger form_input_login" *ngIf="emailLogin.errors.required">*Vui lòng nhập địa chỉ email!
-                        </p>
-                        <p class="text-danger form_input_login" *ngIf="emailLogin.errors.email">*Email không hợp lệ!</p>
-                    </div>
+              </div>
+              <div class="mb-3">
+                <mat-form-field class="example-full-width">
+                  <input matInput [type]="hide ? 'password' : 'text'" placeholder="Nhập mật khẩu" [(ngModel)]="password" name="password" required pattern="[\w]+[\w]{5,}" type="password"  #pass='ngModel' [class.is-invalid]="pass.invalid && pass.touched">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+                <div *ngIf="pass.errors && (pass.valid || pass.touched)">
+                  <small class="text-danger" *ngIf="pass.errors.required">Mật khẩu không được để trống</small>
+                  <small class="text-danger" *ngIf="pass.errors.pattern">Mật khẩu phải hơn 6 ký tự và không được dùng ký tự đặc biệt</small>
                 </div>
-                <div class="form-group form_input_login mb-3">
-                    <label>Mật khẩu</label>
-                    <input type="password" name="password" class="form-control input_form_login" required [(ngModel)]="password" #passLogin="ngModel">
-                </div>
-                <div *ngIf="submitted">
-                    <div *ngIf="passLogin.errors" style="color: red">
-                        <p class="text-danger form_input_login" *ngIf="passLogin.errors.required">*Vui lòng nhập mật khẩu!</p>
-                    </div>
-                </div>
-                <div class="div_submit">
-                    <button class="loginButton btn btn-success">Đăng nhập</button>
-                </div>
-                <!--        <div style="text-align: center;" class="div_submit">-->
-                <!--          <button  class="loginButton btn btn-success " [disabled]="login.form.invalid">Đăng nhập</button>-->
-                <!--        </div>-->
+              </div>
+              <div class="div_submit">
+                <button class="loginButton btn btn-success" (click)="onSubmit()"  [disabled]="loginForm.form.invalid">Đăng nhập</button>
+              </div>
                 <p style="text-align: center;">Hoặc</p>
                 <div style="text-align: center;" class="mb-3">
                     <button class="loginButtonGoogle btn btn-outline-primary">

@@ -1,7 +1,8 @@
-import { NotificationService } from './../../notification.service';
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {NotificationService} from '../../notification.service';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {UserService} from "../user.service";
+import {Observable} from 'rxjs';
 
 
 @Component({
@@ -15,19 +16,29 @@ export class LoginComponent implements OnInit {
   id!: number;
 
   submitted: boolean = false;
+  hide = true;
+  result!: Observable<any>;
 
   constructor(private userService: UserService,
               private router: Router,
               private notificationService: NotificationService
-  ) {}
+  ) {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   showToasterSuccess() {
     this.notificationService.showSuccess(
       'Đăng nhập thành công !!',
       'Thông báo'
     );
+  }
+  showToasterError(){
+    this.notificationService.showError(
+      'Đăng nhập thất bại Tài khoản hoặc mật khẩu không đúng !!',
+      'thông báo'
+    )
   }
 
   onSubmit() {
@@ -52,11 +63,9 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('AccessToken', data.token);
       this.showToasterSuccess();
       this.getIdByEmail();
-      // if (localStorage.getItem('role') == 'user')
-      //   this.router.navigate(['table-list']);
-      // if (localStorage.getItem('role') == 'admin')
-      //   this.router.navigate(['quizzes-list']);
-    });
+      this.router.navigate(['quizzes']);
+
+    }, error => this.showToasterError())
   }
 
   // goToChangePassword() {
