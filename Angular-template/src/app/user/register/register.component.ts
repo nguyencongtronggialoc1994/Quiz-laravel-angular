@@ -1,7 +1,7 @@
-import { Router } from '@angular/router';
-import { NotificationService } from './../../notification.service';
-import { UserService } from './../user.service';
-import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {NotificationService} from './../../notification.service';
+import {UserService} from './../user.service';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-register',
@@ -18,9 +18,11 @@ export class RegisterComponent implements OnInit {
     private userService: UserService,
     private notificationService: NotificationService,
     private router: Router
-  ) {}
+  ) {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   // test(): void {
   //   var confirm_password = $('#confirm_password').val();
@@ -54,21 +56,14 @@ export class RegisterComponent implements OnInit {
   register() {
     this.userService
       .register({
-        name: this.name,
-        email: this.email,
-        password: this.password,
-        role: '2',
+        'name': this.name,
+        'email': this.email,
+        'password': this.password,
+        'role': '2',
       })
-      .subscribe((data) => {
-        // console.log(data.HttpErrorResponse);
-        // if (data.statusCode == 201) {
-        //   // console.log(data);
+      .subscribe(data => {
         this.showToasterSuccess();
         this.router.navigate(['login']);
-        // } else {
-        //   this.showToasterError();
-        //
-        // }
       });
   }
 }

@@ -42,7 +42,9 @@ export class CreateQuizComponent implements OnInit {
     this.submited = false;
     this.quiz = new Quiz();
   }
-
+  correctOption(value: string){
+    this.quiz.correctAnswer=value;
+  }
   save() {
     this.quizService.createQuizz(this.quiz)
       .subscribe((data: any) => {
