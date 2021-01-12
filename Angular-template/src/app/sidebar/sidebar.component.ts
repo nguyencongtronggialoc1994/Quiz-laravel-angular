@@ -15,4 +15,10 @@ export class SidebarComponent implements OnInit {
   clickLogin(){
     this.router.navigate(['login']);
   }
+  goToCategoryList(){
+    this.router.navigate(['category-list']);
+  }
+  goToQuizList(){
+    this.router.navigate(['quizzes']);
+  }
 }

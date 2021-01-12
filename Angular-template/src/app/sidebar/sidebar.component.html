@@ -1,4 +1,3 @@
-<div class="row">
 
     <div style="float: left;" class="page-wrapper chiller-theme toggled">
       <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
@@ -35,43 +34,24 @@
               <li class="header-menu">
                 <span>General</span>
               </li>
-              <!-- <li class="sidebar-dropdown">
-                  <a href="#">
-                      <i class="fa fa-tachometer-alt"></i>
-                      <span>Dashboard</span>
-                      <span class="badge badge-pill badge-warning">New</span>
-                  </a>
-              </li>
-              <li class="sidebar-dropdown">
-                  <a href="#">
-                      <i class="fa fa-shopping-cart"></i>
-                      <span>E-commerce</span>
-                  </a>
-              </li> -->
+
               <li class="sidebar-dropdown" (click)="clickLogin()">
                 <a class="nav-link" routerLinkActive="active" (click)="clickLogin()">
                   <span (click)="clickLogin()">Đăng nhập</span></a>
               </li>
-
-              <!-- <li class="sidebar-dropdown">
-                  <a routerLink="register" class="nav-link" routerLinkActive="active">
-                      <span>Đăng ký</span></a>
-              </li> -->
-              <li class="sidebar-dropdown">
-                <a routerLink="quizzes" class="nav-link" routerLinkActive="active">
-                  <span>Danh sách câu hỏi</span></a>
+              <li class="sidebar-dropdown" (click)="goToQuizList()">
+                <a (click)="goToQuizList()" class="nav-link" >
+                  <span (click)="goToQuizList()">Danh sách câu hỏi</span></a>
               </li>
-              <li class="sidebar-dropdown">
-                <a routerLink="category-list" class="nav-link" routerLinkActive="active">
-                  <span>Danh sách đề thi</span></a>
+              <li class="sidebar-dropdown" (click)="goToCategoryList()">
+                <a  (click)="goToCategoryList()" class="nav-link" >
+                  <span  (click)="goToCategoryList()">Danh sách đề thi</span></a>
               </li>
 
 
             </ul>
           </div>
-          <!-- sidebar-menu  -->
         </div>
-        <!-- sidebar-content  -->
         <div class="sidebar-footer">
           <a href="#">
             <i class="fa fa-bell"></i>
@@ -93,4 +73,4 @@
 
     </div>
 
-  </div>
+
