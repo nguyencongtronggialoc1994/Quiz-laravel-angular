@@ -1,40 +1,17 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
           <list size="3">
-            <item index="0" class="java.lang.String" itemvalue="ng-show" />
-            <item index="1" class="java.lang.String" itemvalue="ng-really-click" />
-            <item index="2" class="java.lang.String" itemvalue="ng-really-message" />
-=======
-<<<<<<< HEAD
->>>>>>> d40d0b2dae629baf1df7e750291be1ff57727ad5
-    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
-      <option name="myValues">
-        <value>
-          <list size="1">
-            <item index="0" class="java.lang.String" itemvalue="ng-show" />
->>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
+            <item index="0" class="java.lang.String" itemvalue="mat-icon-button" />
+            <item index="1" class="java.lang.String" itemvalue="matinput" />
+            <item index="2" class="java.lang.String" itemvalue="text" />
           </list>
         </value>
       </option>
       <option name="myCustomValuesEnabled" value="true" />
     </inspection_tool>
-<<<<<<< HEAD
-=======
->>>>>>> feature-login
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> feature-login
->>>>>>> b07dbbf3915b74471fbeddf6e7015637179ac26c
->>>>>>> d40d0b2dae629baf1df7e750291be1ff57727ad5
-    <inspection_tool class="TsLint" enabled="true" level="WARNING" enabled_by_default="true" />
   </profile>
 </component>
