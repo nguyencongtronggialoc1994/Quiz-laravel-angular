@@ -1,47 +1,46 @@
 <div class="row">
-  <div class="col-sm-2">
+  <div class="col-sm-2" *ngIf="isEmptyToken()">
     <app-sidebar></app-sidebar>
   </div>
-    <div class="col-sm-10">
-        <div class="card" style="position: relative;top: 100px">
-            <div class="card-header">
-                <h3>Danh sách đề thi</h3>
-            </div>
-            <div class="card-body">
-                <div class="container">
-
-                    <div [hidden]="submitted">
-                        <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label for="name">Đề thi</label>
-
-
-                                <input type="text" class="form-control" id="name"  [(ngModel)]="category.name"  name="name">
-<!--                                <div *ngIf="name.invalid && (name.dirty || name.touched)" class="category_name">-->
-<!--                                    <div *ngIf="name.errors.required" style="color: red">-->
-<!--                                        Không được để trống đề thi-->
-<!--                                    </div>-->
-<!--                                    <div *ngIf="name.errors.minlength" style="color: red">-->
-<!--                                        Tên đề thi phải dài ít nhất 2 ký tự.-->
-<!--                                    </div>-->
-<!--                                </div>-->
-
-
-                            </div>
-
-
-
-                            <div style="float: right;"><button (click)="goToList()" class="btn btn-success">Quay lại danh sách</button></div>
-                            <button type="submit" class="btn btn-primary">Thêm</button>
-                        </form>
-                    </div>
-
-                    <div [hidden]="!submitted">
-                        <h4>You submitted successfully!</h4>
-
-                    </div>
-                </div>
-            </div>
+  <div class="con-sm-10" *ngIf="!isEmptyToken()">
+    <app-not-found></app-not-found>
+  </div>
+  <div class="col-sm-10" *ngIf="isEmptyToken()">
+    <div class="col-sm-6 " style="left: 320px">
+      <div class="card shadow-lg" style="position: relative;top: 100px;">
+        <div class="card-header">
+          <h3>Thêm mới đề thi</h3>
         </div>
+        <div class="card-body">
+          <form #formCategory="ngForm">
+            <div class="form-group col-sm-12">
+              <label>Đề thi</label>
+              <div class="col-12-mb-5">
+                <mat-form-field class="example-full-width">
+                <textarea cols="100" rows="20" matInput type="text" [(ngModel)]="category.name" name="userName" required
+                          #categoryName="ngModel" [class.is-invalid]="categoryName.invalid && categoryName.touched"
+                          placeholder="Tên Đề Thi "></textarea>
+                </mat-form-field>
+                <div *ngIf="categoryName.errors && (categoryName.valid || categoryName.touched)">
+                  <small class="text-danger" *ngIf="categoryName.errors.required">Tên đề thi không được để trống</small>
+                </div>
+              </div>
+            </div>
+            <div style="float: right;">
+              <button (click)="goToList()" class="btn btn-success">Quay lại</button>
+            </div>
+            <button [disabled]="formCategory.form.invalid" (click)="onSubmit()" class="btn btn-primary">Thêm</button>
+          </form>
+        </div>
+      </div>
     </div>
+
+
+  </div>
 </div>
+
+
+
+
+
+

@@ -17,7 +17,11 @@ export class QuizzesListComponent implements OnInit {
     private router: Router
   ) {
   }
-
+  isEmptyToken(){
+    if (localStorage.getItem('AccessToken')&&localStorage.getItem('role')=='admin')
+      return true;
+    else return false;
+  }
   ngOnInit(): void {
     this.reloadData();
   }

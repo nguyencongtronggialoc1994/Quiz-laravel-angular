@@ -27,7 +27,11 @@ export class CreateCategoryComponent implements OnInit {
   showToasterError(){
     this.notificationService.showError("Có đáp án trùng nhau hoặc đáp án đúng không trùng với các đáp án","Thông báo!");
   }
-
+  isEmptyToken(){
+    if (localStorage.getItem('AccessToken')&&localStorage.getItem('role')=='admin')
+      return true;
+    else return false;
+  }
 
   Category(): void {
     this.submitted = false;
