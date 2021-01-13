@@ -15,19 +15,19 @@ import {TakeTestComponent} from './test/take-test/take-test.component';
 import {SidebarComponent} from "./sidebar/sidebar.component";
 
 const routes: Routes = [
-  {path: '', component: SidebarComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'quizzes', component: QuizzesListComponent},
-  {path: 'create-quiz', component: CreateQuizComponent},
-  {path: 'delete-quiz/:id', component: DeleteQuizComponent},
-  {path: 'update-quiz/:id', component: UpdateQuizComponent},
-  {path: 'category-add', component: CreateCategoryComponent},
-  {path: 'category-list', component: CategoryListComponent},
-  {path: 'update-category/:id', component: UpdateCategoryComponent},
-  {path: 'delete-category/:id', component: DeleteCategoryComponent},
-  {path: 'exam', component: ExamComponent},
-  {path: 'test', component: TakeTestComponent},
+
+  { path: '', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'quizzes', component: QuizzesListComponent },
+  { path: 'create-quiz', component: CreateQuizComponent },
+  { path: 'delete-quiz/:id', component: DeleteQuizComponent },
+  { path: 'update-quiz/:id', component: UpdateQuizComponent },
+  { path: 'category-add', component: CreateCategoryComponent },
+  { path: 'category-list', component: CategoryListComponent },
+  { path: 'update-category/:id', component: UpdateCategoryComponent },
+  { path: 'delete-category/:id', component: DeleteCategoryComponent },
+  {path: 'exam', component:ExamComponent},
+  {path:'test/:id', component:TakeTestComponent}
 
 ];
 

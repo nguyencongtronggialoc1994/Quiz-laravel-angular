@@ -1,154 +1,87 @@
 <div class="row">
-  <div class="col-sm-2" *ngIf="isEmptyToken()">
-    <app-sidebar></app-sidebar>
-  </div>
-  <div *ngIf="!isEmptyToken()" class="col-sm-10">
-    <app-not-found></app-not-found>
-  </div>
-  <div class="col-sm-10 " *ngIf="isEmptyToken()" style="left: 320px;top: 15px">
-    <div class="row " >
-      <div class="col-md-6">
-        <div class="card shadow-lg">
-          <div class="card-header">
-            <h4> Cập nhật câu hỏi</h4>
-          </div>
-          <div class="card-body">
-            <form #addQuiz="ngForm">
-              <div class="form-group">
-                <label for="category_id">Đề thi</label>
-                <select class="form-control" name="category_id" id="category_id" [(ngModel)]="quiz.category_id" #quizCategory="ngModel">
+    <div class="col-sm-2" *ngIf="isEmptyToken()">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div *ngIf="!isEmptyToken()" class="col-sm-10">
+        <app-not-found></app-not-found>
+    </div>
+    <div class="col-sm-10 " *ngIf="isEmptyToken()" style="left: 320px;top: 15px">
+        <div class="row ">
+            <div class="col-md-6">
+                <div class="card shadow-lg">
+                    <div class="card-header">
+                        <h4> Cập nhật câu hỏi</h4>
+                    </div>
+                    <div class="card-body">
+                        <form #addQuiz="ngForm">
+                            <div class="form-group">
+                                <label for="category_id">Đề thi</label>
+                                <select class="form-control" name="category_id" id="category_id" [(ngModel)]="quiz.category_id" #quizCategory="ngModel">
                   <option *ngFor="let category of categories| async" value="{{category.id}}" >{{category.name}}</option>
                 </select>
-              </div>
-              <div class="form-group">
-                <label>Câu hỏi</label>
-                <div class="col-12-mb-5">
-                  <mat-form-field class="example-full-width">
-                <textarea  matInput type="text" [(ngModel)]="quiz.text" name="name" required
-                           #quizName="ngModel" [class.is-invalid]="quizName.invalid && quizName.touched"
-                           placeholder="Tên câu hỏi "></textarea>
-                  </mat-form-field>
-                  <div *ngIf="quizName.errors && (quizName.valid || quizName.touched)">
-                    <small class="text-danger" *ngIf="quizName.errors.required">Tên đề thi không được để trống</small>
-                  </div>
-<!--=======-->
-<!--  <div class="col-sm-10" *ngIf="!isEmptyToken()">-->
-<!--    <app-not-found></app-not-found>-->
-<!--  </div>-->
-<!--    <div class="col-sm-10" *ngIf="isEmptyToken()">-->
-<!--        <div  class="card">-->
+                            </div>
+                            <div class="form-group">
+                                <label>Câu hỏi</label>
+                                <div class="col-12-mb-5">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput type="text" [(ngModel)]="quiz.text" name="name" required #quizName="ngModel" [class.is-invalid]="quizName.invalid && quizName.touched" placeholder="Tên câu hỏi "></textarea>
+                                    </mat-form-field>
+                                    <div *ngIf="quizName.errors && (quizName.valid || quizName.touched)">
+                                        <small class="text-danger" *ngIf="quizName.errors.required">Tên câu hỏi không được để trống</small>
+                                    </div>
 
-<!--            <div class="card-header">-->
-<!--                <h2>Cập nhật câu hỏi</h2>-->
-<!--            </div>-->
-<!--            <div class="card-body">-->
-<!--                <div class="container" style="width: 60%">-->
-
-<!--                    &lt;!&ndash;                     <div [hidden]="submitted"> &ndash;&gt;-->
-<!--                    <form (ngSubmit)="onSubmit()">-->
-<!--                        <div class="form-group">-->
-<!--                            <label for="category_id">Đề thi</label>-->
-<!--                            <select class="form-control" name="category_id" id="category_id" [(ngModel)]="quiz.category_id">-->
-<!--                            <option *ngFor="let category of categories| async" value="{{category.id}}">{{category.name}}</option>-->
-<!--                          </select>-->
-<!--                        </div>-->
-
-<!--                        <div class="form-group">-->
-<!--                            <label for="text">Câu hỏi</label>-->
-<!--                            <input type="text" class="form-control" id="text" value="{{quiz.text}}" required [(ngModel)]="quiz.text" name="text">-->
-<!--                        </div>-->
-
-<!--                        <div class="form-group">-->
-<!--                            <label for="option1">Đáp án 1 </label>-->
-<!--                            <input type="text" class="form-control" id="option1" value="{{quiz.option1}}" required [(ngModel)]="quiz.option1" name="option1">-->
-<!--                        </div>-->
-
-<!--                        <div class="form-group">-->
-<!--                            <label for="option2">Đáp án 2 </label>-->
-<!--                            <input type="text" class="form-control" id="option2" value="{{quiz.option2}}" required [(ngModel)]="quiz.option2" name="option2">-->
-<!--                        </div>-->
-
-<!--                        <div class="form-group">-->
-<!--                            <label for="option3">Đáp án 3 </label>-->
-<!--                            <input type="text" class="form-control" id="option3" value="{{quiz.option3}}" required [(ngModel)]="quiz.option3" name="option3">-->
-<!--                        </div>-->
-
-<!--                        <div class="form-group">-->
-<!--                            <label for="option4">Đáp án 4 </label>-->
-<!--                            <input type="text" class="form-control" id="option4" value="{{quiz.option4}}" required [(ngModel)]="quiz.option4" name="option4">-->
-<!--                        </div>-->
-
-<!--                        <div class="form-group">-->
-<!--                            <label for="correctAnswer">Đáp án đúng </label>-->
-<!--                            <input type="text" class="form-control" id="correctAnswer" value="{{quiz.correctAnswer}}" required [(ngModel)]="quiz.correctAnswer" name="correctAnswer">-->
-<!--                        </div>-->
-<!--                        <div style="float: right;"><button (click)="goToList()" class="btn btn-primary">Quay lại danh sách</button></div>-->
-<!--                        <button type="submit" class="btn btn-success">Cập nhật</button>-->
-<!--                    </form>-->
-
-<!--                    &lt;!&ndash; </div> &ndash;&gt;-->
-
-<!--&gt;>>>>>> 95fec234b0f9e8ea099003f2284be3bd1f982f4c-->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Đáp án 1 :     <input (click)="correctOption(quiz.option1)" type="checkbox" id="checkboxOption1" ><span>    Đáp án đúng</span></label>
+                                <div class="col-12-mb-5">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput type="text" [(ngModel)]="quiz.option1" name="option1" required #quizoption1="ngModel" [class.is-invalid]="quizoption1.invalid && quizoption1.touched" placeholder="Đáp án 1 "></textarea>
+                                    </mat-form-field>
+                                    <div *ngIf="quizoption1.errors && (quizoption1.valid || quizoption1.touched)">
+                                        <small class="text-danger" *ngIf="quizoption1.errors.required">Không được để trống đáp án</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Đáp án 2:     <input type="checkbox" (click)="correctOption(quiz.option2)" id="checkboxOption2" ><span>    Đáp án đúng</span></label>
+                                <div class="col-12-mb-5">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput type="text" [(ngModel)]="quiz.option2" name="option2" required #quizoption2="ngModel" [class.is-invalid]="quizoption2.invalid && quizoption2.touched" placeholder="Đáp án 2 "></textarea>
+                                    </mat-form-field>
+                                    <div *ngIf="quizoption2.errors && (quizoption2.valid || quizoption2.touched)">
+                                        <small class="text-danger" *ngIf="quizoption2.errors.required">Không được để trống đáp án</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Đáp án 3:      <input (click)="correctOption(quiz.option3)" type="checkbox" id="checkboxOption3" ><span>    Đáp án đúng</span></label>
+                                <div class="col-12-mb-5">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput type="text" [(ngModel)]="quiz.option3" name="option3" required #quizoption3="ngModel" [class.is-invalid]="quizoption3.invalid && quizoption3.touched" placeholder="Đáp án 3 "></textarea>
+                                    </mat-form-field>
+                                    <div *ngIf="quizoption3.errors && (quizoption3.valid || quizoption3.touched)">
+                                        <small class="text-danger" *ngIf="quizoption3.errors.required">Không được để trống đáp án</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Đáp án 4:      <input type="checkbox" (click)="correctOption(quiz.option4)" id="checkboxOption4" ><span>    Đáp án đúng</span></label>
+                                <div class="col-12-mb-5">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput type="text" [(ngModel)]="quiz.option4" name="option4" required #quizoption4="ngModel" [class.is-invalid]="quizoption4.invalid && quizoption4.touched" placeholder="Đáp án 4 "></textarea>
+                                    </mat-form-field>
+                                    <div *ngIf="quizoption4.errors && (quizoption4.valid || quizoption4.touched)">
+                                        <small class="text-danger" *ngIf="quizoption4.errors.required">Không được để trống đáp án</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;"><button (click)="goToList()" class="btn btn-primary">Quay lại danh sách</button></div>
+                            <button [disabled]="addQuiz.form.invalid" class="btn btn-success" (click)="onSubmit()">Cập nhật</button>
+                        </form>
+                    </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <label>Đáp án 1 :     <input (click)="correctOption(quiz.option1)" type="checkbox" id="checkboxOption1" ><span>    Đáp án đúng</span></label>
-                <div class="col-12-mb-5">
-                  <mat-form-field class="example-full-width">
-                <textarea  matInput type="text" [(ngModel)]="quiz.option1" name="option1" required
-                           #quizoption1="ngModel" [class.is-invalid]="quizoption1.invalid && quizoption1.touched"
-                           placeholder="Đáp án 1 "></textarea>
-                  </mat-form-field>
-                  <div *ngIf="quizoption1.errors && (quizoption1.valid || quizoption1.touched)">
-                    <small class="text-danger" *ngIf="quizoption1.errors.required">Không được để trống đáp án</small>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Đáp án 2:     <input type="checkbox" (click)="correctOption(quiz.option2)" id="checkboxOption2" ><span>    Đáp án đúng</span></label>
-                <div class="col-12-mb-5">
-                  <mat-form-field class="example-full-width">
-                <textarea  matInput type="text" [(ngModel)]="quiz.option2" name="option2" required
-                           #quizoption2="ngModel" [class.is-invalid]="quizoption2.invalid && quizoption2.touched"
-                           placeholder="Đáp án 2 "></textarea>
-                  </mat-form-field>
-                  <div *ngIf="quizoption2.errors && (quizoption2.valid || quizoption2.touched)">
-                    <small class="text-danger" *ngIf="quizoption2.errors.required">Không được để trống đáp án</small>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Đáp án 3:      <input (click)="correctOption(quiz.option3)" type="checkbox" id="checkboxOption3" ><span>    Đáp án đúng</span></label>
-                <div class="col-12-mb-5">
-                  <mat-form-field class="example-full-width">
-                <textarea  matInput type="text" [(ngModel)]="quiz.option3" name="option3" required
-                           #quizoption3="ngModel" [class.is-invalid]="quizoption3.invalid && quizoption3.touched"
-                           placeholder="Đáp án 3 "></textarea>
-                  </mat-form-field>
-                  <div *ngIf="quizoption3.errors && (quizoption3.valid || quizoption3.touched)">
-                    <small class="text-danger" *ngIf="quizoption3.errors.required">Không được để trống đáp án</small>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Đáp án 4:      <input type="checkbox" (click)="correctOption(quiz.option4)" id="checkboxOption4" ><span>    Đáp án đúng</span></label>
-                <div class="col-12-mb-5">
-                  <mat-form-field class="example-full-width">
-                <textarea  matInput type="text" [(ngModel)]="quiz.option4" name="option4" required
-                           #quizoption4="ngModel" [class.is-invalid]="quizoption4.invalid && quizoption4.touched"
-                           placeholder="Đáp án 4 "></textarea>
-                  </mat-form-field>
-                  <div *ngIf="quizoption4.errors && (quizoption4.valid || quizoption4.touched)">
-                    <small class="text-danger" *ngIf="quizoption4.errors.required">Không được để trống đáp án</small>
-                  </div>
-                </div>
-              </div>
-              <div style="float: right;"><button (click)="goToList()" class="btn btn-primary">Quay lại danh sách</button></div>
-              <button [disabled]="addQuiz.form.invalid"  class="btn btn-success" (click)="onSubmit()">Cập nhật</button>
-            </form>
-          </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>

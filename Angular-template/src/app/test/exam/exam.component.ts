@@ -22,10 +22,11 @@ exams!: Observable<Category[]>;
 
   reloadData(){
     this.exams = this.categoriesService.getCategoryList();
+    console.log(this.exams)
   }
 
-  gotoTest(){
-this.router.navigate(['test'])
+  gotoTest(id: any){
+this.router.navigate(['test',id])
   }
 
 }
