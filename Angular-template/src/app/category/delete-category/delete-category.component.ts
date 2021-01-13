@@ -15,7 +15,7 @@ export class DeleteCategoryComponent implements OnInit {
 
   category!: Category;
   id!: number;
-  // categories!: Observable<Category[]>
+  categories!: Observable<Category[]>
     constructor(
       private categoryService: CategoryService,
       private quizService: QuizService,

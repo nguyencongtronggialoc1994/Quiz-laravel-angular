@@ -7,13 +7,14 @@
   </div>
     <div class="col-sm-10" *ngIf="isEmptyToken()">
         <div  class="card">
+
             <div class="card-header">
                 <h2>Cập nhật câu hỏi</h2>
             </div>
             <div class="card-body">
                 <div class="container" style="width: 60%">
 
-<!--                     <div [hidden]="submitted"> -->
+                    <!--                     <div [hidden]="submitted"> -->
                     <form (ngSubmit)="onSubmit()">
                         <div class="form-group">
                             <label for="category_id">Đề thi</label>

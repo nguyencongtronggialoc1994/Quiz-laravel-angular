@@ -24,14 +24,13 @@ class AddCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>"required|min:2|max:500"
+            'name'=>"required|max:500"
         ];
     }
     public function messages()
     {
         return [
           'name.required'=>"Không được để trống tên Danh Mục"  ,
-          'name.min'=>"Phải từ 2 ký tự trở lên"  ,
           'name.max'=>"Không được quá 500 ký tự"  ,
         ];
     }

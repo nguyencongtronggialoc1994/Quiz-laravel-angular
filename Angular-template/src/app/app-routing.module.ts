@@ -10,6 +10,8 @@ import {RegisterComponent} from './user/register/register.component';
 import {LoginComponent} from './user/login/login.component';
 import {NgModule, Component} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
+import {ExamComponent} from './test/exam/exam.component';
+import {TakeTestComponent} from './test/take-test/take-test.component';
 import {SidebarComponent} from "./sidebar/sidebar.component";
 
 const routes: Routes = [
@@ -24,6 +26,9 @@ const routes: Routes = [
   {path: 'category-list', component: CategoryListComponent},
   {path: 'update-category/:id', component: UpdateCategoryComponent},
   {path: 'delete-category/:id', component: DeleteCategoryComponent},
+  {path: 'exam', component: ExamComponent},
+  {path: 'test', component: TakeTestComponent},
+
 ];
 
 @NgModule({

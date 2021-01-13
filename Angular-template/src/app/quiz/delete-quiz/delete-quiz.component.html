@@ -8,9 +8,12 @@
   <div class="col-sm-10" *ngIf="isEmptyToken()">
     <div class="container" style="position: relative;top: 100px">
       <div class="card">
-        <div class="card-header">
 
-          <h2 class="text-danger">Bạn có chắc chắn muốn xóa câu hỏi này</h2>
+        <div class="card-header">
+          <div class="alert alert-danger">
+
+            <h2 class="text-danger">Bạn có chắc chắn muốn xóa câu hỏi này</h2>
+          </div>
 
         </div>
         <div class="card-body">
@@ -76,6 +79,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>

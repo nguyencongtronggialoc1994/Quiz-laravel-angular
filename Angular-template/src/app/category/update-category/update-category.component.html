@@ -6,30 +6,41 @@
     <app-not-found></app-not-found>
   </div>
     <div class="col-sm-10" *ngIf="isEmptyToken()">
-        <div class="card" style="position: relative;top: 100px">
-            <div class="card-header">
-                <h2>Cập nhật đề thi</h2>
-            </div>
-            <div class="card-body">
-                <div class="container" style="width: 60%">
-
-                    <div [hidden]="submitted">
-                        <form (ngSubmit)="onSubmit()">
-                            <div class="form-group">
-                                <label for="name">Đề thi</label>
-                                <input type="text" class="form-control" id="name" [(ngModel)]="category.name"  name="name">
-                            </div>
-
-
-
-
-                            <div style="float: right;"><button (click)="goToList()" class="btn btn-primary">Quay lại danh sách</button></div>
-                            <button type="submit" class="btn btn-success">Cập nhật</button>
-                        </form>
-                    </div>
-
+      <div class="col-sm-6 " style="left: 320px">
+        <div class="card shadow-lg" style="position: relative;top: 100px;">
+          <div class="card-header">
+            <h3>Cập nhật đề thi</h3>
+          </div>
+          <div class="card-body">
+            <form #formCategory="ngForm">
+              <div class="form-group col-sm-12">
+                <label>Đề thi</label>
+                <div class="col-12-mb-5">
+                  <mat-form-field class="example-full-width">
+                <textarea cols="100" rows="20" matInput type="text" [(ngModel)]="category.name" name="userName" required
+                          #categoryName="ngModel" [class.is-invalid]="categoryName.invalid && categoryName.touched"
+                          placeholder="Tên Đề Thi "></textarea>
+                  </mat-form-field>
+                  <div *ngIf="categoryName.errors && (categoryName.valid || categoryName.touched)">
+                    <small class="text-danger" *ngIf="categoryName.errors.required">Tên đề thi không được để trống</small>
+                  </div>
                 </div>
-            </div>
+              </div>
+              <div style="float: right;">
+                <button (click)="goToList()" class="btn btn-success">Quay lại</button>
+              </div>
+              <button [disabled]="formCategory.form.invalid" (click)="onSubmit()" class="btn btn-primary">Cập nhật</button>
+            </form>
+          </div>
         </div>
-    </div>
+      </div>
+
+    </div>>
 </div>
+
+
+
+
+
+
+
