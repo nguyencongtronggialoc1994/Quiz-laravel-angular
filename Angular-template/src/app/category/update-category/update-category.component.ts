@@ -29,7 +29,11 @@ export class UpdateCategoryComponent implements OnInit {
         this.category = data;
       }, error => console.log(error));
   }
-
+  isEmptyToken(){
+    if (localStorage.getItem('AccessToken')&&localStorage.getItem('role')=='admin')
+      return true;
+    else return false;
+  }
   showToasterSuccess(){
     this.notificationService.showSuccess("Cập nhật thành công","Thông báo!");
   }

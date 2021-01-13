@@ -34,7 +34,11 @@ export class DeleteCategoryComponent implements OnInit {
         this.category=data;
       },(error:any)=>console.log(error));
     }
-
+  isEmptyToken(){
+    if (localStorage.getItem('AccessToken')&&localStorage.getItem('role')=='admin')
+      return true;
+    else return false;
+  }
     deleteCategory(id: number){
 
       this.categoryService.deleteCategory(id)

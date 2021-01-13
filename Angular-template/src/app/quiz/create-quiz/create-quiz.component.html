@@ -1,17 +1,18 @@
 <div class="row">
-    <div class="col-sm-2">
-        <app-sidebar></app-sidebar>
-    </div>
-    <div class="col-sm-10">
-        <div class="row">
-            <div class="col-md-12">
-
-                <div class="card">
-                    <div class="card-header">
-                        <h4> Thêm mới câu hỏi</h4>
-                    </div>
-                    <div class="card-body">
-
+  <div class="col-sm-2" *ngIf="isEmptyToken()">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="col-sm-10" *ngIf="!isEmptyToken()">
+    <app-not-found></app-not-found>
+  </div>
+  <div class="col-sm-10" *ngIf="isEmptyToken()">
+    <div class="row" >
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4> Thêm mới câu hỏi</h4>
+          </div>
+          <div class="card-body">
 
                         <form>
 
