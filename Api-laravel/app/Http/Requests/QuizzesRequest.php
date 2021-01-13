@@ -24,12 +24,12 @@ class QuizzesRequest extends FormRequest
     public function rules()
     {
         return [
-            'text'=> "required|min:10|max:10000",
-            'option1'=> "required|min:1|max:255",
-            'option2'=> "required|min:1|max:255",
-            'option3'=> "required|min:1|max:255",
-            'option4'=> "required|min:1|max:255",
-            'correctAnswer'=> "required|min:1|max:255",
+            'text'=> "required|max:10000",
+            'option1'=> "required|max:255",
+            'option2'=> "required|max:255",
+            'option3'=> "required|max:255",
+            'option4'=> "required|max:255",
+            'correctAnswer'=> "required|max:255",
             'category_id'=> "required|numeric"
         ];
     }
@@ -44,12 +44,6 @@ class QuizzesRequest extends FormRequest
             'option4.required'=> 'Không được để trống',
             'correctAnswer.required'=> 'Không được để trống',
             'category_id.required'=> 'Không được để trống',
-            'text.min'=> 'Không được nhỏ hơn một ký tự',
-            'option1.min'=> 'Không được nhỏ hơn một ký tự',
-            'option2.min'=> 'Không được nhỏ hơn một ký tự',
-            'option3.min'=> 'Không được nhỏ hơn một ký tự',
-            'option4.min'=> 'Không được nhỏ hơn một ký tự',
-            'correctAnswer.min'=> 'Không được nhỏ hơn một ký tự',
             'category_id.min'=> 'Không được nhỏ hơn một ký tự',
             'text.max' => ' Không được quá 10000 ký tự',
             'option1.max' => ' Không được quá 255 ký tự',
