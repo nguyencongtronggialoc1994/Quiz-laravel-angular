@@ -25,7 +25,7 @@
                     </span>
                     <span *ngIf="checkAdmin()||checkUser()">
                 <label (click)="logout()">Đăng xuất</label><br>
-                <label>Đổi mật khẩu</label>
+                <label (click)="clickChangePassword()">Đổi mật khẩu</label>
               </span>
                 </div>
             </div>

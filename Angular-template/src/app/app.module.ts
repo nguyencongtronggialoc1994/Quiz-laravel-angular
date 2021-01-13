@@ -63,6 +63,7 @@ import {OverlayModule} from '@angular/cdk/overlay';
 import {PortalModule} from "@angular/cdk/portal";
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ChangePasswordComponent } from './user/change-password/change-password.component';
 
 
 
@@ -83,7 +84,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     DeleteCategoryComponent,
     NotFoundComponent,
     TakeTestComponent,
-    ExamComponent
+    ExamComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,

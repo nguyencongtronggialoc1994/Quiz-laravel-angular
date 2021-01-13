@@ -52,9 +52,9 @@
                   <small class="text-danger" *ngIf="newPassAgain.valid && newPassAgain.value != password.value">Mật khẩu không khớp </small>
                 </div>
               </div>
-                <div class="div_submit" style="text-align: center;">
-                    <button class="btn btn-success" [disabled]="login.form.invalid" (click)="onSubmit()">Đăng ký</button>
-                </div>
+              <div class="div_submit" style="text-align: center;">
+                <button class="btn btn-success" [disabled]="login.form.invalid" (click)="onSubmit()">Đăng ký</button>
+              </div>
             </form>
 
         </div>
