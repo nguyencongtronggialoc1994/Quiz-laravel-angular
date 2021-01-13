@@ -59,10 +59,11 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.userService.login(this.email, this.password).subscribe((data) => {
+    this.userService.login(this.email, this.password).subscribe(data => {
       localStorage.setItem('AccessToken', data.token);
       this.showToasterSuccess();
       this.getIdByEmail();
+      this.getRole();
       this.router.navigate(['quizzes']);
 
     }, error => this.showToasterError())
@@ -72,7 +73,9 @@ export class LoginComponent implements OnInit {
   //   this.router.navigate(['changePassword', this.id]);
   //   // console.log(this.id);
   // }
-
+  goToHome(){
+    this.router.navigate(['/']);
+  }
   goToRegister() {
     this.router.navigate(['/register']);
   }

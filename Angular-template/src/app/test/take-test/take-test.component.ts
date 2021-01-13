@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+
 import { Quiz } from '../../quiz/Quiz';
-import { QuizService } from 'src/app/quiz/quiz.service';
+
 import { TestService } from '../test.service';
 
 @Component({

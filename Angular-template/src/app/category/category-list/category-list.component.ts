@@ -22,7 +22,11 @@ export class CategoryListComponent implements OnInit {
     this.router.navigate(['delete-category', id]);
 
   }
-
+  isEmptyToken(){
+    if (localStorage.getItem('AccessToken')&&localStorage.getItem('role')=='admin')
+      return true;
+    else return false;
+  }
   add() {
     this.router.navigate(['category-add']);
   }

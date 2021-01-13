@@ -1,20 +1,21 @@
-
-import { DeleteCategoryComponent } from './category/delete-category/delete-category.component';
-import { UpdateCategoryComponent } from './category/update-category/update-category.component';
-import { CategoryListComponent } from './category/category-list/category-list.component';
-import { CreateCategoryComponent } from './category/create-category/create-category.component';
-import { UpdateQuizComponent } from './quiz/update-quiz/update-quiz.component';
-import { CreateQuizComponent } from './quiz/create-quiz/create-quiz.component';
-import { DeleteQuizComponent } from './quiz/delete-quiz/delete-quiz.component';
-import { QuizzesListComponent } from './quiz/quizzes-list/quizzes-list.component';
-import { RegisterComponent } from './user/register/register.component';
-import { LoginComponent } from './user/login/login.component';
-import { NgModule, Component } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ExamComponent } from './test/exam/exam.component';
-import { TakeTestComponent } from './test/take-test/take-test.component';
+import {DeleteCategoryComponent} from './category/delete-category/delete-category.component';
+import {UpdateCategoryComponent} from './category/update-category/update-category.component';
+import {CategoryListComponent} from './category/category-list/category-list.component';
+import {CreateCategoryComponent} from './category/create-category/create-category.component';
+import {UpdateQuizComponent} from './quiz/update-quiz/update-quiz.component';
+import {CreateQuizComponent} from './quiz/create-quiz/create-quiz.component';
+import {DeleteQuizComponent} from './quiz/delete-quiz/delete-quiz.component';
+import {QuizzesListComponent} from './quiz/quizzes-list/quizzes-list.component';
+import {RegisterComponent} from './user/register/register.component';
+import {LoginComponent} from './user/login/login.component';
+import {NgModule, Component} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {ExamComponent} from './test/exam/exam.component';
+import {TakeTestComponent} from './test/take-test/take-test.component';
+import {SidebarComponent} from "./sidebar/sidebar.component";
 
 const routes: Routes = [
+
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'quizzes', component: QuizzesListComponent },
