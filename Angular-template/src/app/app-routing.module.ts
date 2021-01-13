@@ -13,10 +13,12 @@ import {Routes, RouterModule} from '@angular/router';
 import {ExamComponent} from './test/exam/exam.component';
 import {TakeTestComponent} from './test/take-test/take-test.component';
 import {SidebarComponent} from "./sidebar/sidebar.component";
+import {ChangePasswordComponent} from "./user/change-password/change-password.component";
 
 const routes: Routes = [
 
   { path: '', component: LoginComponent },
+  { path: 'changePassword', component: ChangePasswordComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'quizzes', component: QuizzesListComponent },
   { path: 'create-quiz', component: CreateQuizComponent },
