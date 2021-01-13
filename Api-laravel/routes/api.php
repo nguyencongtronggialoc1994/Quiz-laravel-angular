@@ -49,7 +49,14 @@ Route::middleware('jwt.verify')->group(function () {
         Route::get('/{id}', [QuizController::class, 'show']);
         Route::put('/{id}', [QuizController::class, 'update']);
         Route::delete('/{id}', [QuizController::class, 'destroy']);
+
     });
+    Route::prefix('test')->group(function () {
+        Route::get('/{id}',[QuizController::class,'showTest']);
+    });
+
 });
+
+
 
 

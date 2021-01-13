@@ -29,11 +29,15 @@ export class CreateQuizComponent implements OnInit {
     this.categories = this.categoryService.getCategoryList();
     console.log(this.categories);
   }
-  isEmptyToken(){
-    if (localStorage.getItem('AccessToken')&&localStorage.getItem('role')=='admin')
+
+  isEmptyToken() {
+    if (localStorage.getItem('AccessToken') && localStorage.getItem('role') == 'admin') {
       return true;
-    else return false;
+    } else {
+      return false;
+    }
   }
+
   showToasterSuccess() {
     this.notificationService.showSuccess('Thêm thành công', 'Thông báo!');
   }
@@ -46,9 +50,11 @@ export class CreateQuizComponent implements OnInit {
     this.submited = false;
     this.quiz = new Quiz();
   }
-  correctOption(value: string){
-    this.quiz.correctAnswer=value;
+
+  correctOption(value: string) {
+    this.quiz.correctAnswer = value;
   }
+
   save() {
     this.quizService.createQuizz(this.quiz)
       .subscribe((data: any) => {

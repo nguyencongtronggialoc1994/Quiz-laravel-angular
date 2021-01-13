@@ -35,6 +35,9 @@ export class SidebarComponent implements OnInit {
   clickLogin() {
     this.router.navigate(['login']);
   }
+  clickChangePassword() {
+    this.router.navigate(['changePassword']);
+  }
 
   goToCategoryList() {
     this.router.navigate(['category-list']);

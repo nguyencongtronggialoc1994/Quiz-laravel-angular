@@ -14,6 +14,7 @@ import {ExamComponent} from './test/exam/exam.component';
 import {TakeTestComponent} from './test/take-test/take-test.component';
 import {SidebarComponent} from "./sidebar/sidebar.component";
 import {UserListComponent} from "./user/user-list/user-list.component";
+import {ChangePasswordComponent} from "./user/change-password/change-password.component";
 
 const routes: Routes = [
   {path: '', component: SidebarComponent},
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path: 'exam', component: ExamComponent},
   {path: 'test', component: TakeTestComponent},
   {path: 'user-list', component: UserListComponent},
+  { path: 'changePassword', component: ChangePasswordComponent }
 ];
 
 @NgModule({

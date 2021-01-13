@@ -34,11 +34,18 @@ export class UpdateQuizComponent implements OnInit {
         this.quiz = data;
       }, error => console.log(error));
   }
+
+  correctOption(value: string){
+    this.quiz.correctAnswer=value;
+  }
+
+
   isEmptyToken(){
     if (localStorage.getItem('AccessToken')&&localStorage.getItem('role')=='admin')
       return true;
     else return false;
   }
+
   updateQuiz() {
     this.quizService.updateQuizz(this.id, this.quiz)
       .subscribe((data: any) => {
