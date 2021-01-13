@@ -1,20 +1,3 @@
-.loginButton {
-  width: 21rem;
-}
-
-.loginButtonGoogle {
-  width: 21rem;
-}
-
-body {
-  background-color: whitesmoke;
-}
-
-.btn_blue {
-  background-color: blueviolet;
-  /*border-radius: 20px;*/
-}
-
 .example-form {
   min-width: 250px;
   max-width: 500px;
