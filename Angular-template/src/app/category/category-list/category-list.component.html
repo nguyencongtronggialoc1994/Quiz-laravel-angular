@@ -1,8 +1,11 @@
 <div class="row">
-  <div class="col-sm-2">
+  <div class="col-sm-2" *ngIf="isEmptyToken()">
     <app-sidebar></app-sidebar>
   </div>
-    <div class="col-sm-10">
+  <div class="col-sm-10" *ngIf="!isEmptyToken()">
+    <app-not-found></app-not-found>
+  </div>
+    <div class="col-sm-10" *ngIf="isEmptyToken()">
         <div style="position: relative;top: 100px" class="card">
             <div class="card-header">
                 <h2>Danh sách đề thi</h2>

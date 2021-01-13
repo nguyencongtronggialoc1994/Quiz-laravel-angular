@@ -57,6 +57,7 @@ import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 import {PortalModule} from "@angular/cdk/portal";
 import {ScrollingModule} from "@angular/cdk/scrolling";
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -73,7 +74,8 @@ import {ScrollingModule} from "@angular/cdk/scrolling";
     CategoryListComponent,
     CreateCategoryComponent,
     UpdateCategoryComponent,
-    DeleteCategoryComponent
+    DeleteCategoryComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

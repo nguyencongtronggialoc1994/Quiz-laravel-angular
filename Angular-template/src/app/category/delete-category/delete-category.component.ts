@@ -28,13 +28,17 @@ export class DeleteCategoryComponent implements OnInit {
     ngOnInit(): void {
       this.category=new Category();
       this.id= this.route.snapshot.params['id'];
-      // this.categoryService.getCategory(this.id)
-      // .subscribe((data:any)=>{
-      //   console.log(data);
-      //   this.category=data;
-      // },(error:any)=>console.log(error));
+      this.categoryService.getCategory(this.id)
+      .subscribe((data:any)=>{
+        console.log(data);
+        this.category=data;
+      },(error:any)=>console.log(error));
     }
-
+  isEmptyToken(){
+    if (localStorage.getItem('AccessToken')&&localStorage.getItem('role')=='admin')
+      return true;
+    else return false;
+  }
     deleteCategory(id: number){
 
       this.categoryService.deleteCategory(id)

@@ -45,13 +45,15 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
-        $statusCode = 200;
-        if (!$user)
-            $statusCode = 404;
-//        $user->name = $request->name;
-//        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->save();
+        $statusCode = 404;
+          if (Hash::check($request->oldPassword,$user->password)){
+              if ($request->newPassword==$request->confirmPassword){
+                  $user->password = Hash::make($request->newPassword);
+                  $user->save();
+                  $statusCode=200;
+              }
+
+          }
         return response()->json($user, $statusCode);
     }
 
@@ -81,7 +83,7 @@ class UserController extends Controller
         ]);
         $statusCode = 201;
         if ($validator->fails()) {
-            $statusCode=400;
+            $statusCode = 400;
             return response()->json($validator->errors()->toJson(), $statusCode);
         }
 
@@ -93,7 +95,7 @@ class UserController extends Controller
         $user->roles()->attach($request->role);
         $token = JWTAuth::fromUser($user);
 
-        return response()->json(compact('user', 'token','statusCode'), $statusCode);
+        return response()->json(compact('user', 'token', 'statusCode'), $statusCode);
     }
 
     /*

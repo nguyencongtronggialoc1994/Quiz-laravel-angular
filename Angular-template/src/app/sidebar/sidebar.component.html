@@ -26,6 +26,10 @@
           <i class="fa fa-circle"></i>
           <span>Online</span>
                             </span>
+              <span *ngIf="checkAdmin()||checkUser()">
+                <label (click)="logout()">Đăng xuất</label><br>
+                <label>Đổi mật khẩu</label>
+              </span>
             </div>
           </div>
 
@@ -39,14 +43,17 @@
                 <a class="nav-link" routerLinkActive="active" (click)="clickLogin()">
                   <span (click)="clickLogin()">Đăng nhập</span></a>
               </li>
-              <li class="sidebar-dropdown" (click)="goToQuizList()">
-                <a (click)="goToQuizList()" class="nav-link" >
-                  <span (click)="goToQuizList()">Danh sách câu hỏi</span></a>
-              </li>
-              <li class="sidebar-dropdown" (click)="goToCategoryList()">
-                <a  (click)="goToCategoryList()" class="nav-link" >
-                  <span  (click)="goToCategoryList()">Danh sách đề thi</span></a>
-              </li>
+              <div *ngIf="checkAdmin()">
+                <li class="sidebar-dropdown" (click)="goToQuizList()">
+                  <a (click)="goToQuizList()" class="nav-link" >
+                    <span (click)="goToQuizList()">Danh sách câu hỏi</span></a>
+                </li>
+                <li class="sidebar-dropdown" (click)="goToCategoryList()">
+                  <a  (click)="goToCategoryList()" class="nav-link" >
+                    <span  (click)="goToCategoryList()">Danh sách đề thi</span></a>
+                </li>
+              </div>
+
 
 
             </ul>

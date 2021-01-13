@@ -34,7 +34,11 @@ export class UpdateQuizComponent implements OnInit {
         this.quiz = data;
       }, error => console.log(error));
   }
-
+  isEmptyToken(){
+    if (localStorage.getItem('AccessToken')&&localStorage.getItem('role')=='admin')
+      return true;
+    else return false;
+  }
   updateQuiz() {
     this.quizService.updateQuizz(this.id, this.quiz)
       .subscribe(data => {

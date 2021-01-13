@@ -29,7 +29,11 @@ export class CreateQuizComponent implements OnInit {
     this.categories = this.categoryService.getCategoryList();
     console.log(this.categories);
   }
-
+  isEmptyToken(){
+    if (localStorage.getItem('AccessToken')&&localStorage.getItem('role')=='admin')
+      return true;
+    else return false;
+  }
   showToasterSuccess() {
     this.notificationService.showSuccess('Thêm thành công', 'Thông báo!');
   }

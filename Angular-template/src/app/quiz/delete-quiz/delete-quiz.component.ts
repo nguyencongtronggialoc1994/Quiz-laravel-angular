@@ -44,7 +44,11 @@ export class DeleteQuizComponent implements OnInit {
       (error: any) => console.log(error)
     );
   }
-
+  isEmptyToken(){
+    if (localStorage.getItem('AccessToken')&&localStorage.getItem('role')=='admin')
+      return true;
+    else return false;
+  }
   deleteQuiz(id: number) {
     this.quizzesService.deleteQuizz(id).subscribe(
       (data: any) => {
