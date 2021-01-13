@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
       this.showToasterSuccess();
       this.getIdByEmail();
       this.getRole();
-      this.router.navigate(['quizzes']);
+      this.router.navigate(['']);
 
     }, error => this.showToasterError())
   }

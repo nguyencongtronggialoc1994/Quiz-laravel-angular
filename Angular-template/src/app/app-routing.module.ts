@@ -13,24 +13,25 @@ import {Routes, RouterModule} from '@angular/router';
 import {ExamComponent} from './test/exam/exam.component';
 import {TakeTestComponent} from './test/take-test/take-test.component';
 import {SidebarComponent} from "./sidebar/sidebar.component";
+import {UserListComponent} from "./user/user-list/user-list.component";
 import {ChangePasswordComponent} from "./user/change-password/change-password.component";
 
 const routes: Routes = [
-
-  { path: '', component: LoginComponent },
-  { path: 'changePassword', component: ChangePasswordComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'quizzes', component: QuizzesListComponent },
-  { path: 'create-quiz', component: CreateQuizComponent },
-  { path: 'delete-quiz/:id', component: DeleteQuizComponent },
-  { path: 'update-quiz/:id', component: UpdateQuizComponent },
-  { path: 'category-add', component: CreateCategoryComponent },
-  { path: 'category-list', component: CategoryListComponent },
-  { path: 'update-category/:id', component: UpdateCategoryComponent },
-  { path: 'delete-category/:id', component: DeleteCategoryComponent },
-  {path: 'exam', component:ExamComponent},
-  {path:'test/:id', component:TakeTestComponent}
-
+  {path: '', component: SidebarComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'quizzes', component: QuizzesListComponent},
+  {path: 'create-quiz', component: CreateQuizComponent},
+  {path: 'delete-quiz/:id', component: DeleteQuizComponent},
+  {path: 'update-quiz/:id', component: UpdateQuizComponent},
+  {path: 'category-add', component: CreateCategoryComponent},
+  {path: 'category-list', component: CategoryListComponent},
+  {path: 'update-category/:id', component: UpdateCategoryComponent},
+  {path: 'delete-category/:id', component: DeleteCategoryComponent},
+  {path: 'exam', component: ExamComponent},
+  {path: 'test', component: TakeTestComponent},
+  {path: 'user-list', component: UserListComponent},
+  { path: 'changePassword', component: ChangePasswordComponent }
 ];
 
 @NgModule({

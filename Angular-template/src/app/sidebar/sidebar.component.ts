@@ -46,7 +46,9 @@ export class SidebarComponent implements OnInit {
   goToQuizList() {
     this.router.navigate(['quizzes']);
   }
-
+ goToUserList(){
+    this.router.navigate(['user-list']);
+ }
   goToTest(){
     this.router.navigate(['exam'])
   }

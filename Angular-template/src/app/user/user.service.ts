@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {observableToBeFn} from "rxjs/internal/testing/TestScheduler";
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,13 @@ export class UserService {
     return this.http.get(`http://127.0.0.1:8000/api/users/getId/${email}`);
   }
   getRole(email: string): Observable<any> {
-    return this.http.get(`http://127.0.0.1:8000/api/users/role/${email}`)
+    return this.http.get(`http://127.0.0.1:8000/api/users/role/${email}`);
+  }
+  getUserList(): Observable<any>{
+    return this.http.get(`http://127.0.0.1:8000/api/users`);
+  }
+  updateRole(id: number,role_id: string): Observable<any>{
+    const data={'role_id':role_id};
+    return this.http.put(`http://127.0.0.1:8000/api/role-user/${id}`,data);
   }
 }

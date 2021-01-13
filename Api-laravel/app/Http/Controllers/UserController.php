@@ -22,7 +22,11 @@ class UserController extends Controller
 
     public function index(): \Illuminate\Http\JsonResponse
     {
-        $users = User::all();
+        $users = DB::table('users')
+            ->join('role_user','users.id','=','role_user.user_id')
+            ->join('roles','role_user.role_id','=','roles.id')
+            ->select('users.*','roles.name as roleName')
+            ->get();
         return response()->json($users, 200);
     }
 
