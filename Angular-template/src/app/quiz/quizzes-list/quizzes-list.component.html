@@ -11,6 +11,7 @@
         <a class="btn btn-success mb-3 ml-2" (click)="add()">Thêm mới câu hỏi</a>
       </div>
       <div class="table-responsive">
+        <div class="mat-elevation-z8">
         <table class="table table-bordered">
           <thead>
           <th>
@@ -97,7 +98,9 @@
 
           </tbody>
         </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
       </div>
     </div>
   </div>
+</div>
 </div>

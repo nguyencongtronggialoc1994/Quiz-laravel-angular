@@ -1,83 +1,83 @@
 <div style="float: left;" class="page-wrapper chiller-theme toggled">
-    <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
-        <i class="fas fa-bars"></i>
-    </a>
-    <nav id="sidebar" class="sidebar-wrapper">
-        <div class="sidebar-content">
-            <div class="sidebar-brand">
-                <a href="#">pro sidebar</a>
-                <div id="close-sidebar">
-                    <i class="fas fa-times"></i>
-                </div>
-            </div>
-            <div class="sidebar-header">
-                <div class="user-pic">
-                    <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg" alt="User picture">
-                </div>
-                <div class="user-info">
-                    <span class="user-name">Jhon
-          <strong>Smith</strong>
-        </span>
-                    <span class="user-role">Administrator</span>
-                    <span class="user-status">
+  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <a href="#">Quiz</a>
+        <div id="close-sidebar">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="sidebar-header">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded"
+               src="https://lh3.googleusercontent.com/proxy/Zx1XGbV7GZEjz90vSmx8e6oyVvA7pCKoGTmdgZgP9Bh8vqDN3i-2P-61zKkDCd67xnwJCgao4-9Q6EezXG5sP4nHtCEYBeF_2hDVMrUdXnwUp_3oxTto63Ra3FqpZNblQj47jxd8"
+               alt="User picture">
+        </div>
+        <div class="user-info">
+
+          <a class="btn-outline-light" mat-button [matMenuTriggerFor]="animals"> <b>Duy Luận</b></a>
+          <mat-menu #animals="matMenu">
+                    <span *ngIf="checkAdmin()||checkUser()">
+                      <a mat-menu-item (click)="clickChangePassword()">Đổi mật khẩu</a>
+                    <a mat-menu-item (click)="logout()">Đăng xuất </a>
+              </span>
+          </mat-menu>
+          <span class="user-status">
           <i class="fa fa-circle"></i>
           <span>Online</span>
                     </span>
-                    <span *ngIf="checkAdmin()||checkUser()">
-                <label (click)="logout()">Đăng xuất</label><br>
-                <label (click)="clickChangePassword()">Đổi mật khẩu</label>
-              </span>
-                </div>
-            </div>
 
-            <div class="sidebar-menu">
-                <ul>
-                    <li class="header-menu">
-                        <span>General</span>
-                    </li>
-
-                    <li class="sidebar-dropdown" (click)="clickLogin()">
-                        <a class="nav-link" routerLinkActive="active" (click)="clickLogin()">
-                            <span (click)="clickLogin()">Đăng nhập</span></a>
-                    </li>
-                    <div *ngIf="checkAdmin()">
-                        <li class="sidebar-dropdown" (click)="goToQuizList()">
-                            <a (click)="goToQuizList()" class="nav-link">
-                                <span (click)="goToQuizList()">Danh sách câu hỏi</span></a>
-                        </li>
-                        <li class="sidebar-dropdown" (click)="goToCategoryList()">
-                            <a (click)="goToCategoryList()" class="nav-link">
-                                <span (click)="goToCategoryList()">Danh sách đề thi</span></a>
-                        </li>
-
-                        <li class="sidebar-dropdown" (click)="goToTest()">
-                            <a (click)="goToTest()" class="nav-link">
-                                <span (click)="goToTest()">Bài thi</span></a>
-                        </li>
-                    </div>
-
-
-
-                </ul>
-            </div>
         </div>
-        <div class="sidebar-footer">
-            <a href="#">
-                <i class="fa fa-bell"></i>
-                <span class="badge badge-pill badge-warning notification">3</span>
-            </a>
-            <a href="#">
-                <i class="fa fa-envelope"></i>
-                <span class="badge badge-pill badge-success notification">7</span>
-            </a>
-            <a href="#">
-                <i class="fa fa-cog"></i>
-                <span class="badge-sonar"></span>
-            </a>
-            <a href="#">
-                <i class="fa fa-power-off"></i>
-            </a>
-        </div>
-    </nav>
+      </div>
+
+
+      <div class="sidebar-menu">
+        <ul>
+
+          <li class="sidebar-dropdown" (click)="clickLogin()">
+            <a class="nav-link" routerLinkActive="active" (click)="clickLogin()">
+              <span (click)="clickLogin()">Đăng nhập</span></a>
+          </li>
+          <div *ngIf="checkAdmin()">
+            <li class="sidebar-dropdown" (click)="goToQuizList()">
+              <a (click)="goToQuizList()" class="nav-link">
+                <span (click)="goToQuizList()">Danh sách câu hỏi</span></a>
+            </li>
+            <li class="sidebar-dropdown" (click)="goToCategoryList()">
+              <a (click)="goToCategoryList()" class="nav-link">
+                <span (click)="goToCategoryList()">Danh sách đề thi</span></a>
+            </li>
+
+            <li class="sidebar-dropdown" (click)="goToTest()">
+              <a (click)="goToTest()" class="nav-link">
+                <span (click)="goToTest()">Bài thi</span></a>
+            </li>
+          </div>
+
+
+        </ul>
+      </div>
+    </div>
+    <div class="sidebar-footer">
+      <a href="#">
+        <i class="fa fa-bell"></i>
+        <span class="badge badge-pill badge-warning notification">3</span>
+      </a>
+      <a href="#">
+        <i class="fa fa-envelope"></i>
+        <span class="badge badge-pill badge-success notification">7</span>
+      </a>
+      <a href="#">
+        <i class="fa fa-cog"></i>
+        <span class="badge-sonar"></span>
+      </a>
+      <a href="#">
+        <i class="fa fa-power-off"></i>
+      </a>
+    </div>
+  </nav>
 
 </div>
