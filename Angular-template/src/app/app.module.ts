@@ -63,6 +63,10 @@ import {OverlayModule} from '@angular/cdk/overlay';
 import {PortalModule} from "@angular/cdk/portal";
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import { NotFoundComponent } from './not-found/not-found.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { UpdateUserComponent } from './user/update-user/update-user.component';
+import { DeleteUserComponent } from './user/delete-user/delete-user.component';
+import { CreateUserComponent } from './user/create-user/create-user.component';
 
 
 
@@ -83,7 +87,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
     DeleteCategoryComponent,
     NotFoundComponent,
     TakeTestComponent,
-    ExamComponent
+    ExamComponent,
+    UserListComponent,
+    UpdateUserComponent,
+    DeleteUserComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,

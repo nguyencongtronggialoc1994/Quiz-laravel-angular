@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 
 use App\Http\Controllers\QuizController;
 
+use App\Http\Controllers\RoleUserController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,9 +24,11 @@ use Illuminate\Support\Facades\Route;
 Route::post('login', [UserController::class, 'authenticate']);
 Route::post('register', [UserController::class, 'register']);
 Route::put('/users/{id}', [UserController::class, 'update']);
+Route::get('users', [UserController::class, 'index']);
 Route::get('users/getId/{key}', [UserController::class, 'getIdByEmail']);
 Route::get('users/getId/{key}', [UserController::class, 'getIdByEmail']);
 Route::get('users/role/{email}', [UserController::class, 'getRole']);
+Route::put('role-user/{id}', [RoleUserController::class, 'update']);
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
