@@ -34,6 +34,9 @@ export class UpdateQuizComponent implements OnInit {
         this.quiz = data;
       }, error => console.log(error));
   }
+  correctOption(value: string){
+    this.quiz.correctAnswer=value;
+  }
 
   updateQuiz() {
     this.quizService.updateQuizz(this.id, this.quiz)
