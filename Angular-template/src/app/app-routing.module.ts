@@ -15,7 +15,7 @@ import { ExamComponent } from './test/exam/exam.component';
 import { TakeTestComponent } from './test/take-test/take-test.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'quizzes', component: QuizzesListComponent },
   { path: 'create-quiz', component: CreateQuizComponent },
@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'update-category/:id', component: UpdateCategoryComponent },
   { path: 'delete-category/:id', component: DeleteCategoryComponent },
   {path: 'exam', component:ExamComponent},
-  {path:'test', component:TakeTestComponent}
+  {path:'test/:id', component:TakeTestComponent}
 
 ];
 

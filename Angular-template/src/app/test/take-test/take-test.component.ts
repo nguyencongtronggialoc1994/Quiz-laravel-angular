@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Quiz } from '../../quiz/Quiz';
+import { QuizService } from 'src/app/quiz/quiz.service';
+import { TestService } from '../test.service';
 
 @Component({
   selector: 'app-take-test',
@@ -6,10 +11,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./take-test.component.css']
 })
 export class TakeTestComponent implements OnInit {
-
-  constructor() { }
+quizzes!: Quiz[];
+id!: number;
+  constructor(
+    private testService: TestService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+
+    this.id=this.route.snapshot.params['id'];
+    this.testService.getShowTestFindId(this.id)
+    .subscribe((data: any)=>{
+      // console.log(data[0]);
+      this.quizzes=data;
+      console.log(this.quizzes)
+
+    })
   }
 
 }

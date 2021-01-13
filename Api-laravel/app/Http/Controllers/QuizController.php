@@ -151,5 +151,13 @@ class QuizController extends Controller
         return response()-> json($message, $statusCode);
     }
 
-   
+   public function showTest($id){
+       $test=DB::table('quizzes')
+       ->join('categories','quizzes.category_id','=','categories.id')
+       ->select('quizzes.*','categories.name')
+       ->where('quizzes.category_id','LIKE',$id)
+       ->get();
+
+       return response()->json($test);
+   }
 }

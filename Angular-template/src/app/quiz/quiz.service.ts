@@ -57,4 +57,8 @@ export class QuizService {
     return this.http.post(`${this.baseUrl}`, quizzes, {headers: reqHeader});
 
   }
+
+  
+
+
 }
