@@ -1,26 +1,22 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent implements OnInit {
+  constructor(private router: Router) {}
 
-
-  constructor(private router: Router) {
-  }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   getUserName() {
     return localStorage.getItem('name');
   }
 
   getRole() {
-    return localStorage.getItem('role')
+    return localStorage.getItem('role');
   }
 
   checkUser() {
@@ -46,9 +42,7 @@ export class SidebarComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
-  clickChangePassword() {
+  changePassword() {
     this.router.navigate(['changePassword']);
   }
-
-  
 }
