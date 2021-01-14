@@ -12,6 +12,8 @@ export class ChangePasswordComponent implements OnInit {
   newPassword!: string;
   confirmPassword!: string;
   id!: string | null;
+  hide!: boolean;
+  hide2!: boolean;
 
   constructor(
     private userService: UserService,
