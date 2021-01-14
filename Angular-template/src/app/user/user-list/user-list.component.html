@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-sm-2" *ngIf="isEmptyToken()">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="col-sm-10" *ngIf="!isEmptyToken()">
+    <app-not-found></app-not-found>
+  </div>
+  <div class="col-sm-10" *ngIf="isEmptyToken()">
+    <div style="position: relative;top: 100px" class="card shadow-lg">
+      <div class="card">
+        <div class="card-header">
+          <h2>Danh sách người dùng</h2>
+        </div>
+        <div class="card-body" style="text-align: center">
+
+          <div class="table-responsive">
+            <div style="text-align: left">
+              <!--              <a class="btn btn-success mb-3 ml-2" (click)="add()">Thêm mới đề thi</a>-->
+            </div>
+            <table class="table table-bordered">
+              <thead class=" text-primary">
+              <th>STT</th>
+              <th>Tên tài khoản</th>
+              <th colspan="2">Email</th>
+              <th>Vai trò</th>
+              <th></th>
+              </thead>
+              <tbody>
+              <tr *ngFor="let user of users| async; index as i ">
+                <td>{{i + 1}}</td>
+                <td>{{user.name}}</td>
+                <td colspan="2">{{user.email}}</td>
+                <td>
+<!--                  {{user.roleName}}-->
+                  <input type="checkbox" (click)="authorize(user.id,2)" [checked]="checkRoleUser(user.roleName)" > <span> &nbsp;user</span>&nbsp;&nbsp; || &nbsp;&nbsp;
+                  <input type="checkbox" (click)="authorize(user.id,1)" [checked]="checkRoleAdmin(user.roleName)" > <span> &nbsp;admin</span>
+                </td>
+                <td>
+<!--                  <button class="btn btn-danger" (click)="deleteUser(user.id)">Xóa</button>-->
+                  <button class="btn btn-primary" (click)="userDetail(user.id)">Chi tiết</button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

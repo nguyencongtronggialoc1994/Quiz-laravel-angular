@@ -54,7 +54,8 @@ export class LoginComponent implements OnInit {
 
   getRole() {
     this.userService.getRole(this.email).subscribe((data) => {
-      localStorage.setItem('role', data.name);
+      localStorage.setItem('role', data.roleName);
+      localStorage.setItem('name', data.name);
     });
   }
 
@@ -64,7 +65,7 @@ export class LoginComponent implements OnInit {
       this.showToasterSuccess();
       this.getIdByEmail();
       this.getRole();
-      this.router.navigate(['quizzes']);
+      this.router.navigate(['']);
 
     }, error => this.showToasterError())
   }

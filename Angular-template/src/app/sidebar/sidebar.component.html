@@ -5,7 +5,7 @@
   <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-content">
       <div class="sidebar-brand">
-        <a href="#">Quiz</a>
+        <a href="#">pro sidebar</a>
         <div id="close-sidebar">
           <i class="fas fa-times"></i>
         </div>
@@ -13,45 +13,64 @@
       <div class="sidebar-header">
         <div class="user-pic">
           <img class="img-responsive img-rounded"
-               src="https://lh3.googleusercontent.com/proxy/Zx1XGbV7GZEjz90vSmx8e6oyVvA7pCKoGTmdgZgP9Bh8vqDN3i-2P-61zKkDCd67xnwJCgao4-9Q6EezXG5sP4nHtCEYBeF_2hDVMrUdXnwUp_3oxTto63Ra3FqpZNblQj47jxd8"
+               src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
                alt="User picture">
         </div>
-        <div class="user-info">
 
-          <a class="btn-outline-light" mat-button [matMenuTriggerFor]="animals"> <b>Duy Luận</b></a>
-          <mat-menu #animals="matMenu">
-                    <span *ngIf="checkAdmin()||checkUser()">
-                      <a mat-menu-item (click)="clickChangePassword()">Đổi mật khẩu</a>
-                    <a mat-menu-item (click)="logout()">Đăng xuất </a>
-              </span>
-          </mat-menu>
+        <div class="user-info">
+          <a class="btn" mat-button [matMenuTriggerFor]="quiz">
+                    <span class="user-name">
+          <strong style="color: white">{{getUserName()}}</strong>
+        </span>
+          </a>
+          <span class="user-role">{{getRole()}}</span>
           <span class="user-status">
-          <i class="fa fa-circle"></i>
-          <span>Online</span>
-                    </span>
+          <i class="fa fa-circle">
+          <span *ngIf="checkLogin()">Online</span>
+          </i>
+            <span *ngIf="!checkLogin()">Offline</span>
+          </span>
+
         </div>
       </div>
 
+      <!-- #docregion sub-menu -->
+      <mat-menu #quiz="matMenu">
+        <span *ngIf="checkAdmin()||checkUser()">
+                <a class="nav-link" (click)="logout()">Đăng xuất</a><br>
+                <a class="nav-link">Đổi mật khẩu</a>
+              </span>
+      </mat-menu>
+
       <div class="sidebar-menu">
         <ul>
-          <li class="sidebar-dropdown" (click)="clickLogin()">
-            <a class="nav-link" routerLinkActive="active" (click)="clickLogin()">
-              <span (click)="clickLogin()">Đăng nhập</span></a>
+
+          <li class="sidebar-dropdown" routerLink="/login">
+            <a class="nav-link" routerLinkActive="active">
+              <span *ngIf="!checkLogin()">Đăng nhập</span></a>
           </li>
           <div *ngIf="checkAdmin()">
-            <li class="sidebar-dropdown" (click)="goToQuizList()">
-              <a (click)="goToQuizList()" class="nav-link">
-                <span (click)="goToQuizList()">Danh sách câu hỏi</span></a>
+            <li class="sidebar-dropdown" routerLink="/quizzes">
+              <a class="nav-link">
+                <span>Danh sách câu hỏi</span></a>
             </li>
-            <li class="sidebar-dropdown" (click)="goToCategoryList()">
-              <a (click)="goToCategoryList()" class="nav-link">
-                <span (click)="goToCategoryList()">Danh sách đề thi</span></a>
+            <li class="sidebar-dropdown" routerLink="/category-list">
+              <a class="nav-link">
+                <span>Danh sách đề thi</span></a>
             </li>
-            <li class="sidebar-dropdown" (click)="goToTest()">
-              <a (click)="goToTest()" class="nav-link">
-                <span (click)="goToTest()">Bài thi</span></a>
+
+            <li class="sidebar-dropdown" routerLink="/test">
+              <a class="nav-link">
+                <span>Bài thi</span></a>
+            </li>
+
+            <li class="sidebar-dropdown" routerLink="/user-list">
+              <a class="nav-link">
+                <span>Danh sách người dùng</span></a>
             </li>
           </div>
+
+
         </ul>
       </div>
     </div>
