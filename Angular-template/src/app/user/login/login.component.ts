@@ -54,7 +54,8 @@ export class LoginComponent implements OnInit {
 
   getRole() {
     this.userService.getRole(this.email).subscribe((data) => {
-      localStorage.setItem('role', data.name);
+      localStorage.setItem('role', data.roleName);
+      localStorage.setItem('name', data.name);
     });
   }
 

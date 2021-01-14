@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+import {UserService} from "../user.service";
+import {User} from "../User";
 
 @Component({
   selector: 'app-delete-user',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteUserComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private routerActive: ActivatedRoute,
+    private router: Router,
+    private userService: UserService
+  ) {
+  }
 
   ngOnInit(): void {
+
   }
 
 }

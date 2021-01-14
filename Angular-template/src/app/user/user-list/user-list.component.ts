@@ -39,12 +39,16 @@ export class UserListComponent implements OnInit {
   getUserList() {
     this.users =this.userService.getUserList()
   }
-  authorize(id: number,role_id:string){
+  authorize(id: number,role_id:number){
     this.userService.updateRole(id,role_id).subscribe(
       data=>{
         console.log(data)
         this.getUserList();
       }
     );
+  }
+
+  userDetail(id:number){
+    this.router.navigate(['user-detail',id]);
   }
 }
