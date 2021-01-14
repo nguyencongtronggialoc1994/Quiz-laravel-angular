@@ -68,6 +68,7 @@ import { UpdateUserComponent } from './user/update-user/update-user.component';
 import { DeleteUserComponent } from './user/delete-user/delete-user.component';
 import { CreateUserComponent } from './user/create-user/create-user.component';
 import { ChangePasswordComponent } from './user/change-password/change-password.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
 
 
 
@@ -93,7 +94,8 @@ import { ChangePasswordComponent } from './user/change-password/change-password.
     UpdateUserComponent,
     DeleteUserComponent,
     CreateUserComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
