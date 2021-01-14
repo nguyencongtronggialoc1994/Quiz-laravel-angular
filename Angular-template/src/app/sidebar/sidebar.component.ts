@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class SidebarComponent implements OnInit {
   constructor(private router: Router) {}
 
+
   ngOnInit(): void {}
 
   getUserName() {
@@ -20,11 +21,18 @@ export class SidebarComponent implements OnInit {
   }
 
   checkUser() {
+
+    if (localStorage.getItem('role') == 'user') {
+      return true;
+    } else
+      return false;
+
     return localStorage.getItem('role') == 'user';
   }
 
   checkLogin() {
     return !!localStorage.getItem('AccessToken');
+
   }
 
   checkAdmin() {
@@ -36,13 +44,28 @@ export class SidebarComponent implements OnInit {
     localStorage.removeItem('AccessToken');
     localStorage.removeItem('name');
     this.router.navigate(['/']);
+
+
   }
 
+  checkToken(){
+    if (localStorage.getItem('AccessToken')){
+     return true;
+    } else  return  false;
+  }
   clickLogin() {
     this.router.navigate(['login']);
+
   }
 
+
+
+
+  goToTest() {
+    this.router.navigate(['exam'])
+  }
   changePassword() {
     this.router.navigate(['changePassword']);
+
   }
 }

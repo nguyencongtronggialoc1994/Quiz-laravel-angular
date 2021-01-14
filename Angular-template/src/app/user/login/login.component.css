@@ -24,3 +24,22 @@ body {
 .example-full-width {
     width: 100%;
 }
+.card_login{
+  margin-top: 10px;
+}
+.div_login{
+  border-radius: 10px;
+  background-color: lightsteelblue!important;
+  color: black!important;
+}
+.input_text{
+  font-size: 20px;
+}
+.quiz_image{
+  width: 100%;
+  height: 30%;
+}
+.login_body{
+  margin-top: -2%;
+}
+
