@@ -15,41 +15,40 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getUserName() {
+    return localStorage.getItem('name');
+  }
+
+  getRole() {
+    return localStorage.getItem('role')
+  }
+
   checkUser() {
-    if (localStorage.getItem('role') == 'user')
-      return true;
-    else
-      return false;
+    return localStorage.getItem('role') == 'user';
+  }
+
+  checkLogin() {
+    return !!localStorage.getItem('AccessToken');
   }
 
   checkAdmin() {
-    if (localStorage.getItem('role') == 'admin')
-      return true;
-    else return false;
+    return localStorage.getItem('role') == 'admin';
   }
- logout(){
+
+  logout() {
     localStorage.removeItem('role');
     localStorage.removeItem('AccessToken');
+    localStorage.removeItem('name');
     this.router.navigate(['/']);
- }
+  }
+
   clickLogin() {
     this.router.navigate(['login']);
   }
+
   clickChangePassword() {
     this.router.navigate(['changePassword']);
   }
 
-  goToCategoryList() {
-    this.router.navigate(['category-list']);
-  }
-
-  goToQuizList() {
-    this.router.navigate(['quizzes']);
-  }
- goToUserList(){
-    this.router.navigate(['user-list']);
- }
-  goToTest(){
-    this.router.navigate(['exam'])
-  }
+  
 }

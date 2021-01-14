@@ -20,9 +20,10 @@
             <table class="table table-bordered">
               <thead class=" text-primary">
               <th>STT</th>
-              <th>Name</th>
+              <th>Tên tài khoản</th>
               <th colspan="2">Email</th>
-              <th>Role</th>
+              <th>Vai trò</th>
+              <th></th>
               </thead>
               <tbody>
               <tr *ngFor="let user of users| async; index as i ">
@@ -30,9 +31,13 @@
                 <td>{{user.name}}</td>
                 <td colspan="2">{{user.email}}</td>
                 <td>
-                  {{user.roleName}}
-<!--                  <input type="checkbox" (click)="authorize(user.id,'2')" [checked]="checkRoleUser(user.roleName)" > <span> &nbsp;user</span>&nbsp;&nbsp; || &nbsp;&nbsp;-->
-<!--                  <input type="checkbox" (click)="authorize(user.id,'1')" [checked]="checkRoleAdmin(user.roleName)" > <span> &nbsp;admin</span>-->
+<!--                  {{user.roleName}}-->
+                  <input type="checkbox" (click)="authorize(user.id,2)" [checked]="checkRoleUser(user.roleName)" > <span> &nbsp;user</span>&nbsp;&nbsp; || &nbsp;&nbsp;
+                  <input type="checkbox" (click)="authorize(user.id,1)" [checked]="checkRoleAdmin(user.roleName)" > <span> &nbsp;admin</span>
+                </td>
+                <td>
+<!--                  <button class="btn btn-danger" (click)="deleteUser(user.id)">Xóa</button>-->
+                  <button class="btn btn-primary" (click)="userDetail(user.id)">Chi tiết</button>
                 </td>
               </tr>
               </tbody>

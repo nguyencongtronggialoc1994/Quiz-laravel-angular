@@ -16,7 +16,13 @@ class UserController extends Controller
 {
     public function show($id)
     {
-        $user = User::findOrFail($id);
+
+        $user = DB::table('users')
+            ->join('role_user','users.id','=','role_user.user_id')
+            ->join('roles','role_user.role_id','=','roles.id')
+            ->where('users.id','=',$id)
+            ->select('users.*','roles.name as roleName')
+            ->first();
         return response()->json($user, 200);
     }
 
@@ -35,7 +41,7 @@ class UserController extends Controller
         $role = DB::table('users')
             ->join('role_user', 'users.id', '=', 'role_user.user_id')
             ->join('roles', 'role_user.role_id', '=', 'roles.id')
-            ->select('roles.name')->where('users.email', '=', $email)
+            ->select('users.name','roles.name as roleName')->where('users.email', '=', $email)
             ->first();
         return response()->json($role, 200);
     }
