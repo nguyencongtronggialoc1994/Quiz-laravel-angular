@@ -1,55 +1,48 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent implements OnInit {
+  constructor(private router: Router) {}
 
+  ngOnInit(): void {}
 
-  constructor(private router: Router) {
+  getUserName() {
+    return localStorage.getItem('name');
   }
 
-  ngOnInit(): void {
+  getRole() {
+    return localStorage.getItem('role');
   }
 
   checkUser() {
-    if (localStorage.getItem('role') == 'user')
-      return true;
-    else
-      return false;
+    return localStorage.getItem('role') == 'user';
+  }
+
+  checkLogin() {
+    return !!localStorage.getItem('AccessToken');
   }
 
   checkAdmin() {
-    if (localStorage.getItem('role') == 'admin')
-      return true;
-    else return false;
+    return localStorage.getItem('role') == 'admin';
   }
- logout(){
+
+  logout() {
     localStorage.removeItem('role');
     localStorage.removeItem('AccessToken');
+    localStorage.removeItem('name');
     this.router.navigate(['/']);
- }
+  }
+
   clickLogin() {
     this.router.navigate(['login']);
   }
-  clickChangePassword() {
+
+  changePassword() {
     this.router.navigate(['changePassword']);
-  }
-
-  goToCategoryList() {
-    this.router.navigate(['category-list']);
-  }
-
-  goToQuizList() {
-    this.router.navigate(['quizzes']);
-  }
- goToUserList(){
-    this.router.navigate(['user-list']);
- }
-  goToTest(){
-    this.router.navigate(['exam'])
   }
 }
