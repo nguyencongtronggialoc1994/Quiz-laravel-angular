@@ -26,7 +26,7 @@
           <span class="user-role">{{getRole()}}</span>
           <span class="user-status">
           <i class="fa fa-circle">
-          <span *ngIf="checkLogin()">Online</span>
+          <span style="font-size: 12px" *ngIf="checkLogin()">Online</span>
           </i>
             <span *ngIf="!checkLogin()">Offline</span>
           </span>
@@ -45,9 +45,9 @@
       <div class="sidebar-menu">
         <ul>
 
-          <li class="sidebar-dropdown" routerLink="/login">
+          <li  *ngIf="!checkLogin()" class="sidebar-dropdown" routerLink="/login">
             <a class="nav-link" routerLinkActive="active">
-              <span *ngIf="!checkLogin()">Đăng nhập</span></a>
+              <span>Đăng nhập</span></a>
           </li>
           <div *ngIf="checkAdmin()">
             <li class="sidebar-dropdown" routerLink="/quizzes">
