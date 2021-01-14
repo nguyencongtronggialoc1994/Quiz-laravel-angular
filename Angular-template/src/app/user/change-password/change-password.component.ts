@@ -12,7 +12,9 @@ export class ChangePasswordComponent implements OnInit {
   newPassword!: string;
   confirmPassword!: string;
   id!: string | null;
-
+  hide1=true;
+  hide= true;
+  hide2= true;
   constructor(
     private userService: UserService,
     private notificationService: NotificationService
