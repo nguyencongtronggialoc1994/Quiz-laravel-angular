@@ -1,8 +1,4 @@
-.loginButton {
-  width: 21rem;
-}
-
-.loginButtonGoogle {
+.registerButton {
   width: 21rem;
 }
 
@@ -18,3 +14,20 @@ body {
 .example-full-width {
   width: 100%;
 }
+.div_register{
+  border-radius: 10px;
+  background-color: lightsteelblue!important;
+  color: black!important;
+  margin-top: 20px;
+}
+.card_register{
+  margin-top: 10px;
+}
+.input_text{
+  font-size: 15px;
+}
+.quiz_image{
+  width: 100%;
+  height: 30%;
+}
+
