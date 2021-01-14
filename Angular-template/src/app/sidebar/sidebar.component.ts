@@ -8,7 +8,6 @@ import {Router} from "@angular/router";
 })
 export class SidebarComponent implements OnInit {
 
-
   constructor(private router: Router) {
   }
 
@@ -16,9 +15,9 @@ export class SidebarComponent implements OnInit {
   }
 
   checkUser() {
-    if (localStorage.getItem('role') == 'user')
+    if (localStorage.getItem('role') == 'user') {
       return true;
-    else
+    } else
       return false;
   }
 
@@ -27,11 +26,19 @@ export class SidebarComponent implements OnInit {
       return true;
     else return false;
   }
- logout(){
+
+  logout() {
     localStorage.removeItem('role');
     localStorage.removeItem('AccessToken');
     this.router.navigate(['/']);
- }
+
+  }
+
+  checkToken(){
+    if (localStorage.getItem('AccessToken')){
+     return true;
+    } else  return  false;
+  }
   clickLogin() {
     this.router.navigate(['login']);
   }
@@ -44,7 +51,7 @@ export class SidebarComponent implements OnInit {
     this.router.navigate(['quizzes']);
   }
 
-  goToTest(){
+  goToTest() {
     this.router.navigate(['exam'])
   }
 }

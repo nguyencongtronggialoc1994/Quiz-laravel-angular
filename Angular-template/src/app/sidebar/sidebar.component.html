@@ -1,11 +1,11 @@
-<div style="float: left;" class="page-wrapper chiller-theme toggled">
+<div style="float: left;background: #1a202c!important;" class="page-wrapper chiller-theme toggled">
   <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
     <i class="fas fa-bars"></i>
   </a>
   <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-content">
       <div class="sidebar-brand">
-        <a href="#">pro sidebar</a>
+        <a href="#">Trang chủ</a>
         <div id="close-sidebar">
           <i class="fas fa-times"></i>
         </div>
@@ -23,33 +23,35 @@
           <span class="user-role">Administrator</span>
           <span class="user-status">
           <i class="fa fa-circle"></i>
-          <span>Online</span>
+          <span><svg style="color:green" xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+  <circle cx="8" cy="8" r="8"/>
+</svg></span> <span> Online</span>
                             </span>
-          <span *ngIf="checkAdmin()||checkUser()">
-                <label (click)="logout()">Đăng xuất</label><br>
-                <label>Đổi mật khẩu</label>
-              </span>
+          <div style="width: 145px" *ngIf="checkAdmin()||checkUser()">
+                <button  class="btn_login_change_pass" (click)="logout()">Đăng xuất</button ><br>
+                <button class="btn_login_change_pass" style="margin-top: 5px">Đổi mật khẩu</button>
+              </div>
         </div>
       </div>
 
       <div class="sidebar-menu">
         <ul>
-          <li class="header-menu">
-            <span>General</span>
-          </li>
-
-          <li class="sidebar-dropdown" (click)="clickLogin()">
-            <a class="nav-link" routerLinkActive="active" (click)="clickLogin()">
-              <span (click)="clickLogin()">Đăng nhập</span></a>
+          <li *ngIf="!checkToken()" class="sidebar-dropdown" (click)="clickLogin()">
+            <a class="nav-link" routerLinkActive="active">
+              <span>Đăng nhập</span></a>
           </li>
           <div *ngIf="checkAdmin()">
-            <li class="sidebar-dropdown" (click)="goToQuizList()">
+            <li (click)="goToQuizList()">
               <a (click)="goToQuizList()" class="nav-link" >
-                <span (click)="goToQuizList()">Danh sách câu hỏi</span></a>
+                <span (click)="goToQuizList()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bookmark-star-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zM8.16 4.1a.178.178 0 0 0-.32 0l-.634 1.285a.178.178 0 0 1-.134.098l-1.42.206a.178.178 0 0 0-.098.303L6.58 6.993c.042.041.061.1.051.158L6.39 8.565a.178.178 0 0 0 .258.187l1.27-.668a.178.178 0 0 1 .165 0l1.27.668a.178.178 0 0 0 .257-.187L9.368 7.15a.178.178 0 0 1 .05-.158l1.028-1.001a.178.178 0 0 0-.098-.303l-1.42-.206a.178.178 0 0 1-.134-.098L8.16 4.1z"/>
+</svg> Danh sách câu hỏi</span></a>
             </li>
-            <li class="sidebar-dropdown" (click)="goToCategoryList()">
+            <li (click)="goToCategoryList()">
               <a  (click)="goToCategoryList()" class="nav-link" >
-                <span  (click)="goToCategoryList()">Danh sách đề thi</span></a>
+                <span  (click)="goToCategoryList()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bookmark-star-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zM8.16 4.1a.178.178 0 0 0-.32 0l-.634 1.285a.178.178 0 0 1-.134.098l-1.42.206a.178.178 0 0 0-.098.303L6.58 6.993c.042.041.061.1.051.158L6.39 8.565a.178.178 0 0 0 .258.187l1.27-.668a.178.178 0 0 1 .165 0l1.27.668a.178.178 0 0 0 .257-.187L9.368 7.15a.178.178 0 0 1 .05-.158l1.028-1.001a.178.178 0 0 0-.098-.303l-1.42-.206a.178.178 0 0 1-.134-.098L8.16 4.1z"/>
+</svg> Danh sách đề thi</span></a>
             </li>
           </div>
 
