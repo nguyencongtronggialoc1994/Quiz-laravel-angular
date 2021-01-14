@@ -2,32 +2,33 @@
   <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
     <i class="fas fa-bars"></i>
   </a>
-  <nav id="sidebar" class="sidebar-wrapper">
+  <nav id="sidebar" class="sidebar-wrapper" style="  background-image: linear-gradient(to right, rgba(88,37,123,0),
+  rgba(88,37,123,1));
+">
     <div class="sidebar-content">
       <div class="sidebar-brand">
-        <a href="#">pro sidebar</a>
-        <div id="close-sidebar">
+        <a href="#">Trang chủ</a>
+        <div id="close-sidebar" >
           <i class="fas fa-times"></i>
         </div>
       </div>
       <div class="sidebar-header">
-        <div class="user-pic">
+        <div class="user-info" style="margin-left: -12px">
+          <a class="btn"  mat-button [matMenuTriggerFor]="quiz" >
+                    <span class="user-name">
+          <div class="user-pic" style="margin-top: 7px">
           <img class="img-responsive img-rounded"
                src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
                alt="User picture">
         </div>
-
-        <div class="user-info">
-          <a class="btn" mat-button [matMenuTriggerFor]="quiz">
-                    <span class="user-name">
-          <strong style="color: white">{{getUserName()}}</strong>
         </span>
+            <span class="user-role" style="font-size: 15px!important;">Xin chào {{getUserName()}}</span><br>
+            <span style="margin-right:10px;color:green;font-size: 15px!important;" *ngIf="checkLogin()"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"/></svg><i class="fa fa-circle" style="margin-right: 90px">
+      Online ({{getRole()}})
+          </i> </span>
           </a>
-          <span class="user-role">{{getRole()}}</span>
+
           <span class="user-status">
-          <i class="fa fa-circle">
-          <span *ngIf="checkLogin()">Online</span>
-          </i>
             <span *ngIf="!checkLogin()">Offline</span>
           </span>
 
@@ -45,28 +46,43 @@
       <div class="sidebar-menu">
         <ul>
 
-          <li class="sidebar-dropdown" routerLink="/login">
-            <a class="nav-link" routerLinkActive="active">
-              <span *ngIf="!checkLogin()">Đăng nhập</span></a>
+
+          <li *ngIf="!checkLogin()" routerLink="/login">
+            <a routerLinkActive="active">
+              <span >Đăng nhập</span></a>
+
           </li>
           <div *ngIf="checkAdmin()">
-            <li class="sidebar-dropdown" routerLink="/quizzes">
-              <a class="nav-link">
-                <span>Danh sách câu hỏi</span></a>
+            <li  routerLink="/quizzes">
+              <a >
+                <span class="list_span" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+              </svg> Danh sách câu hỏi</span></a>
             </li>
-            <li class="sidebar-dropdown" routerLink="/category-list">
+            <li  routerLink="/category-list">
               <a class="nav-link">
-                <span>Danh sách đề thi</span></a>
+                <span class="list_span" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                <path id="svg1" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+              </svg> Danh sách đề thi</span></a>
             </li>
 
-            <li class="sidebar-dropdown" routerLink="/exam">
-              <a class="nav-link">
-                <span>Bài thi</span></a>
+
+            <li routerLink="/exam">
+              <a>
+                <span class="list_span" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+              </svg> Bài thi</span>
+              </a>
+
             </li>
 
-            <li class="sidebar-dropdown" routerLink="/user-list">
-              <a class="nav-link">
-                <span>Danh sách người dùng</span></a>
+            <li routerLink="/user-list">
+              <a>
+                <span class="list_span" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+              </svg> Quản lý người dùng</span>
+              </a>
+
             </li>
           </div>
         </ul>
