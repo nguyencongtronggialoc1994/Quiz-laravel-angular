@@ -26,6 +26,7 @@ exams!: Observable<Category[]>;
   }
 
   gotoTest(id: any){
+    console.log(id);
 this.router.navigate(['test',id])
   }
 

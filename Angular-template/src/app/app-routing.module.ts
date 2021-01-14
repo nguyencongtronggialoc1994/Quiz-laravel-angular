@@ -29,7 +29,7 @@ const routes: Routes = [
   {path: 'update-category/:id', component: UpdateCategoryComponent},
   {path: 'delete-category/:id', component: DeleteCategoryComponent},
   {path: 'exam', component: ExamComponent},
-  {path: 'test', component: TakeTestComponent},
+  {path: 'test/:id', component: TakeTestComponent},
   {path: 'user-list', component: UserListComponent},
   { path: 'changePassword', component: ChangePasswordComponent }
 ];
