@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 
 use App\Http\Controllers\QuizController;
 
+use App\Http\Controllers\RoleUserController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,15 +23,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('login', [UserController::class, 'authenticate']);
 Route::post('register', [UserController::class, 'register']);
-Route::put('/users/{id}', [UserController::class, 'update']);
-Route::get('users/getId/{key}', [UserController::class, 'getIdByEmail']);
-Route::get('users/getId/{key}', [UserController::class, 'getIdByEmail']);
-Route::get('users/role/{email}', [UserController::class, 'getRole']);
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
 Route::middleware('jwt.verify')->group(function () {
+    //user
+    Route::put('users/{id}', [UserController::class, 'update']);
+    Route::get('users', [UserController::class, 'index']);
+    Route::get('users/{id}', [UserController::class, 'show']);
+    Route::get('users/getId/{key}', [UserController::class, 'getIdByEmail']);
+//    Route::get('users/getId/{key}', [UserController::class, 'getIdByEmail']);
+    Route::get('users/role/{email}', [UserController::class, 'getRole']);
+
+    Route::put('role-user/{id}', [RoleUserController::class, 'update']);
+
 
     Route::prefix('categories')->group(function () {
         Route::get('/', [CategoryController::class, 'index']);
@@ -46,7 +54,14 @@ Route::middleware('jwt.verify')->group(function () {
         Route::get('/{id}', [QuizController::class, 'show']);
         Route::put('/{id}', [QuizController::class, 'update']);
         Route::delete('/{id}', [QuizController::class, 'destroy']);
+
     });
+    Route::prefix('test')->group(function () {
+        Route::get('/{id}',[QuizController::class,'showTest']);
+    });
+
 });
+
+
 
 

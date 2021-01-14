@@ -19,6 +19,9 @@ li:hover{
 .btn_login_change_pass:hover{
   background-color: #45597b;
 }
+.list_span{
+  font-size: 19px;
+}
 @keyframes swing {
     0% {
         transform: rotate(0deg);
