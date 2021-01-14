@@ -13,7 +13,7 @@ import {Observable} from 'rxjs';
 export class LoginComponent implements OnInit {
   email!: string;
   password!: string;
-  id!: number;
+  // id!: number;
 
   submitted: boolean = false;
   hide = true;
@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
       'Thông báo'
     );
   }
-  showToasterError(){
+
+  showToasterError() {
     this.notificationService.showError(
       'Đăng nhập thất bại Tài khoản hoặc mật khẩu không đúng !!',
       'thông báo'
@@ -47,8 +48,9 @@ export class LoginComponent implements OnInit {
   }
 
   getIdByEmail() {
-    this.userService.getIdByEmail(this.email).subscribe((data) => {
-      this.id = data;
+    this.userService.getIdByEmail(this.email).subscribe(data => {
+      localStorage.setItem('idUser',data);
+      // console.log(localStorage.getItem('idUser'));
     });
   }
 
@@ -58,6 +60,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('name', data.name);
     });
   }
+
 
   login() {
     this.userService.login(this.email, this.password).subscribe(data => {
@@ -70,13 +73,11 @@ export class LoginComponent implements OnInit {
     }, error => this.showToasterError())
   }
 
-  // goToChangePassword() {
-  //   this.router.navigate(['changePassword', this.id]);
-  //   // console.log(this.id);
-  // }
-  goToHome(){
+
+  goToHome() {
     this.router.navigate(['/']);
   }
+
   goToRegister() {
     this.router.navigate(['/register']);
   }
