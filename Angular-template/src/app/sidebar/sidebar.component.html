@@ -38,7 +38,7 @@
       <mat-menu #quiz="matMenu">
         <span *ngIf="checkAdmin()||checkUser()">
                 <a class="nav-link" (click)="logout()">Đăng xuất</a><br>
-                <a class="nav-link">Đổi mật khẩu</a>
+                <a class="nav-link" (click)="changePassword()">Đổi mật khẩu</a>
               </span>
       </mat-menu>
 
@@ -59,7 +59,7 @@
                 <span>Danh sách đề thi</span></a>
             </li>
 
-            <li class="sidebar-dropdown" routerLink="/test">
+            <li class="sidebar-dropdown" routerLink="/exam">
               <a class="nav-link">
                 <span>Bài thi</span></a>
             </li>
