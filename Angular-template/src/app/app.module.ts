@@ -104,6 +104,7 @@ import { SearchCategoryComponent } from './category/search-category/search-categ
     DeleteResultComponent,
     CategoryDetailComponent,
     SearchCategoryComponent
+
   ],
   imports: [
     BrowserModule,

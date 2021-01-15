@@ -41,12 +41,18 @@ const routes: Routes = [
   {path: 'category-detail/:id', component: CategoryDetailComponent},
   {path: 'update-category/:id', component: UpdateCategoryComponent},
   {path: 'delete-category/:id', component: DeleteCategoryComponent},
+
+
+  {path: 'exam', component: ExamComponent},
+  {path: 'test', component: TakeTestComponent},
+
   //result
   {path:'result-list',component: ResultsListComponent},
   {path:'delete-result/:id',component: DeleteResultComponent},
   //
   {path: 'exam', component: ExamComponent},
   {path: 'test/:id', component: TakeTestComponent},
+
 
 ];
 

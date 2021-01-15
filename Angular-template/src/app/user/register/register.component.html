@@ -42,9 +42,9 @@
         <div class="mb-3">
           <mat-form-field class="example-full-width input_text">
             <input matInput [type]="hide2 ? 'newPasswordConfirm' : 'text'" [(ngModel)]="newPasswordConfirm"  type="password" required  #newPassAgain="ngModel" [class.is-invalid]="newPassAgain.invalid && newPassAgain.touched" id="name" name="newPassAgain" placeholder="Nhập lại mật khẩu" />
-            <a mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide newPasswordConfirm'" [attr.aria-pressed]="hide">
+            <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide newPasswordConfirm'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </a>
+            </button>
           </mat-form-field>
           <div *ngIf="newPassAgain.errors && (newPassAgain.valid || newPassAgain.touched)">
             <small class="text-danger" *ngIf="newPassAgain.errors.required">Mật khẩu mới không được để trống</small>
@@ -57,10 +57,9 @@
           <button class="registerButton btn btn-success" [disabled]="login.form.invalid" (click)="onSubmit()">Đăng ký</button>
         </div>
         <div style="text-align: center;margin-left: 50px" class="mb-3" >
-          <a class="btn btn-link" (click)=goToLogin()>Đăng nhập</a> | <a class="btn btn-link" (click)="goToHome()" >Trở về trang chủ</a>
+          <a class="btn btn-link" routerLink="/login">Đã có tài khoản</a> | <a class="btn btn-link" >Trở về trang chủ</a>
         </div>
       </form>
-
     </div>
   </div>
 </div>

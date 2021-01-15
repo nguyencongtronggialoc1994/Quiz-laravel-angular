@@ -35,6 +35,7 @@ Route::middleware('jwt.verify')->group(function () {
     Route::get('users', [UserController::class, 'index']);
     Route::get('users/{id}', [UserController::class, 'show']);
     Route::get('users/getId/{key}', [UserController::class, 'getIdByEmail']);
+
     Route::get('users/role/{email}', [UserController::class, 'getRole']);
 
     Route::put('role-user/{id}', [RoleUserController::class, 'update']);
