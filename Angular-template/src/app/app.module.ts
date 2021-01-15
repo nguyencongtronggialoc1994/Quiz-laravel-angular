@@ -69,6 +69,10 @@ import { DeleteUserComponent } from './user/delete-user/delete-user.component';
 import { CreateUserComponent } from './user/create-user/create-user.component';
 import { ChangePasswordComponent } from './user/change-password/change-password.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { ResultsListComponent } from './result-backend/results-list/results-list.component';
+import { DeleteResultComponent } from './result-backend/delete-result/delete-result.component';
+import { CategoryDetailComponent } from './category/category-detail/category-detail.component';
+import { SearchCategoryComponent } from './category/search-category/search-category.component';
 
 
 
@@ -95,7 +99,12 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
     DeleteUserComponent,
     CreateUserComponent,
     ChangePasswordComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    ResultsListComponent,
+    DeleteResultComponent,
+    CategoryDetailComponent,
+    SearchCategoryComponent
+
   ],
   imports: [
     BrowserModule,

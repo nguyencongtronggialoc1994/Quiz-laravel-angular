@@ -12,11 +12,9 @@ export class ChangePasswordComponent implements OnInit {
   newPassword!: string;
   confirmPassword!: string;
   id!: string | null;
-  hide!: boolean;
-  hide2!: boolean;
-  private router: any;
-  hide3!: boolean;
-
+  hide1=true;
+  hide= true;
+  hide2= true;
   constructor(
     private userService: UserService,
     private notificationService: NotificationService
@@ -26,15 +24,13 @@ export class ChangePasswordComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
   showToasterSuccess() {
     this.notificationService.showSuccess('Đổi mật khẩu thành công', 'Thông báo')
-  }
 
+  }
   showToasterError() {
     this.notificationService.showError('Đổi mật khẩu Thất bại! Mật khẩu cũ hoặc xác nhận mật khẩu sai.', 'Thông báo !')
   }
-
   changePassword() {
     console.log(localStorage.getItem('idUser'))
     this.userService.changePassword(localStorage.getItem('idUser'), this.oldPassword, this.newPassword, this.confirmPassword).subscribe(
@@ -43,7 +39,5 @@ export class ChangePasswordComponent implements OnInit {
       }, error => this.showToasterError()
     )
   }
-  goToHome() {
-    this.router.navigate(['/']);
-  }
+
 }

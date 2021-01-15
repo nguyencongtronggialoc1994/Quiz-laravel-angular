@@ -20,6 +20,14 @@ export class QuizService {
     });
     return this.http.get(`${this.baseUrl}`, {headers: reqHeader});
   }
+  search(key: string): Observable<any> {
+    const auth_token = localStorage.getItem('AccessToken');
+    const reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.get(`${this.baseUrl}/search/${key}`, {headers: reqHeader});
+  }
 
   getQuizzFindId(id: number): Observable<any> {
     const auth_token = localStorage.getItem('AccessToken');
@@ -28,6 +36,14 @@ export class QuizService {
       'Authorization': 'Bearer ' + auth_token
     });
     return this.http.get(`${this.baseUrl}/${id}`, {headers: reqHeader});
+  }
+  getQuizzesFindByCategoryId(id: number): Observable<any> {
+    const auth_token = localStorage.getItem('AccessToken');
+    const reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.get(`${this.baseUrl}/showByCategoryId/${id}`, {headers: reqHeader});
   }
 
   deleteQuizz(id: number): Observable<any> {
@@ -58,7 +74,7 @@ export class QuizService {
 
   }
 
-  
+
 
 
 }

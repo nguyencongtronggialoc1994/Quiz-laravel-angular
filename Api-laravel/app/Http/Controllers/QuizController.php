@@ -17,12 +17,12 @@ class QuizController extends Controller
      */
     public function index()
     {
-        $quizzes= DB::table('quizzes')
-            ->join('categories','quizzes.category_id','=','categories.id')
-            ->select('quizzes.*','categories.name')
+        $quizzes = DB::table('quizzes')
+            ->join('categories', 'quizzes.category_id', '=', 'categories.id')
+            ->select('quizzes.*', 'categories.name')
             ->get();
 
-        return response()->json($quizzes,200);
+        return response()->json($quizzes, 200);
     }
 
 
@@ -39,59 +39,59 @@ class QuizController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(QuizzesRequest $request)
     {
 
-        $quizzes= new Quizzes();
-        $quizzes->fill($request-> all());
+        $quizzes = new Quizzes();
+        $quizzes->fill($request->all());
 
 
-        $option1=$quizzes->option1;
-        $option2=$quizzes->option2;
-        $option3=$quizzes->option3;
-        $option4=$quizzes->option4;
-        $correctAnswer=$quizzes->correctAnswer;
-        if($option1==$option2||$option1==$option3||$option1==$option4||$option2==$option3||$option2==$option4||$option3==$option4){
-            $statusCode=404;
-        }else if($correctAnswer!==$option1 && $correctAnswer!==$option2 && $correctAnswer!==$option3 && $correctAnswer!==$option4){
-            $statusCode=404;
-        }else{
-            $statusCode= 201;
+        $option1 = $quizzes->option1;
+        $option2 = $quizzes->option2;
+        $option3 = $quizzes->option3;
+        $option4 = $quizzes->option4;
+        $correctAnswer = $quizzes->correctAnswer;
+        if ($option1 == $option2 || $option1 == $option3 || $option1 == $option4 || $option2 == $option3 || $option2 == $option4 || $option3 == $option4) {
+            $statusCode = 404;
+        } else if ($correctAnswer !== $option1 && $correctAnswer !== $option2 && $correctAnswer !== $option3 && $correctAnswer !== $option4) {
+            $statusCode = 404;
+        } else {
+            $statusCode = 201;
             $quizzes->save();
         }
 
-        if(!$quizzes){
-            $statusCode=404;
+        if (!$quizzes) {
+            $statusCode = 404;
         }
-        $data=[$statusCode,$quizzes];
+        $data = [$statusCode, $quizzes];
 
-        return response()-> json($data);
+        return response()->json($data);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $quizzes= Quizzes::find($id);
-        $statusCode=200;
-        if(!$quizzes){
-            $statusCode=404;
+        $quizzes = Quizzes::find($id);
+        $statusCode = 200;
+        if (!$quizzes) {
+            $statusCode = 404;
         }
 
-        return response()-> json($quizzes, $statusCode);
+        return response()->json($quizzes, $statusCode);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -102,62 +102,73 @@ class QuizController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $quizzes= Quizzes::find($id);
-        $quizzes->fill($request-> all());
-        $option1=$quizzes->option1;
-        $option2=$quizzes->option2;
-        $option3=$quizzes->option3;
-        $option4=$quizzes->option4;
-        $correctAnswer=$quizzes->correctAnswer;
-        if($option1==$option2||$option1==$option3||$option1==$option4||$option2==$option3||$option2==$option4||$option3==$option4){
-            $statusCode=404;
-        }else if($correctAnswer!==$option1 && $correctAnswer!==$option2 && $correctAnswer!==$option3 && $correctAnswer!==$option4){
-            $statusCode=404;
-        }else{
-            $statusCode= 201;
+        $quizzes = Quizzes::find($id);
+        $quizzes->fill($request->all());
+        $option1 = $quizzes->option1;
+        $option2 = $quizzes->option2;
+        $option3 = $quizzes->option3;
+        $option4 = $quizzes->option4;
+        $correctAnswer = $quizzes->correctAnswer;
+        if ($option1 == $option2 || $option1 == $option3 || $option1 == $option4 || $option2 == $option3 || $option2 == $option4 || $option3 == $option4) {
+            $statusCode = 404;
+        } else if ($correctAnswer !== $option1 && $correctAnswer !== $option2 && $correctAnswer !== $option3 && $correctAnswer !== $option4) {
+            $statusCode = 404;
+        } else {
+            $statusCode = 201;
             $quizzes->save();
         }
 
-        if(!$quizzes){
-            $statusCode=404;
+        if (!$quizzes) {
+            $statusCode = 404;
         }
-        $data=[$statusCode,$quizzes];
+        $data = [$statusCode, $quizzes];
 
-        return response()-> json($data);
+        return response()->json($data);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
-        $quizzes= Quizzes::find($id);
-        $message="User not found";
-        if($quizzes){
+        $quizzes = Quizzes::find($id);
+        $message = "User not found";
+        if ($quizzes) {
             $quizzes->delete();
-            $message="delete success";
-            $statusCode=200;
+            $message = "delete success";
+            $statusCode = 200;
         }
 
-        return response()-> json($message, $statusCode);
+        return response()->json($message, $statusCode);
     }
 
-   public function showTest($id){
-       $test=DB::table('quizzes')
-       ->join('categories','quizzes.category_id','=','categories.id')
-       ->select('quizzes.*','categories.name')
-       ->where('quizzes.category_id','LIKE',$id)
-       ->get();
+    public function showTest($id)
+    {
+        $test = DB::table('quizzes')
+            ->join('categories', 'quizzes.category_id', '=', 'categories.id')
+            ->select('quizzes.*', 'categories.name')
+            ->where('quizzes.category_id', 'LIKE', $id)
+            ->get();
 
-       return response()->json($test);
-   }
+        return response()->json($test);
+    }
+
+    public function showQuizByCategoryId($id)
+    {
+        $quizzes = DB::table('quizzes')->where('category_id', '=', $id)->get();
+        return response()->json($quizzes, 200);
+    }
+
+    public function searchByCategory($key)
+    {
+        $quizzes = DB::table('quizzes')->join('categories', 'quizzes.category_id', '=', 'categories.id')
+            ->where('categories.name', 'LIKE', '%' . $key . '%')
+            ->select('quizzes.*','categories.name')
+            ->get();
+        return response()->json($quizzes, 200);
+    }
 }

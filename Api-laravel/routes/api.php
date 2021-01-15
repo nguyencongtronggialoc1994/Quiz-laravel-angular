@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 
 use App\Http\Controllers\QuizController;
 
+use App\Http\Controllers\ResultController;
 use App\Http\Controllers\RoleUserController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -34,7 +35,7 @@ Route::middleware('jwt.verify')->group(function () {
     Route::get('users', [UserController::class, 'index']);
     Route::get('users/{id}', [UserController::class, 'show']);
     Route::get('users/getId/{key}', [UserController::class, 'getIdByEmail']);
-//    Route::get('users/getId/{key}', [UserController::class, 'getIdByEmail']);
+
     Route::get('users/role/{email}', [UserController::class, 'getRole']);
 
     Route::put('role-user/{id}', [RoleUserController::class, 'update']);
@@ -54,12 +55,19 @@ Route::middleware('jwt.verify')->group(function () {
         Route::get('/{id}', [QuizController::class, 'show']);
         Route::put('/{id}', [QuizController::class, 'update']);
         Route::delete('/{id}', [QuizController::class, 'destroy']);
+        Route::get('/quizzes/showByCategoryId/{id}', [QuizController::class, 'showQuizByCategoryId']);
+        Route::get('/search/{key}', [QuizController::class, 'searchByCategory']);
 
     });
     Route::prefix('test')->group(function () {
-        Route::get('/{id}',[QuizController::class,'showTest']);
+        Route::get('/{id}', [QuizController::class, 'showTest']);
     });
-
+    //results
+    Route::prefix('results')->group(function () {
+        Route::get('/', [ResultController::class, 'index']);
+        Route::post('/', [ResultController::class, 'store']);
+        Route::delete('/{id}', [ResultController::class, 'delete']);
+    });
 });
 
 

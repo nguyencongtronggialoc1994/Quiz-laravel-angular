@@ -50,7 +50,6 @@ export class LoginComponent implements OnInit {
   getIdByEmail() {
     this.userService.getIdByEmail(this.email).subscribe(data => {
       localStorage.setItem('idUser',data);
-      // console.log(localStorage.getItem('idUser'));
     });
   }
 
