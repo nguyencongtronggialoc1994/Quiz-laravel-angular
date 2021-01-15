@@ -13,6 +13,10 @@ import {Routes, RouterModule} from '@angular/router';
 import {ExamComponent} from './test/exam/exam.component';
 import {TakeTestComponent} from './test/take-test/take-test.component';
 import {SidebarComponent} from "./sidebar/sidebar.component";
+
+import { ResultService } from './test/result.service';
+import { ShowResultComponent } from './test/show-result/show-result.component';
+
 import {UserListComponent} from "./user/user-list/user-list.component";
 import {ChangePasswordComponent} from "./user/change-password/change-password.component";
 import {DeleteUserComponent} from "./user/delete-user/delete-user.component";
@@ -20,6 +24,7 @@ import {UserDetailComponent} from "./user/user-detail/user-detail.component";
 import {ResultsListComponent} from "./result-backend/results-list/results-list.component";
 import {DeleteResultComponent} from "./result-backend/delete-result/delete-result.component";
 import {CategoryDetailComponent} from "./category/category-detail/category-detail.component";
+
 
 const routes: Routes = [
   {path: '', component: SidebarComponent},
@@ -52,7 +57,7 @@ const routes: Routes = [
   //
   {path: 'exam', component: ExamComponent},
   {path: 'test/:id', component: TakeTestComponent},
-
+  {path:'results/:id', component: ShowResultComponent}
 
 ];
 

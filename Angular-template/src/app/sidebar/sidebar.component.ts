@@ -24,7 +24,7 @@ export class SidebarComponent implements OnInit {
   }
 
   checkLogin() {
-    return !!localStorage.getItem('AccessToken');
+    return localStorage.getItem('AccessToken');
   }
 
   checkAdmin() {

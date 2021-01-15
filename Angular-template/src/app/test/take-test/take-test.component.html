@@ -18,18 +18,19 @@
                                 <td class="text-left">Câu trả lời</td>
 
                                 <td class="text-left">
-                                    <div class="form-check"><input type="radio" name="{{ quiz.id }}" id="option1" class="form-check-input" value="{{ quiz.option1 }}">
-                                        <label for="option1" class="form-check-label">
+                                    <div class="form-check">
+                                        <input (click)="correctAnswer( quiz.option1, quiz.id)" type="radio" name="{{ quiz.id }} " id="option1 " class="form-check-input " value="{{ quiz.option1 }} ">
+                                        <label for="option1 " class="form-check-label ">
                             {{ quiz.option1 }}
                         </label>
                                     </div>
-                                    <div class="form-check"><input type="radio" name="{{ quiz.id }}" id="option2" class="form-check-input" value="{{ quiz.option2 }}"> <label for="option2" class="form-check-label">
+                                    <div class="form-check "><input (click)="correctAnswer( quiz.option2, quiz.id)" type="radio" name="{{ quiz.id }} " id="option2 " class="form-check-input " value="{{ quiz.option2 }} "> <label for="option2 " class="form-check-label ">
                             {{ quiz.option2 }}
                         </label></div>
-                                    <div class="form-check"><input type="radio" name="{{ quiz.id }}" id="option3" class="form-check-input" value="{{ quiz.option3 }}"> <label for="option3" class="form-check-label">
+                                    <div class="form-check "><input (click)="correctAnswer( quiz.option3, quiz.id)" type="radio" name="{{ quiz.id }} " id="option3 " class="form-check-input " value="{{ quiz.option3 }} "> <label for="option3 " class="form-check-label ">
                               {{ quiz.option3 }}
                         </label></div>
-                                    <div class="form-check"><input type="radio" name="{{ quiz.id }}" id="option4" class="form-check-input" value="{{ quiz.option4 }}"> <label for="option4" class="form-check-label">
+                                    <div class="form-check "><input (click)="correctAnswer( quiz.option4, quiz.id)" type="radio" name="{{ quiz.id }} " id="option4 " class="form-check-input " value="{{ quiz.option4 }} "> <label for="option4 " class="form-check-label ">
                               {{ quiz.option4 }}
                         </label></div>
                                 </td>
@@ -40,6 +41,7 @@
                     </table>
 
                 </div>
+                <div><button class="btn btn-outline-primary " (click)="onSubmit()">Nộp bài</button></div>
             </form>
         </div>
     </div>
