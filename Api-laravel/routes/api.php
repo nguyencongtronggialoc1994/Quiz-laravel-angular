@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 
 use App\Http\Controllers\QuizController;
 
+use App\Http\Controllers\ResultController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+
 
 Route::post('login', [UserController::class, 'authenticate']);
 Route::post('register', [UserController::class, 'register']);
@@ -50,6 +53,13 @@ Route::middleware('jwt.verify')->group(function () {
     });
     Route::prefix('test')->group(function () {
         Route::get('/{id}',[QuizController::class,'showTest']);
+    });
+
+    //results
+    Route::prefix('results')->group(function () {
+        Route::post('/', [ResultController::class, 'store']);
+        Route::get('/', [ResultController::class, 'index']);
+        Route::delete('/{id}', [ResultController::class, 'delete']);
     });
 
 });

@@ -47,8 +47,8 @@ export class LoginComponent implements OnInit {
   }
 
   getIdByEmail() {
-    this.userService.getIdByEmail(this.email).subscribe((data) => {
-      this.id = data;
+    this.userService.getIdByEmail(this.email).subscribe(data => {
+      localStorage.setItem('idUser',data);
     });
   }
 
