@@ -20,6 +20,7 @@ import {UserDetailComponent} from "./user/user-detail/user-detail.component";
 import {ResultsListComponent} from "./result-backend/results-list/results-list.component";
 import {DeleteResultComponent} from "./result-backend/delete-result/delete-result.component";
 import {CategoryDetailComponent} from "./category/category-detail/category-detail.component";
+import {HomeComponent} from "./home/home.component";
 
 const routes: Routes = [
   {path: '', component: SidebarComponent},
@@ -41,6 +42,8 @@ const routes: Routes = [
   {path: 'category-detail/:id', component: CategoryDetailComponent},
   {path: 'update-category/:id', component: UpdateCategoryComponent},
   {path: 'delete-category/:id', component: DeleteCategoryComponent},
+
+  {path: 'home', component: HomeComponent},
 
 
   {path: 'exam', component: ExamComponent},
