@@ -13,6 +13,8 @@ import {Routes, RouterModule} from '@angular/router';
 import {ExamComponent} from './test/exam/exam.component';
 import {TakeTestComponent} from './test/take-test/take-test.component';
 import {SidebarComponent} from "./sidebar/sidebar.component";
+import { ResultService } from './test/result.service';
+import { ShowResultComponent } from './test/show-result/show-result.component';
 
 const routes: Routes = [
 
@@ -27,7 +29,8 @@ const routes: Routes = [
   { path: 'update-category/:id', component: UpdateCategoryComponent },
   { path: 'delete-category/:id', component: DeleteCategoryComponent },
   {path: 'exam', component:ExamComponent},
-  {path:'test/:id', component:TakeTestComponent}
+  {path:'test/:id', component:TakeTestComponent},
+  {path:'results/:id', component: ShowResultComponent}
 
 ];
 

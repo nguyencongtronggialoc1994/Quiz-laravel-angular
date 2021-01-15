@@ -60,6 +60,7 @@ Route::middleware('jwt.verify')->group(function () {
         Route::post('/', [ResultController::class, 'store']);
         Route::get('/', [ResultController::class, 'index']);
         Route::delete('/{id}', [ResultController::class, 'delete']);
+        Route::get('/{id}', [ResultController::class, 'showResultFindId']);
     });
 
 });

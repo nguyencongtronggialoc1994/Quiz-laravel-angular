@@ -37,7 +37,7 @@ export class DeleteQuizComponent implements OnInit {
         this.categoryService
           .getCategory(data.category_id)
           .subscribe((value) => {
-            // console.log(1);
+           
             this.category = value;
           });
       },
