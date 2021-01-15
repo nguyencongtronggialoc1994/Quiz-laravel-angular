@@ -13,7 +13,7 @@ import {Observable} from 'rxjs';
 export class LoginComponent implements OnInit {
   email!: string;
   password!: string;
-  id!: number;
+  // id!: number;
 
   submitted: boolean = false;
   hide = true;
@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
       'Thông báo'
     );
   }
-  showToasterError(){
+
+  showToasterError() {
     this.notificationService.showError(
       'Đăng nhập thất bại Tài khoản hoặc mật khẩu không đúng !!',
       'thông báo'
@@ -54,9 +55,11 @@ export class LoginComponent implements OnInit {
 
   getRole() {
     this.userService.getRole(this.email).subscribe((data) => {
-      localStorage.setItem('role', data.name);
+      localStorage.setItem('role', data.roleName);
+      localStorage.setItem('name', data.name);
     });
   }
+
 
   login() {
     this.userService.login(this.email, this.password).subscribe(data => {
@@ -64,18 +67,16 @@ export class LoginComponent implements OnInit {
       this.showToasterSuccess();
       this.getIdByEmail();
       this.getRole();
-      this.router.navigate(['quizzes']);
+      this.router.navigate(['']);
 
     }, error => this.showToasterError())
   }
 
-  // goToChangePassword() {
-  //   this.router.navigate(['changePassword', this.id]);
-  //   // console.log(this.id);
-  // }
-  goToHome(){
+
+  goToHome() {
     this.router.navigate(['/']);
   }
+
   goToRegister() {
     this.router.navigate(['/register']);
   }

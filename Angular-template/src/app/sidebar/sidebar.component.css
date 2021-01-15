@@ -7,6 +7,21 @@ li{
 li:hover{
   background-color: #45597b;
 }
+.btn_logout{
+  width: 100px!important;
+}
+.btn_login_change_pass{
+  background-color: transparent;
+  border-radius: 10px;
+  color: #a0aec0;
+  width: 70%!important;
+}
+.btn_login_change_pass:hover{
+  background-color: #45597b;
+}
+.list_span{
+  font-size: 19px;
+}
 @keyframes swing {
     0% {
         transform: rotate(0deg);

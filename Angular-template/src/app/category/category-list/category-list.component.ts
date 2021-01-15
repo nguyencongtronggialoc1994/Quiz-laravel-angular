@@ -18,23 +18,28 @@ export class CategoryListComponent implements OnInit {
 
   categories!: Observable<Category[]>;
 
-  deleteCategory(id: string) {
+  deleteCategory(id: number) {
     this.router.navigate(['delete-category', id]);
 
   }
-  isEmptyToken(){
-    if (localStorage.getItem('AccessToken')&&localStorage.getItem('role')=='admin')
+
+  isEmptyToken() {
+    if (localStorage.getItem('AccessToken') && localStorage.getItem('role') == 'admin')
       return true;
     else return false;
   }
+
   add() {
     this.router.navigate(['category-add']);
   }
 
-  updateCategory(id: string) {
+  updateCategory(id: number) {
     this.router.navigate(['update-category', id]);
   }
 
+  categoryDetail(id: number) {
+    this.router.navigate(['category-detail',id])
+  }
 
   ngOnInit() {
     this.reloadData();

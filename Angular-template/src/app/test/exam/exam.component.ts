@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { Category } from 'src/app/category/Category';
-import { CategoryService } from '../../category/category.service';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {Observable} from 'rxjs';
+import {Category} from 'src/app/category/Category';
+import {CategoryService} from '../../category/category.service';
 
 @Component({
   selector: 'app-exam',
@@ -10,23 +10,26 @@ import { CategoryService } from '../../category/category.service';
   styleUrls: ['./exam.component.css']
 })
 export class ExamComponent implements OnInit {
-exams!: Observable<Category[]>;
+  exams!: Observable<Category[]>;
+
   constructor(
     private router: Router,
     private categoriesService: CategoryService
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.reloadData();
   }
 
-  reloadData(){
+  reloadData() {
     this.exams = this.categoriesService.getCategoryList();
     console.log(this.exams)
   }
 
-  gotoTest(id: any){
-this.router.navigate(['test',id])
+  gotoTest(id: any) {
+    console.log(id);
+    this.router.navigate(['test', id])
   }
 
 }

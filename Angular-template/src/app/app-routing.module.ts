@@ -13,23 +13,50 @@ import {Routes, RouterModule} from '@angular/router';
 import {ExamComponent} from './test/exam/exam.component';
 import {TakeTestComponent} from './test/take-test/take-test.component';
 import {SidebarComponent} from "./sidebar/sidebar.component";
+
 import { ResultService } from './test/result.service';
 import { ShowResultComponent } from './test/show-result/show-result.component';
 
-const routes: Routes = [
+import {UserListComponent} from "./user/user-list/user-list.component";
+import {ChangePasswordComponent} from "./user/change-password/change-password.component";
+import {DeleteUserComponent} from "./user/delete-user/delete-user.component";
+import {UserDetailComponent} from "./user/user-detail/user-detail.component";
+import {ResultsListComponent} from "./result-backend/results-list/results-list.component";
+import {DeleteResultComponent} from "./result-backend/delete-result/delete-result.component";
+import {CategoryDetailComponent} from "./category/category-detail/category-detail.component";
 
-  { path: '', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'quizzes', component: QuizzesListComponent },
-  { path: 'create-quiz', component: CreateQuizComponent },
-  { path: 'delete-quiz/:id', component: DeleteQuizComponent },
-  { path: 'update-quiz/:id', component: UpdateQuizComponent },
-  { path: 'category-add', component: CreateCategoryComponent },
-  { path: 'category-list', component: CategoryListComponent },
-  { path: 'update-category/:id', component: UpdateCategoryComponent },
-  { path: 'delete-category/:id', component: DeleteCategoryComponent },
-  {path: 'exam', component:ExamComponent},
-  {path:'test/:id', component:TakeTestComponent},
+
+const routes: Routes = [
+  {path: '', component: SidebarComponent},
+  //user
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'user-list', component: UserListComponent},
+  {path: 'user-detail/:id', component: UserDetailComponent},
+  {path: 'delete-user/:id', component: DeleteUserComponent},
+  {path: 'changePassword', component: ChangePasswordComponent},
+  //quiz
+  {path: 'quizzes', component: QuizzesListComponent},
+  {path: 'create-quiz', component: CreateQuizComponent},
+  {path: 'delete-quiz/:id', component: DeleteQuizComponent},
+  {path: 'update-quiz/:id', component: UpdateQuizComponent},
+  //category
+  {path: 'category-add', component: CreateCategoryComponent},
+  {path: 'category-list', component: CategoryListComponent},
+  {path: 'category-detail/:id', component: CategoryDetailComponent},
+  {path: 'update-category/:id', component: UpdateCategoryComponent},
+  {path: 'delete-category/:id', component: DeleteCategoryComponent},
+
+
+  {path: 'exam', component: ExamComponent},
+  {path: 'test', component: TakeTestComponent},
+
+  //result
+  {path:'result-list',component: ResultsListComponent},
+  {path:'delete-result/:id',component: DeleteResultComponent},
+  //
+  {path: 'exam', component: ExamComponent},
+  {path: 'test/:id', component: TakeTestComponent},
   {path:'results/:id', component: ShowResultComponent}
 
 ];

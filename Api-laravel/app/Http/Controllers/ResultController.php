@@ -13,13 +13,14 @@ class ResultController extends Controller
         $results = DB::table('users')
             ->join('results', 'users.id', '=', 'results.user_id')
             ->join('categories', 'results.category_id', '=', 'categories.id')
-            ->select('users.email', 'results.*','categories.name as categoryName')->get();
+
+            ->select('users.email', 'results.*', 'categories.name as categoryName')->get();
+
         return response()->json($results, 200);
     }
 
     public function store(Request $request)
     {
-
         $result = new Result();
         $result->fill($request->all());
 
@@ -43,16 +44,18 @@ class ResultController extends Controller
         return response()->json($message, $statusCode);
     }
 
+
     public function showResultFindId($id){
-$result=DB::table('users')
+            $result=DB::table('users')
             ->join('results', 'users.id', '=', 'results.user_id')
             ->join('categories', 'results.category_id', '=', 'categories.id')
             ->select('users.name as userName', 'results.point','categories.name as categoryName')
             -> where('results.id','LIKE',$id)
             ->orderBy('results.id','desc')
             ->first();
-            // ->get();
+            
 
             return response()->json($result,200);
     }
+
 }

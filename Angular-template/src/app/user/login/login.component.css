@@ -1,26 +1,44 @@
 .loginButton {
-    width: 21rem;
+  width: 21rem;
 }
 
 .loginButtonGoogle {
-    width: 21rem;
+  width: 21rem;
 }
 
 body {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
 .btn_blue {
-    background-color: blueviolet;
-    /*border-radius: 20px;*/
+  background-color: blueviolet;
+  /*border-radius: 20px;*/
 }
 
 .example-form {
-    min-width: 250px;
-    max-width: 500px;
-    width: 100%;
+  min-width: 250px;
+  max-width: 500px;
+  width: 100%;
 }
 
 .example-full-width {
-    width: 100%;
+  width: 100%;
+}
+.card_login{
+  margin-top: 10px;
+}
+.div_login{
+  border-radius: 10px;
+  background-color: #e2f8e6 !important;
+  color: black!important;
+}
+.input_text{
+  font-size: 20px;
+}
+.quiz_image{
+  width: 100%;
+  height: 30%;
+}
+.login_body{
+  margin-top: -2%;
 }

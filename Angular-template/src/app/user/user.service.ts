@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {observableToBeFn} from "rxjs/internal/testing/TestScheduler";
+import {hasErrors} from "@angular/compiler-cli/ngcc/src/packages/transformer";
 
 @Injectable({
   providedIn: 'root'
@@ -25,18 +27,65 @@ export class UserService {
     return this.http.post(`http://127.0.0.1:8000/api/register`, user);
   }
 
-  changePassword(id: number, value: any): Observable<Object> {
-    return this.http.put(`http://127.0.0.1:8000/api/users/${id}`, value);
+  changePassword(id: string | null, oldPassword: string, newPassword: string, confirmPassword: string): Observable<Object> {
+    const data = {
+      'oldPassword': oldPassword,
+      'newPassword': newPassword,
+      'confirmPassword': confirmPassword
+    }
+    const auth_token = localStorage.getItem('AccessToken');
+    const reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.put(`http://127.0.0.1:8000/api/users/${id}`, data, {headers: reqHeader});
   }
 
   getUser(id: number): Observable<any> {
-    return this.http.get(`http://127.0.0.1:8000/api/users/show/${id}`);
+    const auth_token = localStorage.getItem('AccessToken');
+    const reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.get(`http://127.0.0.1:8000/api/users/${id}`, {headers: reqHeader});
   }
 
   getIdByEmail(email: string): Observable<any> {
-    return this.http.get(`http://127.0.0.1:8000/api/users/getId/${email}`);
+    const auth_token = localStorage.getItem('AccessToken');
+    const reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.get(`http://127.0.0.1:8000/api/users/getId/${email}`, {headers: reqHeader});
   }
+
   getRole(email: string): Observable<any> {
-    return this.http.get(`http://127.0.0.1:8000/api/users/role/${email}`)
+    const auth_token = localStorage.getItem('AccessToken');
+    const reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.get(`http://127.0.0.1:8000/api/users/role/${email}`, {headers: reqHeader});
   }
+
+  getUserList(): Observable<any> {
+    const auth_token = localStorage.getItem('AccessToken');
+    const reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.get(`http://127.0.0.1:8000/api/users`, {headers: reqHeader});
+  }
+
+  updateRole(id: number, role_id: number): Observable<any> {
+    const data = {'role_id': role_id};
+    const auth_token = localStorage.getItem('AccessToken');
+    const reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.put(`http://127.0.0.1:8000/api/role-user/${id}`, data, {headers: reqHeader});
+  }
+
+
 }
