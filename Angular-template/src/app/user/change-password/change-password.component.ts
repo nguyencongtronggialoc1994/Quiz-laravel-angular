@@ -14,6 +14,8 @@ export class ChangePasswordComponent implements OnInit {
   id!: string | null;
   hide!: boolean;
   hide2!: boolean;
+  private router: any;
+  hide3!: boolean;
 
   constructor(
     private userService: UserService,
@@ -40,5 +42,8 @@ export class ChangePasswordComponent implements OnInit {
         this.showToasterSuccess()
       }, error => this.showToasterError()
     )
+  }
+  goToHome() {
+    this.router.navigate(['/']);
   }
 }
