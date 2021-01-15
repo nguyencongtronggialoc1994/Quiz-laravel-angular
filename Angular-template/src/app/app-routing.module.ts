@@ -17,6 +17,9 @@ import {UserListComponent} from "./user/user-list/user-list.component";
 import {ChangePasswordComponent} from "./user/change-password/change-password.component";
 import {DeleteUserComponent} from "./user/delete-user/delete-user.component";
 import {UserDetailComponent} from "./user/user-detail/user-detail.component";
+import {ResultsListComponent} from "./result-backend/results-list/results-list.component";
+import {DeleteResultComponent} from "./result-backend/delete-result/delete-result.component";
+import {CategoryDetailComponent} from "./category/category-detail/category-detail.component";
 
 const routes: Routes = [
   {path: '', component: SidebarComponent},
@@ -35,9 +38,13 @@ const routes: Routes = [
   //category
   {path: 'category-add', component: CreateCategoryComponent},
   {path: 'category-list', component: CategoryListComponent},
+  {path: 'category-detail/:id', component: CategoryDetailComponent},
   {path: 'update-category/:id', component: UpdateCategoryComponent},
   {path: 'delete-category/:id', component: DeleteCategoryComponent},
-
+  //result
+  {path:'result-list',component: ResultsListComponent},
+  {path:'delete-result/:id',component: DeleteResultComponent},
+  //
   {path: 'exam', component: ExamComponent},
   {path: 'test/:id', component: TakeTestComponent},
 

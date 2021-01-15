@@ -11,6 +11,7 @@
         <a class="btn btn-success mb-3 ml-2" (click)="add()">Thêm mới câu hỏi</a>
       </div>
       <div class="table-responsive">
+        <app-search-category (data)="search($event)"></app-search-category>
         <table class="table table-bordered">
           <thead>
           <th>

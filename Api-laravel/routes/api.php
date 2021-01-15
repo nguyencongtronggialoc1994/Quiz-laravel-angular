@@ -54,6 +54,8 @@ Route::middleware('jwt.verify')->group(function () {
         Route::get('/{id}', [QuizController::class, 'show']);
         Route::put('/{id}', [QuizController::class, 'update']);
         Route::delete('/{id}', [QuizController::class, 'destroy']);
+        Route::get('/quizzes/showByCategoryId/{id}', [QuizController::class, 'showQuizByCategoryId']);
+        Route::get('/search/{key}', [QuizController::class, 'searchByCategory']);
 
     });
     Route::prefix('test')->group(function () {
