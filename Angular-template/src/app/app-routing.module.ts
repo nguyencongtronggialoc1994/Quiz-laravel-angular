@@ -24,6 +24,7 @@ import {UserDetailComponent} from "./user/user-detail/user-detail.component";
 import {ResultsListComponent} from "./result-backend/results-list/results-list.component";
 import {DeleteResultComponent} from "./result-backend/delete-result/delete-result.component";
 import {CategoryDetailComponent} from "./category/category-detail/category-detail.component";
+import { QuizDetailComponent } from './quiz/quiz-detail/quiz-detail.component';
 
 
 const routes: Routes = [
@@ -40,6 +41,7 @@ const routes: Routes = [
   {path: 'create-quiz', component: CreateQuizComponent},
   {path: 'delete-quiz/:id', component: DeleteQuizComponent},
   {path: 'update-quiz/:id', component: UpdateQuizComponent},
+  {path:'quiz-detail/:id', component:QuizDetailComponent},
   //category
   {path: 'category-add', component: CreateCategoryComponent},
   {path: 'category-list', component: CategoryListComponent},

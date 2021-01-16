@@ -9,13 +9,7 @@
         <div class="container" style="position: relative;top: 100px">
             <div class="card">
 
-                <div class="card-header">
-                    <div class="alert alert-danger">
-
-                        <h2 class="text-danger">Bạn có chắc chắn muốn xóa câu hỏi này</h2>
-                    </div>
-
-                </div>
+                <div class="card-header">Chi tiết câu hỏi</div>
                 <div class="card-body">
                     <div *ngIf="quiz">
                         <table class="table table-striped">
@@ -73,7 +67,7 @@
                         </table>
                     </div>
                     <div style="float: left;"><button (click)="quizzesList()" class="btn btn-outline-success">Quay lại danh sách</button></div>
-                    <div style="float: right"><button (click)="deleteQuiz(quiz.id)" class="btn btn-outline-danger ">Xóa</button></div>
+
 
 
                 </div>

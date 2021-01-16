@@ -48,4 +48,7 @@ export class QuizzesListComponent implements OnInit {
   add() {
     this.router.navigate(['create-quiz']);
   }
+  quizDetail(id:number){
+    this.router.navigate(['quiz-detail',id]);
+  }
 }
