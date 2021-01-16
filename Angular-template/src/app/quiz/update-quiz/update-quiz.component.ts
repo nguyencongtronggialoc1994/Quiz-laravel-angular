@@ -16,17 +16,16 @@ export class UpdateQuizComponent implements OnInit {
 
   id!: number;
   quiz!: Quiz;
-  categories!: Observable<Category[]>;
+
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               private quizService: QuizService,
-              private categoryService: CategoryService,
               private notificationService: NotificationService) {
   }
 
   ngOnInit(): void {
-    this.categories = this.categoryService.getCategoryList();
+
     this.quiz = new Quiz();
     this.id = this.route.snapshot.params['id'];
     this.quizService.getQuizzFindId(this.id)

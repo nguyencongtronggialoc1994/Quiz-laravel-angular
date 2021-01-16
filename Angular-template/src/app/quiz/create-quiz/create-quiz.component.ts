@@ -1,5 +1,4 @@
 import {NotificationService} from '../../notification.service';
-import {CategoryService} from '../../category/category.service';
 import {Category} from '../../category/Category';
 import {QuizService} from '../quiz.service';
 import {Quiz} from '../Quiz';
@@ -15,19 +14,16 @@ import {Router} from '@angular/router';
 export class CreateQuizComponent implements OnInit {
   quiz: Quiz = new Quiz();
   submited = false;
-  categories!: Observable<Category[]>;
 
   constructor(
     private quizService: QuizService,
     private router: Router,
-    private categoryService: CategoryService,
     private   notificationService: NotificationService
   ) {
   }
 
   ngOnInit(): void {
-    this.categories = this.categoryService.getCategoryList();
-    console.log(this.categories);
+
   }
 
   isEmptyToken() {
@@ -56,8 +52,10 @@ export class CreateQuizComponent implements OnInit {
   }
 
   save() {
+  console.log(this.quiz)
     this.quizService.createQuizz(this.quiz)
       .subscribe((data: any) => {
+        console.log(100)
           console.log(data);
           if (data[0] == '404') {
             this.showToasterError();

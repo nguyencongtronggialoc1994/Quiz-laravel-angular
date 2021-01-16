@@ -49,11 +49,11 @@ class ResultController extends Controller
             $result=DB::table('users')
             ->join('results', 'users.id', '=', 'results.user_id')
             ->join('categories', 'results.category_id', '=', 'categories.id')
-            ->select('users.name as userName', 'results.point','categories.name as categoryName')
+            ->select('users.name as userName', 'results.point','categories.name as categoryName','users.email')
             -> where('results.id','LIKE',$id)
             ->orderBy('results.id','desc')
             ->first();
-            
+
 
             return response()->json($result,200);
     }

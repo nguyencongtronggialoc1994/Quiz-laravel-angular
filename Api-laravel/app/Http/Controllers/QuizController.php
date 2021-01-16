@@ -17,10 +17,7 @@ class QuizController extends Controller
      */
     public function index()
     {
-        $quizzes = DB::table('quizzes')
-            ->join('categories', 'quizzes.category_id', '=', 'categories.id')
-            ->select('quizzes.*', 'categories.name')
-            ->get();
+        $quizzes = Quizzes::all();
 
         return response()->json($quizzes, 200);
     }
@@ -48,19 +45,17 @@ class QuizController extends Controller
         $quizzes = new Quizzes();
         $quizzes->fill($request->all());
 
-
         $option1 = $quizzes->option1;
         $option2 = $quizzes->option2;
         $option3 = $quizzes->option3;
         $option4 = $quizzes->option4;
-        $correctAnswer = $quizzes->correctAnswer;
-        if ($option1 == $option2 || $option1 == $option3 || $option1 == $option4 || $option2 == $option3 || $option2 == $option4 || $option3 == $option4) {
-            $statusCode = 404;
-        } else if ($correctAnswer !== $option1 && $correctAnswer !== $option2 && $correctAnswer !== $option3 && $correctAnswer !== $option4) {
+        if ($option1 == $option2 || $option1 == $option3 || $option1 == $option4 || $option2 == $option3 || $option2 == $option4 || $option3 == $option4)
+        {
             $statusCode = 404;
         } else {
-            $statusCode = 201;
             $quizzes->save();
+            $statusCode = 201;
+
         }
 
         if (!$quizzes) {
@@ -106,7 +101,7 @@ class QuizController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(QuizzesRequest $request, $id)
     {
         $quizzes = Quizzes::find($id);
         $quizzes->fill($request->all());
@@ -114,10 +109,8 @@ class QuizController extends Controller
         $option2 = $quizzes->option2;
         $option3 = $quizzes->option3;
         $option4 = $quizzes->option4;
-        $correctAnswer = $quizzes->correctAnswer;
+
         if ($option1 == $option2 || $option1 == $option3 || $option1 == $option4 || $option2 == $option3 || $option2 == $option4 || $option3 == $option4) {
-            $statusCode = 404;
-        } else if ($correctAnswer !== $option1 && $correctAnswer !== $option2 && $correctAnswer !== $option3 && $correctAnswer !== $option4) {
             $statusCode = 404;
         } else {
             $statusCode = 201;

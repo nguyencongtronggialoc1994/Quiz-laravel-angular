@@ -9,5 +9,5 @@ class Quizzes extends Model
 {
     use HasFactory;
     protected $table='quizzes';
-    protected $fillable=['text','option1','option2','option3','option4','correctAnswer','category_id'];
+    protected $fillable=['title','text','option1','option2','option3','option4','correctAnswer','category_id'];
 }

@@ -15,16 +15,22 @@
                     <div class="card-body">
                         <form #addQuiz="ngForm">
                             <div class="form-group">
-                                <label for="category_id">Đề thi</label>
-                                <select class="form-control" name="category_id" id="category_id" [(ngModel)]="quiz.category_id" #quizCategory="ngModel">
-                  <option *ngFor="let category of categories| async" value="{{category.id}}" >{{category.name}}</option>
-                </select>
-                            </div>
-                            <div class="form-group">
                                 <label>Câu hỏi</label>
                                 <div class="col-12-mb-5">
                                     <mat-form-field class="example-full-width">
-                                        <textarea matInput type="text" [(ngModel)]="quiz.text" name="name" required #quizName="ngModel" [class.is-invalid]="quizName.invalid && quizName.touched" placeholder="Tên câu hỏi "></textarea>
+                                        <textarea matInput type="text" [(ngModel)]="quiz.title" name="Title" required #quizTitle="ngModel" [class.is-invalid]="quizTitle.invalid && quizTitle.touched" placeholder="Tên câu hỏi "></textarea>
+                                    </mat-form-field>
+                                    <div *ngIf="quizTitle.errors && (quizTitle.valid || quizTitle.touched)">
+                                        <small class="text-danger" *ngIf="quizTitle.errors.required">Tên câu hỏi không được để trống</small>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label> Nội dung câu hỏi</label>
+                                <div class="col-12-mb-5">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput type="text" [(ngModel)]="quiz.text" name="name" required #quizName="ngModel" [class.is-invalid]="quizName.invalid && quizName.touched" placeholder="Nội dung câu hỏi "></textarea>
                                     </mat-form-field>
                                     <div *ngIf="quizName.errors && (quizName.valid || quizName.touched)">
                                         <small class="text-danger" *ngIf="quizName.errors.required">Tên câu hỏi không được để trống</small>
@@ -33,7 +39,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Đáp án 1 :     <input (click)="correctOption(quiz.option1)" type="checkbox" id="checkboxOption1" ><span>    Đáp án đúng</span></label>
+                                <label>Đáp án 1 :     <input (click)="correctOption(quiz.option1)" type="radio" name="options" id="checkboxOption1" ><span>    Đáp án đúng</span></label>
                                 <div class="col-12-mb-5">
                                     <mat-form-field class="example-full-width">
                                         <textarea matInput type="text" [(ngModel)]="quiz.option1" name="option1" required #quizoption1="ngModel" [class.is-invalid]="quizoption1.invalid && quizoption1.touched" placeholder="Đáp án 1 "></textarea>
@@ -44,7 +50,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Đáp án 2:     <input type="checkbox" (click)="correctOption(quiz.option2)" id="checkboxOption2" ><span>    Đáp án đúng</span></label>
+                                <label>Đáp án 2:     <input type="radio" name="options" (click)="correctOption(quiz.option2)" id="checkboxOption2" ><span>    Đáp án đúng</span></label>
                                 <div class="col-12-mb-5">
                                     <mat-form-field class="example-full-width">
                                         <textarea matInput type="text" [(ngModel)]="quiz.option2" name="option2" required #quizoption2="ngModel" [class.is-invalid]="quizoption2.invalid && quizoption2.touched" placeholder="Đáp án 2 "></textarea>
@@ -55,7 +61,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Đáp án 3:      <input (click)="correctOption(quiz.option3)" type="checkbox" id="checkboxOption3" ><span>    Đáp án đúng</span></label>
+                                <label>Đáp án 3:      <input (click)="correctOption(quiz.option3)" type="radio" name="options" id="checkboxOption3" ><span>    Đáp án đúng</span></label>
                                 <div class="col-12-mb-5">
                                     <mat-form-field class="example-full-width">
                                         <textarea matInput type="text" [(ngModel)]="quiz.option3" name="option3" required #quizoption3="ngModel" [class.is-invalid]="quizoption3.invalid && quizoption3.touched" placeholder="Đáp án 3 "></textarea>
@@ -66,7 +72,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Đáp án 4:      <input type="checkbox" (click)="correctOption(quiz.option4)" id="checkboxOption4" ><span>    Đáp án đúng</span></label>
+                                <label>Đáp án 4:      <input type="radio" name="options" (click)="correctOption(quiz.option4)" id="checkboxOption4" ><span>    Đáp án đúng</span></label>
                                 <div class="col-12-mb-5">
                                     <mat-form-field class="example-full-width">
                                         <textarea matInput type="text" [(ngModel)]="quiz.option4" name="option4" required #quizoption4="ngModel" [class.is-invalid]="quizoption4.invalid && quizoption4.touched" placeholder="Đáp án 4 "></textarea>
