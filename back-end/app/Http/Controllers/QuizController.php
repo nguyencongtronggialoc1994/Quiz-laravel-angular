@@ -10,38 +10,21 @@ use Illuminate\Support\Facades\DB;
 
 class QuizController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        $quizzes = DB::table('quizzes')
-            ->join('categories', 'quizzes.category_id', '=', 'categories.id')
-            ->select('quizzes.*', 'categories.name')
-            ->get();
-
+        $quizzes = Quizzes::all();
         return response()->json($quizzes, 200);
     }
 
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(QuizzesRequest $request)
     {
 
@@ -71,12 +54,7 @@ class QuizController extends Controller
         return response()->json($data);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         $quizzes = Quizzes::find($id);
@@ -88,24 +66,13 @@ class QuizController extends Controller
         return response()->json($quizzes, $statusCode);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         $quizzes = Quizzes::find($id);
@@ -159,7 +126,10 @@ class QuizController extends Controller
 
     public function showQuizByCategoryId($id)
     {
-        $quizzes = DB::table('quizzes')->where('category_id', '=', $id)->get();
+        $quizzes = DB::table('quizzes')
+            ->join('category_quiz','quizzes.id','=','category_quiz.quiz_id')
+            ->join('categories','category_quiz.category_id','=','categories.id')
+            ->where('categories.id','=',$id)->select('quizzes.*')->get();
         return response()->json($quizzes, 200);
     }
 

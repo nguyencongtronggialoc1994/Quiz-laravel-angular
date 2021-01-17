@@ -27,5 +27,7 @@ id!: number;
       this.result=data
     })
   }
-
+ goToExam(){
+    this.router.navigate(['/exam']);
+ }
 }

@@ -1,3 +1,4 @@
+import { AddQuizToCategoryComponent } from './category/add-quiz-to-category/add-quiz-to-category.component';
 import {DeleteCategoryComponent} from './category/delete-category/delete-category.component';
 import {UpdateCategoryComponent} from './category/update-category/update-category.component';
 import {CategoryListComponent} from './category/category-list/category-list.component';
@@ -24,10 +25,11 @@ import {UserDetailComponent} from "./user/user-detail/user-detail.component";
 import {ResultsListComponent} from "./result-backend/results-list/results-list.component";
 import {DeleteResultComponent} from "./result-backend/delete-result/delete-result.component";
 import {CategoryDetailComponent} from "./category/category-detail/category-detail.component";
+import {HomeComponent} from "./home/home.component";
 
 
 const routes: Routes = [
-  {path: '', component: SidebarComponent},
+  {path: '', component: HomeComponent},
   //user
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
@@ -46,6 +48,7 @@ const routes: Routes = [
   {path: 'category-detail/:id', component: CategoryDetailComponent},
   {path: 'update-category/:id', component: UpdateCategoryComponent},
   {path: 'delete-category/:id', component: DeleteCategoryComponent},
+  {path: 'add-quiz-to-category/:id', component: AddQuizToCategoryComponent},
 
 
   {path: 'exam', component: ExamComponent},

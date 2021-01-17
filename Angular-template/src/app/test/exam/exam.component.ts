@@ -22,6 +22,12 @@ export class ExamComponent implements OnInit {
     this.reloadData();
   }
 
+  isEmptyToken() {
+    if (localStorage.getItem('AccessToken'))
+      return true;
+    else return false;
+  }
+
   reloadData() {
     this.exams = this.categoriesService.getCategoryList();
     console.log(this.exams)

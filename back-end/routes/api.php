@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\CategoryController;
 
+use App\Http\Controllers\CategoryQuizController;
 use App\Http\Controllers\QuizController;
 
 use App\Http\Controllers\ResultController;
@@ -60,7 +61,7 @@ Route::middleware('jwt.verify')->group(function () {
         Route::get('/{id}', [QuizController::class, 'show']);
         Route::put('/{id}', [QuizController::class, 'update']);
         Route::delete('/{id}', [QuizController::class, 'destroy']);
-        Route::get('/quizzes/showByCategoryId/{id}', [QuizController::class, 'showQuizByCategoryId']);
+        Route::get('/showByCategoryId/{id}', [QuizController::class, 'showQuizByCategoryId']);
         Route::get('/search/{key}', [QuizController::class, 'searchByCategory']);
 
     });
@@ -74,6 +75,12 @@ Route::middleware('jwt.verify')->group(function () {
         Route::get('/', [ResultController::class, 'index']);
         Route::delete('/{id}', [ResultController::class, 'delete']);
         Route::get('/{id}', [ResultController::class, 'showResultFindId']);
+    });
+    //categoryQuiz
+    Route::prefix('categoryQuiz')->group(function (){
+        Route::post('/',[CategoryQuizController::class,'store']);
+        Route::delete('/{quiz_id}/{category_id}',[CategoryQuizController::class,'delete']);
+
     });
 
 

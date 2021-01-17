@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
 
   getIdByEmail() {
     this.userService.getIdByEmail(this.email).subscribe(data => {
-      localStorage.setItem('idUser',data);
+      localStorage.setItem('idUser', data);
     });
   }
 
@@ -67,7 +67,13 @@ export class LoginComponent implements OnInit {
       this.showToasterSuccess();
       this.getIdByEmail();
       this.getRole();
-      this.router.navigate(['']);
+      if (localStorage.getItem('role') == 'user') {
+        this.router.navigate(['/exam']);
+      }
+      if (localStorage.getItem('role') == 'admin') {
+        this.router.navigate(['category-list']);
+      }
+
 
     }, error => this.showToasterError())
   }

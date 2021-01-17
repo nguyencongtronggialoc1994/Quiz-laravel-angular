@@ -20,15 +20,15 @@ import {TestService} from '../test.service';
 })
 export class TakeTestComponent implements OnInit {
 
-quizzes!: Quiz[];
-id!: number;
-user_id!: number;
-quiz!: Quiz;
-point: number = 0;
-array : any = [];
-index!: number;
-item!: any[];
-result: Result= new Result();
+  quizzes!: Quiz[];
+  id!: number;
+  user_id!: number;
+  quiz!: Quiz;
+  point: number = 0;
+  array : any = [];
+  index!: number;
+  item!: any[];
+  result: Result= new Result();
   constructor(
     private testService: TestService,
     private route: ActivatedRoute,
@@ -41,51 +41,49 @@ result: Result= new Result();
 
     this.id=this.route.snapshot.params['id'];
     this.testService.getShowTestFindId(this.id)
-    .subscribe((data: any)=>{
-      this.quizzes=data;
-    })
+      .subscribe((data: any)=>{
+        this.quizzes=data;
+      })
 
   }
- correctAnswer(value: string, id: any){
+  correctAnswer(value: string, id: any){
 
-   this.array[id]=value;
+    this.array[id]=value;
 
-   localStorage.setItem('answer',JSON.stringify(this.array));
-}
+    localStorage.setItem('answer',JSON.stringify(this.array));
+  }
 
-onSubmit(){
-this.testService.getShowTestFindId(this.id).subscribe(
-  data=>{
+  onSubmit(){
+    this.testService.getShowTestFindId(this.id).subscribe(
+      data=>{
 
-    this.item=JSON.parse(localStorage.getItem('answer')!);
+        this.item=JSON.parse(localStorage.getItem('answer')!);
 
-    for(let i=0;i<this.item.length;i++){
+        for(let i=0;i<this.item.length;i++){
 
-      if(this.item[i]!= null){
+          if(this.item[i]!= null){
             if(this.item[i]==data[data.findIndex((quiz: { id: number; }) => quiz.id ==i)].correctAnswer){
-                this.point+=1;
+              this.point+=1;
             }
-      }
-    }
+          }
+        }
 
-this.result.point=this.point;
-this.result.category_id=this.id;
-this.result.user_id= parseInt(localStorage.getItem('idUser')!);
-console.log(this.result)
-    this.resultService.addResult(this.result).subscribe(
-      (value: any)=>{
-        console.log(value.id);
+        this.result.point=this.point;
+        this.result.category_id=this.id;
+        this.result.user_id= parseInt(localStorage.getItem('idUser')!);
+        console.log(this.result)
+        this.resultService.addResult(this.result).subscribe(
+          (value: any)=>{
+            console.log(value.id);
 
-this.goToShowResult(value.id);
+            this.goToShowResult(value.id);
+          }
+        )
       }
-    )
+    );
   }
-);
-}
 
-goToShowResult(id: number){
-  this.router.navigate(['results', id])
+  goToShowResult(id: number){
+    this.router.navigate(['results', id])
+  }
 }
-}
-
-

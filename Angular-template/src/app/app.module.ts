@@ -76,6 +76,8 @@ import { ResultsListComponent } from './result-backend/results-list/results-list
 import { DeleteResultComponent } from './result-backend/delete-result/delete-result.component';
 import { CategoryDetailComponent } from './category/category-detail/category-detail.component';
 import { SearchCategoryComponent } from './category/search-category/search-category.component';
+import { HomeComponent } from './home/home.component';
+import { AddQuizToCategoryComponent } from './category/add-quiz-to-category/add-quiz-to-category.component';
 
 
 
@@ -110,7 +112,9 @@ import { SearchCategoryComponent } from './category/search-category/search-categ
     ResultsListComponent,
     DeleteResultComponent,
     CategoryDetailComponent,
-    SearchCategoryComponent
+    SearchCategoryComponent,
+    HomeComponent,
+    AddQuizToCategoryComponent
 
 
   ],
