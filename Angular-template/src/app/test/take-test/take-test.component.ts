@@ -1,9 +1,15 @@
-import { Pipe ,PipeTransform} from '@angular/core';
-import {Component, OnInit,OnDestroy} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {timer, Subscription} from "rxjs";
 
-import {Quiz} from '../../quiz/Quiz';
+
+import { Observable } from 'rxjs';
+import { QuizService } from 'src/app/quiz/quiz.service';
+
+import { Quiz } from '../../quiz/Quiz';
+import { ResultService } from '../result.service';
+import { Result } from '../results';
+
+
 
 import {TestService} from '../test.service';
 
@@ -12,54 +18,72 @@ import {TestService} from '../test.service';
   templateUrl: './take-test.component.html',
   styleUrls: ['./take-test.component.css']
 })
-export class TakeTestComponent implements OnInit,OnDestroy {
+export class TakeTestComponent implements OnInit {
+
   quizzes!: Quiz[];
   id!: number;
-//
-  countDown!: Subscription | null;
-  counter = 1800;
-  tick = 1000;
-
+  user_id!: number;
+  quiz!: Quiz;
+  point: number = 0;
+  array : any = [];
+  index!: number;
+  item!: any[];
+  result: Result= new Result();
   constructor(
     private testService: TestService,
     private route: ActivatedRoute,
-    private router: Router
-  ) {
-  }
-  ngOnDestroy(){
-    this.countDown=null;
-  }
+    private router: Router,
+    private quizService: QuizService,
+    private resultService: ResultService
+  ) { }
+
   ngOnInit(): void {
-    //
-    this.countDown = timer(0, this.tick).subscribe(() => --this.counter);
 
-    //
-    this.id = this.route.snapshot.params['id'];
+    this.id=this.route.snapshot.params['id'];
     this.testService.getShowTestFindId(this.id)
-      .subscribe((data: any) => {
-        // console.log(data[0]);
-        this.quizzes = data;
-        console.log(this.quizzes)
-
+      .subscribe((data: any)=>{
+        this.quizzes=data;
       })
-    // this.displayTimeElapsed();
+
+  }
+  correctAnswer(value: string, id: any){
+
+    this.array[id]=value;
+
+    localStorage.setItem('answer',JSON.stringify(this.array));
   }
 
+  onSubmit(){
+    this.testService.getShowTestFindId(this.id).subscribe(
+      data=>{
 
-}
+        this.item=JSON.parse(localStorage.getItem('answer')!);
 
-@Pipe({
-  name: "formatTime"
-})
+        for(let i=0;i<this.item.length;i++){
 
-export class FormatTimePipe implements PipeTransform {
-  transform(value: number): string {
-    const minutes: number = Math.floor(value / 60);
-    return (
-      ("00" + minutes).slice(-2) +
-      ":" +
-      ("00" + Math.floor(value - minutes * 60)).slice(-2)
+          if(this.item[i]!= null){
+            if(this.item[i]==data[data.findIndex((quiz: { id: number; }) => quiz.id ==i)].correctAnswer){
+              this.point+=1;
+            }
+          }
+        }
+
+        this.result.point=this.point;
+        this.result.category_id=this.id;
+        this.result.user_id= parseInt(localStorage.getItem('idUser')!);
+        console.log(this.result)
+        this.resultService.addResult(this.result).subscribe(
+          (value: any)=>{
+            console.log(value.id);
+
+            this.goToShowResult(value.id);
+          }
+        )
+      }
     );
   }
-}
 
+  goToShowResult(id: number){
+    this.router.navigate(['results', id])
+  }
+}

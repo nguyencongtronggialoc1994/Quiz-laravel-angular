@@ -24,15 +24,13 @@ export class ChangePasswordComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
   showToasterSuccess() {
     this.notificationService.showSuccess('Đổi mật khẩu thành công', 'Thông báo')
-  }
 
+  }
   showToasterError() {
     this.notificationService.showError('Đổi mật khẩu Thất bại! Mật khẩu cũ hoặc xác nhận mật khẩu sai.', 'Thông báo !')
   }
-
   changePassword() {
     console.log(localStorage.getItem('idUser'))
     this.userService.changePassword(localStorage.getItem('idUser'), this.oldPassword, this.newPassword, this.confirmPassword).subscribe(
@@ -41,4 +39,5 @@ export class ChangePasswordComponent implements OnInit {
       }, error => this.showToasterError()
     )
   }
+
 }

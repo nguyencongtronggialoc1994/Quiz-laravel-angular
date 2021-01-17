@@ -1,3 +1,4 @@
+import { AddQuizToCategoryComponent } from './category/add-quiz-to-category/add-quiz-to-category.component';
 import {DeleteCategoryComponent} from './category/delete-category/delete-category.component';
 import {UpdateCategoryComponent} from './category/update-category/update-category.component';
 import {CategoryListComponent} from './category/category-list/category-list.component';
@@ -13,6 +14,10 @@ import {Routes, RouterModule} from '@angular/router';
 import {ExamComponent} from './test/exam/exam.component';
 import {TakeTestComponent} from './test/take-test/take-test.component';
 import {SidebarComponent} from "./sidebar/sidebar.component";
+
+import { ResultService } from './test/result.service';
+import { ShowResultComponent } from './test/show-result/show-result.component';
+
 import {UserListComponent} from "./user/user-list/user-list.component";
 import {ChangePasswordComponent} from "./user/change-password/change-password.component";
 import {DeleteUserComponent} from "./user/delete-user/delete-user.component";
@@ -20,9 +25,11 @@ import {UserDetailComponent} from "./user/user-detail/user-detail.component";
 import {ResultsListComponent} from "./result-backend/results-list/results-list.component";
 import {DeleteResultComponent} from "./result-backend/delete-result/delete-result.component";
 import {CategoryDetailComponent} from "./category/category-detail/category-detail.component";
+import {HomeComponent} from "./home/home.component";
+
 
 const routes: Routes = [
-  {path: '', component: SidebarComponent},
+  {path: '', component: HomeComponent},
   //user
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
@@ -41,12 +48,19 @@ const routes: Routes = [
   {path: 'category-detail/:id', component: CategoryDetailComponent},
   {path: 'update-category/:id', component: UpdateCategoryComponent},
   {path: 'delete-category/:id', component: DeleteCategoryComponent},
+  {path: 'add-quiz-to-category/:id', component: AddQuizToCategoryComponent},
+
+
+  {path: 'exam', component: ExamComponent},
+  {path: 'test', component: TakeTestComponent},
+
   //result
   {path:'result-list',component: ResultsListComponent},
   {path:'delete-result/:id',component: DeleteResultComponent},
   //
   {path: 'exam', component: ExamComponent},
   {path: 'test/:id', component: TakeTestComponent},
+  {path:'results/:id', component: ShowResultComponent}
 
 ];
 

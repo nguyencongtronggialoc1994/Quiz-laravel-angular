@@ -63,6 +63,9 @@ import {OverlayModule} from '@angular/cdk/overlay';
 import {PortalModule} from "@angular/cdk/portal";
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import { NotFoundComponent } from './not-found/not-found.component';
+
+import { ShowResultComponent } from './test/show-result/show-result.component';
+
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UpdateUserComponent } from './user/update-user/update-user.component';
 import { DeleteUserComponent } from './user/delete-user/delete-user.component';
@@ -73,6 +76,9 @@ import { ResultsListComponent } from './result-backend/results-list/results-list
 import { DeleteResultComponent } from './result-backend/delete-result/delete-result.component';
 import { CategoryDetailComponent } from './category/category-detail/category-detail.component';
 import { SearchCategoryComponent } from './category/search-category/search-category.component';
+import { HomeComponent } from './home/home.component';
+import { AddQuizToCategoryComponent } from './category/add-quiz-to-category/add-quiz-to-category.component';
+
 
 
 
@@ -94,6 +100,9 @@ import { SearchCategoryComponent } from './category/search-category/search-categ
     NotFoundComponent,
     TakeTestComponent,
     ExamComponent,
+
+    ShowResultComponent,
+
     UserListComponent,
     UpdateUserComponent,
     DeleteUserComponent,
@@ -103,7 +112,11 @@ import { SearchCategoryComponent } from './category/search-category/search-categ
     ResultsListComponent,
     DeleteResultComponent,
     CategoryDetailComponent,
-    SearchCategoryComponent
+    SearchCategoryComponent,
+    HomeComponent,
+    AddQuizToCategoryComponent
+
+
   ],
   imports: [
     BrowserModule,
