@@ -25,6 +25,7 @@ import {ResultsListComponent} from "./result-backend/results-list/results-list.c
 import {DeleteResultComponent} from "./result-backend/delete-result/delete-result.component";
 import {CategoryDetailComponent} from "./category/category-detail/category-detail.component";
 import { QuizDetailComponent } from './quiz/quiz-detail/quiz-detail.component';
+import { ExamManagementComponent } from './test/exam-management/exam-management.component';
 
 
 const routes: Routes = [
@@ -59,7 +60,8 @@ const routes: Routes = [
   //
   {path: 'exam', component: ExamComponent},
   {path: 'test/:id', component: TakeTestComponent},
-  {path:'results/:id', component: ShowResultComponent}
+  {path:'results/:id', component: ShowResultComponent},
+  {path:'exam-management', component:ExamManagementComponent}
 
 ];
 

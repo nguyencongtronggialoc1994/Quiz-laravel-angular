@@ -77,6 +77,7 @@ import { DeleteResultComponent } from './result-backend/delete-result/delete-res
 import { CategoryDetailComponent } from './category/category-detail/category-detail.component';
 import { SearchCategoryComponent } from './category/search-category/search-category.component';
 import { QuizDetailComponent } from './quiz/quiz-detail/quiz-detail.component';
+import { ExamManagementComponent } from './test/exam-management/exam-management.component';
 
 
 
@@ -112,7 +113,8 @@ import { QuizDetailComponent } from './quiz/quiz-detail/quiz-detail.component';
     DeleteResultComponent,
     CategoryDetailComponent,
     SearchCategoryComponent,
-    QuizDetailComponent
+    QuizDetailComponent,
+    ExamManagementComponent
 
 
   ],

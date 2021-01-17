@@ -1,118 +1,126 @@
 <div style="float: left;" class="page-wrapper chiller-theme toggled">
-  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
-    <i class="fas fa-bars"></i>
-  </a>
-  <nav id="sidebar" class="sidebar-wrapper" style="  background-image: linear-gradient(to right, rgba(88,37,123,0),
+    <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+        <i class="fas fa-bars"></i>
+    </a>
+    <nav id="sidebar" class="sidebar-wrapper" style="  background-image: linear-gradient(to right, rgba(88,37,123,0),
   rgba(88,37,123,1));
 ">
-    <div class="sidebar-content">
-      <div class="sidebar-brand">
-        <a href="#">Trang chủ</a>
-        <div id="close-sidebar" >
-          <i class="fas fa-times"></i>
-        </div>
-      </div>
-      <div class="sidebar-header">
-        <div class="user-info" style="margin-left: -12px">
-          <a class="btn"  mat-button [matMenuTriggerFor]="quiz" >
-                    <span class="user-name">
+        <div class="sidebar-content">
+            <div class="sidebar-brand">
+                <a href="#">Trang chủ</a>
+                <div id="close-sidebar">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="sidebar-header">
+                <div class="user-info" style="margin-left: -12px">
+                    <a class="btn" mat-button [matMenuTriggerFor]="quiz">
+                        <span class="user-name">
           <div class="user-pic" style="margin-top: 7px">
           <img class="img-responsive img-rounded"
                src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
                alt="User picture">
         </div>
         </span>
-            <span class="user-role" style="font-size: 15px!important;">Xin chào {{getUserName()}}</span><br>
-            <span style="margin-right:10px;color:green;font-size: 15px!important;" *ngIf="checkLogin()"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"/></svg><i class="fa fa-circle" style="margin-right: 90px">
+                        <span class="user-role" style="font-size: 15px!important;">Xin chào {{getUserName()}}</span><br>
+                        <span style="margin-right:10px;color:green;font-size: 15px!important;" *ngIf="checkLogin()"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"/></svg><i class="fa fa-circle" style="margin-right: 90px">
       Online ({{getRole()}})
           </i> </span>
-          </a>
+                    </a>
 
-          <span class="user-status">
+                    <span class="user-status">
             <span *ngIf="!checkLogin()">Offline</span>
-          </span>
+                    </span>
 
-        </div>
-      </div>
+                </div>
+            </div>
 
-      <!-- #docregion sub-menu -->
-      <mat-menu #quiz="matMenu">
-        <span *ngIf="checkAdmin()||checkUser()">
+            <!-- #docregion sub-menu -->
+            <mat-menu #quiz="matMenu">
+                <span *ngIf="checkAdmin()||checkUser()">
                 <a class="nav-link" (click)="logout()">Đăng xuất</a><br>
                 <a class="nav-link" (click)="changePassword()">Đổi mật khẩu</a>
               </span>
-      </mat-menu>
+            </mat-menu>
 
-      <div class="sidebar-menu">
-        <ul>
+            <div class="sidebar-menu">
+                <ul>
 
 
-          <li *ngIf="!checkLogin()" routerLink="/login">
-            <a routerLinkActive="active">
-              <span >Đăng nhập</span></a>
+                    <li *ngIf="!checkLogin()" routerLink="/login">
+                        <a routerLinkActive="active">
+                            <span>Đăng nhập</span></a>
 
-          </li>
-          <div *ngIf="checkAdmin()">
-            <li  routerLink="/quizzes">
-              <a >
-                <span class="list_span" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                    </li>
+                    <div *ngIf="checkAdmin()">
+                        <li routerLink="/quizzes">
+                            <a>
+                                <span class="list_span"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
                 <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
               </svg> Danh sách câu hỏi</span></a>
-            </li>
-            <li  routerLink="/category-list">
-              <a class="nav-link">
-                <span class="list_span" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                        </li>
+                        <li routerLink="/category-list">
+                            <a class="nav-link">
+                                <span class="list_span"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
                 <path id="svg1" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
               </svg> Danh sách đề thi</span></a>
-            </li>
+                        </li>
 
-            <li  routerLink="/result-list">
-              <a class="nav-link">
-                <span class="list_span" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                        <li routerLink="/result-list">
+                            <a class="nav-link">
+                                <span class="list_span"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
                 <path id="svg1" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
               </svg>  Quản lý kết quả</span></a>
-            </li>
+                        </li>
 
-            <li routerLink="/user-list">
-              <a>
-                <span class="list_span" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                        <li routerLink="/user-list">
+                            <a>
+                                <span class="list_span"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
                 <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
               </svg> Danh sách người dùng</span>
-              </a>
+                            </a>
 
-            </li>
-          </div>
-          <div *ngIf="checkUser()">
+                        </li>
+                        <li routerLink="/exam-management">
+                            <a>
+                                <span class="list_span"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+              </svg>Quản lý đề thi</span>
+                            </a>
 
-            <li routerLink="/exam">
-              <a>
-                <span class="list_span" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                        </li>
+                    </div>
+                    <div *ngIf="checkUser()">
+
+                        <li routerLink="/exam">
+                            <a>
+                                <span class="list_span"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
                 <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
               </svg> Bài thi</span>
-              </a>
+                            </a>
 
-            </li>
-          </div>
-        </ul>
-      </div>
-    </div>
-    <div class="sidebar-footer">
-      <a href="#">
-        <i class="fa fa-bell"></i>
-        <span class="badge badge-pill badge-warning notification">3</span>
-      </a>
-      <a href="#">
-        <i class="fa fa-envelope"></i>
-        <span class="badge badge-pill badge-success notification">7</span>
-      </a>
-      <a href="#">
-        <i class="fa fa-cog"></i>
-        <span class="badge-sonar"></span>
-      </a>
-      <a href="#">
-        <i class="fa fa-power-off"></i>
-      </a>
-    </div>
-  </nav>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar-footer">
+            <a href="#">
+                <i class="fa fa-bell"></i>
+                <span class="badge badge-pill badge-warning notification">3</span>
+            </a>
+            <a href="#">
+                <i class="fa fa-envelope"></i>
+                <span class="badge badge-pill badge-success notification">7</span>
+            </a>
+            <a href="#">
+                <i class="fa fa-cog"></i>
+                <span class="badge-sonar"></span>
+            </a>
+            <a href="#">
+                <i class="fa fa-power-off"></i>
+            </a>
+        </div>
+    </nav>
 
 </div>
