@@ -3,6 +3,8 @@ import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
 import {CategoryService} from '../category.service';
 import {Component, OnInit} from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-category-list',
@@ -13,7 +15,9 @@ export class CategoryListComponent implements OnInit {
 
 
   constructor(private categoryService: CategoryService,
-              private router: Router) {
+              private router: Router,
+              public dialog: MatDialog
+              ) {
   }
 
   categories!: Observable<Category[]>;
@@ -48,5 +52,6 @@ export class CategoryListComponent implements OnInit {
   reloadData() {
     this.categories = this.categoryService.getCategoryList();
   }
+  
 
 }

@@ -85,6 +85,7 @@ import{CountdownModule}from 'ngx-countdown';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -117,7 +118,8 @@ import{CountdownModule}from 'ngx-countdown';
     SearchCategoryComponent,
     QuizDetailComponent,
     ExamManagementComponent,
-   
+    
+
 
 
   ],
