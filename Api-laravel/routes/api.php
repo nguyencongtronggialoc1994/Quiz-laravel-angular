@@ -26,7 +26,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
 Route::post('login', [UserController::class, 'authenticate']);
 Route::post('register', [UserController::class, 'register']);
 
@@ -64,9 +63,11 @@ Route::middleware('jwt.verify')->group(function () {
         Route::get('/search/{key}', [QuizController::class, 'searchByCategory']);
 
     });
+
     Route::prefix('test')->group(function () {
         Route::get('/{id}', [QuizController::class, 'showTest']);
     });
+
 
     //results
     Route::prefix('results')->group(function () {

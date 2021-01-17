@@ -8,5 +8,6 @@ export class Quiz {
   option3!: string;
   option4!: string;
   correctAnswer!: string;
+  quizId!: number;
 
 }

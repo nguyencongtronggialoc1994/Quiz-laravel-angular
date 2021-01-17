@@ -78,6 +78,8 @@ import { CategoryDetailComponent } from './category/category-detail/category-det
 import { SearchCategoryComponent } from './category/search-category/search-category.component';
 import { QuizDetailComponent } from './quiz/quiz-detail/quiz-detail.component';
 import { ExamManagementComponent } from './test/exam-management/exam-management.component';
+import{CountdownModule}from 'ngx-countdown';
+
 
 
 
@@ -114,7 +116,8 @@ import { ExamManagementComponent } from './test/exam-management/exam-management.
     CategoryDetailComponent,
     SearchCategoryComponent,
     QuizDetailComponent,
-    ExamManagementComponent
+    ExamManagementComponent,
+   
 
 
   ],
@@ -165,6 +168,7 @@ import { ExamManagementComponent } from './test/exam-management/exam-management.
     OverlayModule,
     PortalModule,
     ScrollingModule,
+    CountdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]

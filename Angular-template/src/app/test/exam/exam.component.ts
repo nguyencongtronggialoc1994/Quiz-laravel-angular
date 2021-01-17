@@ -28,7 +28,7 @@ export class ExamComponent implements OnInit {
   }
 
   gotoTest(id: any) {
-    console.log(id);
+    
     this.router.navigate(['test', id])
   }
 

@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+import { NotificationService } from 'src/app/notification.service';
 
-
-import { Observable } from 'rxjs';
 import { QuizService } from 'src/app/quiz/quiz.service';
 
 import { Quiz } from '../../quiz/Quiz';
@@ -29,16 +28,17 @@ array : any = [];
 index!: number;
 item!: any[];
 result: Result= new Result();
+counter: any = 10;
   constructor(
     private testService: TestService,
     private route: ActivatedRoute,
     private router: Router,
-    private quizService: QuizService,
-    private resultService: ResultService
+    private resultService: ResultService,
+    private notificationService: NotificationService
   ) { }
 
   ngOnInit(): void {
-
+    // this.startCountDown();
     this.id=this.route.snapshot.params['id'];
     this.testService.getShowTestFindId(this.id)
     .subscribe((data: any)=>{
@@ -71,7 +71,7 @@ this.testService.getShowTestFindId(this.id).subscribe(
 this.result.point=this.point;
 this.result.category_id=this.id;
 this.result.user_id= parseInt(localStorage.getItem('idUser')!);
-console.log(this.result)
+
     this.resultService.addResult(this.result).subscribe(
       (value: any)=>{
         console.log(value.id);
@@ -85,6 +85,32 @@ this.goToShowResult(value.id);
 
 goToShowResult(id: number){
   this.router.navigate(['results', id])
+}
+
+startCountDown() {
+  setTimeout(() => {
+    this.counter = this.counter - 1;
+    this.processCountdown();
+  }, 1000);
+
+
+}
+processCountdown() {
+  if (this.counter == 0) {
+setTimeout(()=>{
+  this.onSubmit();
+},3000);
+this.showToasterError()
+  } else {
+    this.startCountDown();
+  }
+}
+timeToString(seconds: number) {
+  return new Date(seconds * 1000).toUTCString().match(/(\d\d:\d\d:\d\d)/)![0];
+}
+
+showToasterError() {
+  this.notificationService.showError('Hết thời gian làm bài', 'Thông báo!');
 }
 }
 

@@ -4,13 +4,14 @@
     </div>
     <div class="col-sm-10">
         <div class="card">
+            <p> {{timeToString( counter) }}</p>
             <form>
                 <div *ngFor='let quiz of quizzes; index as i'>
-                    <table class=" table table-bordered table-question ">
+                    <table class=" table table-bordered table-question">
                         <thead>
                             <th width="20% " class="text-left text-bold align-top ">Question {{ i+1}} of 10</th>
-                            <th class="text-left text-bold "><span> {{ quiz.text }}</span>
-
+                            <th class="text-left text-bold "><span> {{ quiz.title }}: </span>
+                                <div>{{ quiz.text}}</div>
                             </th>
                         </thead>
                         <tbody>
@@ -19,18 +20,18 @@
 
                                 <td class="text-left">
                                     <div class="form-check">
-                                        <input (click)="correctAnswer( quiz.option1, quiz.id)" type="radio" name="{{ quiz.id }} " id="option1 " class="form-check-input " value="{{ quiz.option1 }} ">
+                                        <input (click)="correctAnswer( quiz.option1, quiz.id)" type="radio" name="{{ quiz.quizId }} " id="option1 " class="form-check-input " value="{{ quiz.option1 }} ">
                                         <label for="option1 " class="form-check-label ">
                             {{ quiz.option1 }}
                         </label>
                                     </div>
-                                    <div class="form-check "><input (click)="correctAnswer( quiz.option2, quiz.id)" type="radio" name="{{ quiz.id }} " id="option2 " class="form-check-input " value="{{ quiz.option2 }} "> <label for="option2 " class="form-check-label ">
+                                    <div class="form-check "><input (click)="correctAnswer( quiz.option2, quiz.id)" type="radio" name="{{ quiz.quizId }} " id="option2 " class="form-check-input " value="{{ quiz.option2 }} "> <label for="option2 " class="form-check-label ">
                             {{ quiz.option2 }}
                         </label></div>
-                                    <div class="form-check "><input (click)="correctAnswer( quiz.option3, quiz.id)" type="radio" name="{{ quiz.id }} " id="option3 " class="form-check-input " value="{{ quiz.option3 }} "> <label for="option3 " class="form-check-label ">
+                                    <div class="form-check "><input (click)="correctAnswer( quiz.option3, quiz.id)" type="radio" name="{{ quiz.quizId }} " id="option3 " class="form-check-input " value="{{ quiz.option3 }} "> <label for="option3 " class="form-check-label ">
                               {{ quiz.option3 }}
                         </label></div>
-                                    <div class="form-check "><input (click)="correctAnswer( quiz.option4, quiz.id)" type="radio" name="{{ quiz.id }} " id="option4 " class="form-check-input " value="{{ quiz.option4 }} "> <label for="option4 " class="form-check-label ">
+                                    <div class="form-check "><input (click)="correctAnswer( quiz.option4, quiz.id)" type="radio" name="{{ quiz.quizId }} " id="option4 " class="form-check-input " value="{{ quiz.option4 }} "> <label for="option4 " class="form-check-label ">
                               {{ quiz.option4 }}
                         </label></div>
                                 </td>

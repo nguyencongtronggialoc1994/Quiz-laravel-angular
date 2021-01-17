@@ -67,8 +67,8 @@ class CategoryController extends Controller
 
     public function destroy($id)
     {
-        $categories= DB::table('quizzes')->where('category_id','LIKE',$id);
-        $categories->delete();
+        $category_quiz= DB::table('category_quiz')->where('category_id','LIKE',$id);
+        $category_quiz->delete();
         $categories = Category::findOrFail($id);
         $message = "User not found";
         $statusCode = 404;

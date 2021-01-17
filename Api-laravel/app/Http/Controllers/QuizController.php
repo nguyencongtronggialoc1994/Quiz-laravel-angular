@@ -142,9 +142,10 @@ class QuizController extends Controller
     public function showTest($id)
     {
         $test = DB::table('quizzes')
-            ->join('categories', 'quizzes.category_id', '=', 'categories.id')
-            ->select('quizzes.*', 'categories.name')
-            ->where('quizzes.category_id', 'LIKE', $id)
+            ->join('category_quiz', 'quizzes.id', '=', 'category_quiz.quiz_id')
+            ->join('categories','category_quiz.category_id','=','categories.id')
+            ->select('quizzes.*', 'categories.*','quizzes.id as quizId')
+            ->where('categories.id', 'LIKE', $id)
             ->get();
 
         return response()->json($test);
