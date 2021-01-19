@@ -36,7 +36,7 @@ export class AddQuizToCategoryComponent implements OnInit {
       return true;
     else return false;
   }
-  getQuizzes(){
+  getQuizzesOfCategory2(){
 
     this.quizzes=this.quizService.getAllQuizzes();
 
@@ -51,7 +51,7 @@ export class AddQuizToCategoryComponent implements OnInit {
         this.category= data;
       }
     );
-    this.getQuizzes();
+    this.getQuizzesOfCategory2();
     this.getQuizzesOfCategory();
   }
   addQuizToCategory(category_id:number,quiz_id: number){
@@ -66,8 +66,7 @@ export class AddQuizToCategoryComponent implements OnInit {
   }
 
 delete(quiz_id:number,category_id: number){
-  console.log(quiz_id);
-  console.log(category_id);
+
   this.categoryService.deleteQuizFromCategory(quiz_id,category_id).subscribe(
     data=>console.log(data)
   )

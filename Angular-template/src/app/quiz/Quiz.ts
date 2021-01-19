@@ -9,5 +9,6 @@ export class Quiz {
   correctAnswer!: string;
   category_id!:number;
   name!: string;
+  title!: string;
 
 }

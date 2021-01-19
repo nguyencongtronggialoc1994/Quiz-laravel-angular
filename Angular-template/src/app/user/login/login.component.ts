@@ -67,13 +67,7 @@ export class LoginComponent implements OnInit {
       this.showToasterSuccess();
       this.getIdByEmail();
       this.getRole();
-      if (localStorage.getItem('role') == 'user') {
-        this.router.navigate(['/exam']);
-      }
-      if (localStorage.getItem('role') == 'admin') {
-        this.router.navigate(['category-list']);
-      }
-
+      this.router.navigate(['/']);
 
     }, error => this.showToasterError())
   }

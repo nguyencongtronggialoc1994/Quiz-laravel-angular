@@ -1,3 +1,4 @@
+import { QuizDetailComponent } from './quiz/quiz-detail/quiz-detail.component';
 import { AddQuizToCategoryComponent } from './category/add-quiz-to-category/add-quiz-to-category.component';
 import {DeleteCategoryComponent} from './category/delete-category/delete-category.component';
 import {UpdateCategoryComponent} from './category/update-category/update-category.component';
@@ -42,6 +43,7 @@ const routes: Routes = [
   {path: 'create-quiz', component: CreateQuizComponent},
   {path: 'delete-quiz/:id', component: DeleteQuizComponent},
   {path: 'update-quiz/:id', component: UpdateQuizComponent},
+  {path: 'quiz-detail/:id', component: QuizDetailComponent},
   //category
   {path: 'category-add', component: CreateCategoryComponent},
   {path: 'category-list', component: CategoryListComponent},

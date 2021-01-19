@@ -18,7 +18,6 @@ class QuizController extends Controller
     }
 
 
-
     public function create()
     {
         //
@@ -36,10 +35,7 @@ class QuizController extends Controller
         $option2 = $quizzes->option2;
         $option3 = $quizzes->option3;
         $option4 = $quizzes->option4;
-        $correctAnswer = $quizzes->correctAnswer;
         if ($option1 == $option2 || $option1 == $option3 || $option1 == $option4 || $option2 == $option3 || $option2 == $option4 || $option3 == $option4) {
-            $statusCode = 404;
-        } else if ($correctAnswer !== $option1 && $correctAnswer !== $option2 && $correctAnswer !== $option3 && $correctAnswer !== $option4) {
             $statusCode = 404;
         } else {
             $statusCode = 201;
@@ -81,10 +77,7 @@ class QuizController extends Controller
         $option2 = $quizzes->option2;
         $option3 = $quizzes->option3;
         $option4 = $quizzes->option4;
-        $correctAnswer = $quizzes->correctAnswer;
         if ($option1 == $option2 || $option1 == $option3 || $option1 == $option4 || $option2 == $option3 || $option2 == $option4 || $option3 == $option4) {
-            $statusCode = 404;
-        } else if ($correctAnswer !== $option1 && $correctAnswer !== $option2 && $correctAnswer !== $option3 && $correctAnswer !== $option4) {
             $statusCode = 404;
         } else {
             $statusCode = 201;
@@ -102,8 +95,10 @@ class QuizController extends Controller
 
     public function destroy($id)
     {
+        DB::table('category_quiz')->where('quiz_id', '=', $id)->delete();
         $quizzes = Quizzes::find($id);
         $message = "User not found";
+        $statusCode=404;
         if ($quizzes) {
             $quizzes->delete();
             $message = "delete success";
@@ -116,28 +111,55 @@ class QuizController extends Controller
     public function showTest($id)
     {
         $test = DB::table('quizzes')
-            ->join('categories', 'quizzes.category_id', '=', 'categories.id')
-            ->select('quizzes.*', 'categories.name')
-            ->where('quizzes.category_id', 'LIKE', $id)
+            ->join('category_quiz', 'quizzes.id', '=', 'category_quiz.quiz_id')
+            ->join('categories', 'category_quiz.category_id', '=', 'categories.id')
+            ->where('categories.id', '=', $id)
+            ->select('quizzes.*')
             ->get();
-
         return response()->json($test);
     }
 
     public function showQuizByCategoryId($id)
     {
         $quizzes = DB::table('quizzes')
-            ->join('category_quiz','quizzes.id','=','category_quiz.quiz_id')
-            ->join('categories','category_quiz.category_id','=','categories.id')
-            ->where('categories.id','=',$id)->select('quizzes.*')->get();
+            ->join('category_quiz', 'quizzes.id', '=', 'category_quiz.quiz_id')
+            ->join('categories', 'category_quiz.category_id', '=', 'categories.id')
+            ->where('categories.id', '=', $id)->select('quizzes.*')->get();
         return response()->json($quizzes, 200);
+    }
+
+    public function showQuizByCategoryId2($id)
+    {
+        $arr1 = [];
+        $arr2 = [];
+        $quizzes = Quizzes::all();
+
+        foreach ($quizzes as $quiz) {
+            $arr1[] = $quiz;
+        }
+        $quizzesByCategory = DB::table('quizzes')
+            ->join('category_quiz', 'quizzes.id', '=', 'category_quiz.quiz_id')
+            ->join('categories', 'category_quiz.category_id', '=', 'categories.id')
+            ->where('categories.id', '=', $id)->select('quizzes.*')->get();
+        foreach ($quizzesByCategory as $quiz) {
+            $arr2[] = $quiz;
+        }
+
+        for ($i = count($arr1); $i > 0; $i--) {
+            for ($j = 0; $j < count($arr2); $j++) {
+                if ($arr2[$j]->id == $arr1[$i]->id) {
+                    array_splice($arr1, $i, 1);
+                }
+            }
+        }
+        return response()->json($arr1, 200);
     }
 
     public function searchByCategory($key)
     {
         $quizzes = DB::table('quizzes')->join('categories', 'quizzes.category_id', '=', 'categories.id')
             ->where('categories.name', 'LIKE', '%' . $key . '%')
-            ->select('quizzes.*','categories.name')
+            ->select('quizzes.*', 'categories.name')
             ->get();
         return response()->json($quizzes, 200);
     }

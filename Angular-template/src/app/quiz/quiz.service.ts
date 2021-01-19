@@ -45,6 +45,14 @@ export class QuizService {
     });
     return this.http.get(`${this.baseUrl}/showByCategoryId/${id}`, {headers: reqHeader});
   }
+  getQuizzesFindByCategoryId2(id: number): Observable<any> {
+    const auth_token = localStorage.getItem('AccessToken');
+    const reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.get(`${this.baseUrl}/showByCategoryId2/${id}`, {headers: reqHeader});
+  }
 
   deleteQuizz(id: number): Observable<any> {
     const auth_token = localStorage.getItem('AccessToken');

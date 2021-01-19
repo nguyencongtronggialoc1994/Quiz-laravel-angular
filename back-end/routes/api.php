@@ -86,6 +86,7 @@ Route::middleware('jwt.verify')->group(function () {
 
 });
 
+Route::get('/quizzes/showByCategoryId2/{id}', [QuizController::class, 'showQuizByCategoryId2']);
 
 
 

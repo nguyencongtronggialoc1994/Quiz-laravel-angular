@@ -30,7 +30,6 @@ class QuizzesRequest extends FormRequest
             'option3'=> "required|max:255",
             'option4'=> "required|max:255",
             'correctAnswer'=> "required|max:255",
-            'category_id'=> "required|numeric"
         ];
     }
 
@@ -43,8 +42,6 @@ class QuizzesRequest extends FormRequest
             'option3.required'=> 'Không được để trống',
             'option4.required'=> 'Không được để trống',
             'correctAnswer.required'=> 'Không được để trống',
-            'category_id.required'=> 'Không được để trống',
-            'category_id.min'=> 'Không được nhỏ hơn một ký tự',
             'text.max' => ' Không được quá 10000 ký tự',
             'option1.max' => ' Không được quá 255 ký tự',
             'option2.max' => ' Không được quá 255 ký tự',

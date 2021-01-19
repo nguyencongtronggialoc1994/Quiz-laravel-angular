@@ -9,51 +9,53 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-delete-category',
   templateUrl: './delete-category.component.html',
-  styleUrls: ['./delete-category.component.css']
+  styleUrls: ['./delete-category.component.css'],
 })
 export class DeleteCategoryComponent implements OnInit {
-
   category!: Category;
   id!: number;
-  categories!: Observable<Category[]>
-    constructor(
-      private categoryService: CategoryService,
-      private quizService: QuizService,
-      private router: Router,
-      private route: ActivatedRoute,
-      private notificationService: NotificationService
+  categories!: Observable<Category[]>;
+  constructor(
+    private categoryService: CategoryService,
+    private quizService: QuizService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private notificationService: NotificationService
+  ) {}
 
-    ) { }
-
-    ngOnInit(): void {
-      this.category=new Category();
-      this.id= this.route.snapshot.params['id'];
-      this.categoryService.getCategory(this.id)
-      .subscribe((data:any)=>{
+  ngOnInit(): void {
+    this.category = new Category();
+    this.id = this.route.snapshot.params['id'];
+    this.categoryService.getCategory(this.id).subscribe(
+      (data: any) => {
         console.log(data);
-        this.category=data;
-      },(error:any)=>console.log(error));
-    }
-  isEmptyToken(){
-    if (localStorage.getItem('AccessToken')&&localStorage.getItem('role')=='admin')
+        this.category = data;
+      },
+      (error: any) => console.log(error)
+    );
+  }
+  isEmptyToken() {
+    if (
+      localStorage.getItem('AccessToken') &&
+      localStorage.getItem('role') == 'admin'
+    )
       return true;
     else return false;
   }
-    deleteCategory(id: number){
+  deleteCategory(id: number) {
+    console.log(id);
+    this.categoryService.deleteCategory(id).subscribe((data: any) => {
+      console.log(data);
+      this.categoriesList();
+      this.showToasterSuccess();
+    });
+  }
 
-      this.categoryService.deleteCategory(id)
-      .subscribe((data:any)=>{
-        console.log(data)
-        this.categoriesList();
-        this.showToasterSuccess()
-      })
-    }
+  showToasterSuccess() {
+    this.notificationService.showSuccess('Xóa thành công', 'Thông báo!');
+  }
 
-    showToasterSuccess(){
-      this.notificationService.showSuccess("Xóa thành công","Thông báo!");
-    }
-
-    categoriesList(){
-      this.router.navigate(['category-list'])
-    }
+  categoriesList() {
+    this.router.navigate(['category-list']);
+  }
 }

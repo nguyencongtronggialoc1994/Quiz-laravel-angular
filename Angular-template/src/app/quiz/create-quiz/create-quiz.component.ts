@@ -43,7 +43,7 @@ export class CreateQuizComponent implements OnInit {
   }
 
   showToasterError() {
-    this.notificationService.showError('Có đáp án trùng nhau hoặc đáp án đúng không trùng với các đáp án', 'Thông báo!');
+    this.notificationService.showError('Chưa chọn đáp án đúng hoặc Có đáp án trùng nhau hoặc đáp án đúng không trùng với các đáp án', 'Thông báo!');
   }
 
   newQuizz() {
@@ -58,17 +58,14 @@ export class CreateQuizComponent implements OnInit {
   save() {
     this.quizService.createQuizz(this.quiz)
       .subscribe((data: any) => {
-          console.log(data);
-          if (data[0] == '404') {
-            this.showToasterError();
-          } else {
+
             this.showToasterSuccess();
             this.quiz = new Quiz();
             this.goToList();
-          }
+
 
         },
-        (error: any) => console.log(error));
+        (error: any) => this.showToasterError());
   }
 
   // tslint:disable-next-line:typedef

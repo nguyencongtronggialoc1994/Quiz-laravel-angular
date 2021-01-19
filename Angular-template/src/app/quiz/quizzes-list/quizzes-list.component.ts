@@ -33,6 +33,7 @@ export class QuizzesListComponent implements OnInit {
   }
 
   deleteQuizz(id: number) {
+    console.log(id);
     this.router.navigate(['delete-quiz', id]);
   }
 
@@ -47,5 +48,8 @@ export class QuizzesListComponent implements OnInit {
 
   add() {
     this.router.navigate(['create-quiz']);
+  }
+  quizDetail(id:number){
+    this.router.navigate(['quiz-detail',id])
   }
 }

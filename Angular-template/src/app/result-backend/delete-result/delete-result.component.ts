@@ -35,6 +35,7 @@ export class DeleteResultComponent implements OnInit {
     this.resultService.deleteResult(this.id).subscribe(
       data=>{
         this.showToasterSuccess();
+        this.goToResultList();
       }
     )
   }

@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   }
 
   isEmptyToken() {
-    if (localStorage.getItem('AccessToken') && localStorage.getItem('role') == 'admin')
+    if (localStorage.getItem('AccessToken'))
       return true;
     else return false;
   }

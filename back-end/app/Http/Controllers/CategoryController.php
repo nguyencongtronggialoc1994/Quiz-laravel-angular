@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AddCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
+use Illuminate\Database\Console\DbCommand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -67,17 +68,18 @@ class CategoryController extends Controller
 
     public function destroy($id)
     {
-        $categories= DB::table('quizzes')->where('category_id','LIKE',$id);
-        $categories->delete();
-        $categories = Category::findOrFail($id);
-        $message = "User not found";
-        $statusCode = 404;
-        if ($categories){
-            $categories->delete();
-            $message="delete success";
-            $statusCode =200;
+        DB::table('category_quiz')->where('category_id', '=', $id)->delete();
+        DB::table('results')->where('category_id','=',$id)->delete();
+        $category = Category::findOrFail($id);
+        $message = "category not found";
+        $statusCode=404;
+        if ($category) {
+            $category->delete();
+            $message = "delete success";
+            $statusCode = 200;
         }
-        return response()->json($message,$statusCode);
+
+        return response()->json($message, $statusCode);
     }
 
 

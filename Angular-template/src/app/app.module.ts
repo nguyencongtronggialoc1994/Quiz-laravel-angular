@@ -78,6 +78,7 @@ import { CategoryDetailComponent } from './category/category-detail/category-det
 import { SearchCategoryComponent } from './category/search-category/search-category.component';
 import { HomeComponent } from './home/home.component';
 import { AddQuizToCategoryComponent } from './category/add-quiz-to-category/add-quiz-to-category.component';
+import { QuizDetailComponent } from './quiz/quiz-detail/quiz-detail.component';
 
 
 
@@ -114,7 +115,8 @@ import { AddQuizToCategoryComponent } from './category/add-quiz-to-category/add-
     CategoryDetailComponent,
     SearchCategoryComponent,
     HomeComponent,
-    AddQuizToCategoryComponent
+    AddQuizToCategoryComponent,
+    QuizDetailComponent
 
 
   ],
